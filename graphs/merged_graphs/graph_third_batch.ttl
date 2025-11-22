@@ -1,0 +1,1251 @@
+@prefix ex: <http://flow.ai/ontology/> .
+@prefix flow: <http://flow.ai/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex: a owl:Ontology ;
+    rdfs:label "Flow Provenance Ontology" ;
+    rdfs:comment "Lightweight ontology combining PROV-O and Schema.org for video metadata, plus Flow-specific provenance primitives." .
+
+ex:Transformation a owl:Class ;
+    rdfs:label "Transformation" ;
+    rdfs:comment "A processing step (cleaning, enrichment, deduplication) applied to dataset records." ;
+    rdfs:subClassOf prov:Activity .
+
+ex:batchSource a owl:ObjectProperty ;
+    rdfs:label "batchSource" ;
+    rdfs:comment "Link to the Dataset (batch) the video was originally found in; each Dataset is typically stored as a Named Graph." ;
+    rdfs:domain ex:Video ;
+    rdfs:range ex:Dataset .
+
+ex:dataset_first_batch a ex:Dataset ;
+    rdfs:label "First batch (2019)" ;
+    rdfs:comment "CSV: first_batch_metadata_preprocessed.csv" .
+
+ex:dataset_second_batch a ex:Dataset ;
+    rdfs:label "Second batch (2020)" ;
+    rdfs:comment "CSV: second_batch_metadata_preprocessed.csv" .
+
+ex:datePublished a owl:DatatypeProperty ;
+    rdfs:label "datePublished" ;
+    rdfs:comment "ISO 8601 publish timestamp." ;
+    rdfs:domain ex:Video ;
+    rdfs:range xsd:dateTime .
+
+ex:description a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    rdfs:comment "Original textual description for the video." ;
+    rdfs:domain ex:Video ;
+    rdfs:range xsd:string .
+
+ex:durationMs a owl:DatatypeProperty ;
+    rdfs:label "durationMs" ;
+    rdfs:comment "Approximate duration in milliseconds." ;
+    rdfs:domain ex:Video ;
+    rdfs:range xsd:integer .
+
+ex:publishYear a owl:DatatypeProperty ;
+    rdfs:label "publishYear" ;
+    rdfs:comment "Derived publish year for temporal aggregation." ;
+    rdfs:domain ex:Video ;
+    rdfs:range xsd:gYear .
+
+ex:sourceRow a owl:DatatypeProperty ;
+    rdfs:label "sourceRow" ;
+    rdfs:comment "Optional: original CSV row identifier or pointer (e.g., line number or file path)." ;
+    rdfs:domain ex:Video ;
+    rdfs:range xsd:string .
+
+ex:title a owl:DatatypeProperty ;
+    rdfs:label "title" ;
+    rdfs:comment "Original title of the video." ;
+    rdfs:domain ex:Video ;
+    rdfs:range xsd:string .
+
+ex:videoId a owl:DatatypeProperty ;
+    rdfs:label "videoId" ;
+    rdfs:comment "Stable identifier assigned during preprocessing (e.g., first_batch_vid_0001)." ;
+    rdfs:domain ex:Video ;
+    rdfs:range xsd:string .
+
+flow:belongsToDataset a owl:ObjectProperty ;
+    rdfs:label "belongsToDataset" ;
+    rdfs:comment "Links a video to the dataset (named graph) it belongs to." ;
+    rdfs:domain flow:Video ;
+    rdfs:range flow:Dataset .
+
+flow:description a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    rdfs:comment "Description of the video." ;
+    rdfs:domain flow:Video ;
+    rdfs:range xsd:string .
+
+flow:durationMs a owl:DatatypeProperty ;
+    rdfs:label "durationMs" ;
+    rdfs:comment "Video duration in milliseconds." ;
+    rdfs:domain flow:Video ;
+    rdfs:range xsd:integer .
+
+flow:generatedBy a owl:ObjectProperty ;
+    rdfs:label "generatedBy" ;
+    rdfs:comment "Indicates which transformation produced this dataset." ;
+    rdfs:domain flow:Dataset ;
+    rdfs:range flow:Transformation .
+
+flow:publishTimestamp a owl:DatatypeProperty ;
+    rdfs:label "publishTimestamp" ;
+    rdfs:comment "Timestamp when the video was published." ;
+    rdfs:domain flow:Video ;
+    rdfs:range xsd:dateTime .
+
+flow:publishYear a owl:DatatypeProperty ;
+    rdfs:label "publishYear" ;
+    rdfs:comment "Year extracted from the publish timestamp." ;
+    rdfs:domain flow:Video ;
+    rdfs:range xsd:gYear .
+
+flow:title a owl:DatatypeProperty ;
+    rdfs:label "title" ;
+    rdfs:comment "Title of the video." ;
+    rdfs:domain flow:Video ;
+    rdfs:range xsd:string .
+
+flow:videoId a owl:DatatypeProperty ;
+    rdfs:label "videoId" ;
+    rdfs:comment "Unique identifier for each video." ;
+    rdfs:domain flow:Video ;
+    rdfs:range xsd:string .
+
+<http://flow.ai/video/third_batch_vid_0001> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Multiclass semantic segmentation using U-Net with VGG, ResNet, and Inception as backbones. Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists The dataset used in this video can be downloaded from the link below. This dataset can be used to train and test machine learning algorithms designed for multiclass semantic segmentation. Please read the Readme document for more information. https://drive.google.com/file/d/1HWtBaSa-LTyAMgf2uaz1T9o1sTWDBajU/view?usp=sharing Segmentation models library documentation: https://github.com/qubvel/segmentation_models To annotate images and generate labels, you can use APEER (for free): www.apeer.com"^^xsd:string ;
+    flow:durationMs 2271000 ;
+    flow:publishTimestamp "2021-03-24T07:00:02+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "210 - Multiclass U-Net using VGG, ResNet, and Inception as backbones"^^xsd:string ;
+    flow:videoId "third_batch_vid_0001"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0002> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Multiclass semantic segmentation using Linknet and how does it compare against unet Original paper on Unet: (2015) https://arxiv.org/pdf/1505.04597.pdf Original paper on Linknet: (2017) https://arxiv.org/pdf/1707.03718.pdf Can learn a bit more about backbone comparison here.... https://iopscience.iop.org/article/10.1088/1742-6596/1544/1/012196/pdf Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists The dataset used in this video can be downloaded from the link below. This dataset can be used to train and test machine learning algorithms designed for multiclass semantic segmentation. Please read the Readme document for more information. https://drive.google.com/file/d/1HWtBaSa-LTyAMgf2uaz1T9o1sTWDBajU/view?usp=sharing To annotate images and generate labels, you can use APEER (for free): www.apeer.com Segmentation models library documentation: https://github.com/qubvel/segmentation_models"^^xsd:string ;
+    flow:durationMs 1915000 ;
+    flow:publishTimestamp "2021-03-31T07:00:10+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "211 - U-Net vs LinkNet for multiclass semantic segmentation"^^xsd:string ;
+    flow:videoId "third_batch_vid_0002"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0003> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Classification of mnist hand sign language alphabets into 25 classes (Z is not included as it includes a wave motion, not captured using a single image) Dataset: https://www.kaggle.com/datamunge/sign-language-mnist Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Dataset: https://www.kaggle.com/datamunge/sign-language-mnist"^^xsd:string ;
+    flow:durationMs 1332000 ;
+    flow:publishTimestamp "2021-04-07T07:00:00+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "212 - Classification of mnist sign language alphabets using deep learning"^^xsd:string ;
+    flow:videoId "third_batch_vid_0003"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0004> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Classification of mnist hand sign language alphabets into 25 classes. An ensemble of network results may provide improved accuracy compared to any single network. This video goes through the code that explains the ensemble process of the network predictions. Dataset: https://www.kaggle.com/datamunge/sign-language-mnist Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Dataset: https://www.kaggle.com/datamunge/sign-language-mnist"^^xsd:string ;
+    flow:durationMs 1531000 ;
+    flow:publishTimestamp "2021-04-14T09:00:00+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "213 - Ensemble of networks for improved accuracy in deep learning"^^xsd:string ;
+    flow:videoId "third_batch_vid_0004"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0005> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Improving semantic segmentation (U-Net) performance via ensemble of multiple trained networks. ResNet34 + Inception V3 + VGG16 If you get an error while loading Segmentation models library, please follow these steps to fix the issue: https://youtu.be/syJZxDtLujs Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists The dataset used in this video can be downloaded from the link below. This dataset can be used to train and test machine learning algorithms designed for multiclass semantic segmentation. Please read the Readme document for more information. https://drive.google.com/file/d/1HWtBaSa-LTyAMgf2uaz1T9o1sTWDBajU/view?usp=sharing To annotate images and generate labels, you can use APEER (for free): www.apeer.com Segmentation models library documentation: https://github.com/qubvel/segmentation_models"^^xsd:string ;
+    flow:durationMs 1773000 ;
+    flow:publishTimestamp "2021-04-21T07:00:04+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "214 - Improving semantic segmentation (U-Net) performance via ensemble of multiple trained networks"^^xsd:string ;
+    flow:videoId "third_batch_vid_0005"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0006> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Dataset info: Electron microscopy (EM) dataset from https://www.epfl.ch/labs/cvlab/data/data-em/ To annotate images and generate labels, you can use APEER (for free): www.apeer.com"^^xsd:string ;
+    flow:durationMs 1474000 ;
+    flow:publishTimestamp "2021-02-25T08:00:08+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "204 - U-Net for semantic segmentation of mitochondria"^^xsd:string ;
+    flow:videoId "third_batch_vid_0006"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0007> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "This video explains U-Net segmentation of images followed by watershed based separation of objects. Object properties will also be calculated. Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Dataset info: Electron microscopy (EM) dataset from https://www.epfl.ch/labs/cvlab/data/data-em/ To annotate images and generate labels, you can use APEER (for free): www.apeer.com"^^xsd:string ;
+    flow:durationMs 1666000 ;
+    flow:publishTimestamp "2021-03-02T08:00:09+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "205 - U-Net plus watershed for instance segmentation"^^xsd:string ;
+    flow:videoId "third_batch_vid_0007"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0008> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Can be applied to 3D volumes from FIB-SEM, CT, MRI, etc. (e.g., BRATS dataset). Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists If you get an error while loading Segmentation models library, please follow these steps to fix the issue: https://youtu.be/syJZxDtLujs The dataset used in this video can be downloaded from the link below. This dataset can be used to train and test machine learning algorithms designed for multiclass semantic segmentation. Please read the Readme document for more information. https://drive.google.com/file/d/1HWtBaSa-LTyAMgf2uaz1T9o1sTWDBajU/view?usp=sharing To annotate images and generate labels, you can use APEER (for free): www.apeer.com Segmentation models 3D library documentation: https://pypi.org/project/segmentation-models-3D/"^^xsd:string ;
+    flow:durationMs 3000000 ;
+    flow:publishTimestamp "2021-04-28T07:00:03+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "215 - 3D U-Net for semantic segmentation"^^xsd:string ;
+    flow:videoId "third_batch_vid_0008"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0009> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Just got bored of spending time at home so decided to get in the car and drive. I’m glad I found beautiful places that give some peace to mind!"^^xsd:string ;
+    flow:durationMs 86000 ;
+    flow:publishTimestamp "2021-02-21T23:13:36+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Hidden gems around the Bay Area - Santa Cruz - Feb2021"^^xsd:string ;
+    flow:videoId "third_batch_vid_0009"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0010> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Link to sign up for Mito: https://hubs.ly/H0H0Gsz0"^^xsd:string ;
+    flow:durationMs 407000 ;
+    flow:publishTimestamp "2021-02-22T20:04:04+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Python Tips and Tricks - 1: Mito (trymito.io) for structured data"^^xsd:string ;
+    flow:videoId "third_batch_vid_0010"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0011> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists/blob/master/02_Tips_Tricks_python_tips_and_tricks_2_google_image_download.py This script downloads images from Google search (or Bing search). As with any download, please make sure you are not violating any copyright terms. I use this script to download images that help me practice deep learning based image classification. DO NOT use downloaded images to train a commercial product, this most certainly violates copyright terms. Do not pip install google_images_download this gives an error that some images could not be downloadable. Google changed some things on their side... The updated repo can be installed using the following command. pip install git+https://github.com/Joeclinton1/google-images-download.git Please remember that this method has a limit of 100 images. OR You can use bing. Does not seem to have a limit on the number of images to download. pip install bing-image-downloader"^^xsd:string ;
+    flow:durationMs 408000 ;
+    flow:publishTimestamp "2021-02-23T19:02:13+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Python tips and tricks - 2: Downloading images from online search"^^xsd:string ;
+    flow:videoId "third_batch_vid_0011"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0012> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "In summary: DigitalSreeni is my personal channel and Apeer_Micro is my work channel. I appreciate if you subscribe to both. Link to Apeer_Micro channel. https://www.youtube.com/channel/UCVrG0AsRMb0pPcxzX75SusA"^^xsd:string ;
+    flow:durationMs 133000 ;
+    flow:publishTimestamp "2021-02-26T00:33:15+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Clarification about my YouTube channels"^^xsd:string ;
+    flow:videoId "third_batch_vid_0012"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0013> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Image augmentation may hurt your model accuracy if you're not careful. Always test you augmentation operations first on a smaller dataset and then incrementally verify its accuracy before using it in your final model training. Link to the file from this video: https://github.com/bnsreenu/python_for_microscopists/blob/master/tips_tricks_3_data_augmentation.ipynb Link to my GitHub account: https://github.com/bnsreenu/python_for_microscopists"^^xsd:string ;
+    flow:durationMs 683000 ;
+    flow:publishTimestamp "2021-03-05T23:07:51+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Python tips and tricks - 3: Be conservative with image augmentation"^^xsd:string ;
+    flow:videoId "third_batch_vid_0013"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0014> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "imageJ (Fiji): https://imagej.net/Fiji ZEN Lite: https://www.zeiss.com/microscopy/us/products/microscope-software/zen-lite.html"^^xsd:string ;
+    flow:durationMs 543000 ;
+    flow:publishTimestamp "2021-03-15T10:00:12+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Python tips and tricks - 4: Best free software for image visualization and processing"^^xsd:string ;
+    flow:videoId "third_batch_vid_0014"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0015> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Link to my GitHub account: https://github.com/bnsreenu/python_for_microscopists"^^xsd:string ;
+    flow:durationMs 448000 ;
+    flow:publishTimestamp "2021-03-23T10:00:02+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Python tips and tricks - 5: Extracting patches from large images and masks for semantic segmentation"^^xsd:string ;
+    flow:videoId "third_batch_vid_0015"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0016> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "What to expect when you perform semantic segmentation using small datasets (less than 100 images) and U-net architecture? Does augmentation help and how about transfer learning? Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists To annotate images and generate labels, you can use APEER (for free): www.apeer.com"^^xsd:string ;
+    flow:durationMs 2234000 ;
+    flow:publishTimestamp "2021-05-05T09:00:00+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "216 - Semantic segmentation using a small dataset for training (& U-Net)"^^xsd:string ;
+    flow:videoId "third_batch_vid_0016"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0017> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Step 1: Install Visual Studio community edition: I installed VS2019 https://visualstudio.microsoft.com/vs/community/ Step 2: Install your IDE if you haven't already done so. I installed Spyder 4.1.5 via Anaconda individual edition. https://www.anaconda.com/products/individual Step 3: Setup a separate environment for your IDE. I created an env. with python 3.7 I skipped 3.8 as it is relatively new and some of my libraries may not be tested or available. On Anaconda you can use Anaconda Navigaor to create a new environment. If you only see 3.8 as option on Navigator you can create new env from anaconda prompt: conda create -n py37gpu python=3.7 anaconda For the following steps verify instructions from www.tensorflow.org/install/gpu Step 4: Verify your GPU is actually supported for deep learning: https://developer.nvidia.com/cuda-gpus Step 5: Figure out your GPU model: I have P5000 Quadro and Update the GPU driver: For me it updated to Version 461.72 https://www.nvidia.com/download/index.aspx?lang=en-us Step 6: Download and install CUDA Toolkit. I installed Version 11.0 https://developer.nvidia.com/cuda-toolkit-archive Step 7: Download cuDNN. I downloaded version 8.0.4 You need to sign up for Nvidia developer program (free) Extract all folder contents from cudnn you just downloaded to C:\\program files\\Nvidia GPU computing toolkit\\CUDA\\v11.0 Step 8: Install tensorflow Open spyder in the new environment that got named as: py37gpu (or whatever name you assigned) - pip install tensorflow Step 9: Verify the installation Create a new python file and run these lines to test if GPU is recognized by tensorflow. import tensorflow as tf tf.test.is_gpu_available( cuda_only=False, min_cuda_compute_capability=None ) The last few lines of my output shows... physical GPU (device: 0, name: Quadro P5000, pci bus id: 0000:03:00.0, compute capability: 6.1) physical GPU (device: 1, name: Quadro P5000, pci bus id: 0000:a1:00.0, compute capability: 6.1) I have 2 GPUs. But on Windows you will not be able to efficiently use both GPUs for training. #On windows sysems you cannot install NCCL that is required for multi GPU #So we need to follow Heirarchial copy method or reduce to single GPU. strategy = tf.distribute.MirroredStrategy(devices=devices_names[:n_gpus], cross_device_ops=tf.distribute.HierarchicalCopyAllReduce()) #The following will raise an error on Windows about NCCL. #strategy = tf.distribute.MirroredStrategy(devices=devices_names[:n_gpus])"^^xsd:string ;
+    flow:durationMs 854000 ;
+    flow:publishTimestamp "2021-05-12T07:00:25+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "217 - 9 steps to installing TensorFlow GPU on Windows 10"^^xsd:string ;
+    flow:videoId "third_batch_vid_0017"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0018> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Difference between UpSampling2D and Conv2DTranspose These are the two common types of layers that can be used to increase the dimensions of arrays. UpSampling2D is like the opposite of pooling where it repeats rows and columns of the input. Conv2DTranspose performs up-sampling and convolution. Conv2DTranspose has been reported to result in Checkerboard artifacts but unfortunately not much information on the comparison of UpSampling2D vs Conv2DTranspose. Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists"^^xsd:string ;
+    flow:durationMs 1088000 ;
+    flow:publishTimestamp "2021-05-19T07:00:20+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "218 - Difference between UpSampling2D and Conv2DTranspose used in U-Net and GAN"^^xsd:string ;
+    flow:videoId "third_batch_vid_0018"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0019> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Understanding U-Net architecture and building it from scratch. This tutorial should clear any doubts you may have regarding the architecture of U-Net. It should also inform you on the process of building your own U-Net using functional blocks for encoder and decoder. Example use case: Segmentation of mitochondria using only 12 images and about 150 labeled objects. Dataset: https://www.epfl.ch/labs/cvlab/data/data-em/ Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists"^^xsd:string ;
+    flow:durationMs 2257000 ;
+    flow:publishTimestamp "2021-05-27T07:00:04+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "219 - Understanding U-Net architecture and building it from scratch"^^xsd:string ;
+    flow:videoId "third_batch_vid_0019"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0020> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Note: Importing segmentation models library may give you generic_utils error on TF2.x If you get an error about generic_utils... change keras.utils.generic_utils.get_custom_objects().update(custom_objects) to keras.utils.get_custom_objects().update(custom_objects) in .../lib/python3.7/site-packages/efficientnet/__init__.py For Anaconda users: Use this code to find out the location of site-packages directory under your current environment in anaconda. from distutils.sysconfig import get_python_lib print(get_python_lib()) For Colab users: You can click on the direct link provided on Colab for __init__.py and edit it. Remember to restart the runtime after editing the file. Alternatively you can work with Tensorflow 1.x that doesn't throw the generic_utils error. In google colab, add this as your first line. %tensorflow_version 1.x (Or just create a new environment in your local IDE to use TF1.x) Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists"^^xsd:string ;
+    flow:durationMs 467000 ;
+    flow:publishTimestamp "2021-03-30T07:00:07+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Python tips and tricks - 6: Fixing generic_utils error while importing segmentation models library"^^xsd:string ;
+    flow:videoId "third_batch_vid_0020"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0021> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "This video refers to semantic segmentation use case. Dataset: https://www.epfl.ch/labs/cvlab/data/data-em/ Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists/tree/master/222_working_with_large_data_that_does_not_fit_memory_semantic_segm Code for all videos: https://github.com/bnsreenu/python_for_microscopists For semantic segmentation the folder structure needs to look like below if you want to use ImageDatagenerator. Data/ train_images/ train/ img1, img2, img3, ...... train_masks/ train/ msk1, msk, msk3, ...... val_images/ val/ img1, img2, img3, ...... val_masks/ val/ msk1, msk, msk3, ...... test_images/ test/ img1, img2, img3, ...... test_masks/ test/ msk1, msk, msk3, ...... Use split-folders library (pip install split-folders) to make this process of splitting files easy."^^xsd:string ;
+    flow:durationMs 2697000 ;
+    flow:publishTimestamp "2021-06-16T07:00:17+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "222 - Working with large data that doesn't fit your system memory - Semantic Segmentation"^^xsd:string ;
+    flow:videoId "third_batch_vid_0021"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0022> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists # TTA - Should be called prediction time augmentation #We can augment each input image, predict augmented images and average all predictions."^^xsd:string ;
+    flow:durationMs 1141000 ;
+    flow:publishTimestamp "2021-06-23T07:00:11+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "223 - Test time augmentation for semantic segmentation"^^xsd:string ;
+    flow:videoId "third_batch_vid_0022"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0023> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "IoU and Binary Cross-Entropy are good loss functions for binary semantic segmentation. but Focal loss may be better. Focal loss is good for multiclass classification where some classes are easy and other difficult to classify. ​It is just an extension of the cross-entropy loss.​ It down-weights easy classes and focuses training on hard to classify classes.​ In summary, focal loss turns the model’s attention towards the difficult to classify examples.​"^^xsd:string ;
+    flow:durationMs 1211000 ;
+    flow:publishTimestamp "2021-06-02T07:00:04+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "220 - What is the best loss function for semantic segmentation?"^^xsd:string ;
+    flow:videoId "third_batch_vid_0023"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0024> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists pip install split-folders import splitfolders # or import split_folders input_folder = 'cell_images/' # Split with a ratio. # To only split into training and validation set, set a tuple to `ratio`, i.e, `(.8, .2)`. #Train, val, test splitfolders.ratio(input_folder, output=\"cell_images2\", seed=42, ratio=(.7, .2, .1), group_prefix=None) # default values # Split val/test with a fixed number of items e.g. 100 for each set. # To only split into training and validation set, use a single number to `fixed`, i.e., `10`. # enable oversampling of imbalanced datasets, works only with fixed splitfolders.fixed(input_folder, output=\"cell_images2\", seed=42, fixed=(35, 20), oversample=False, group_prefix=None)"^^xsd:string ;
+    flow:durationMs 532000 ;
+    flow:publishTimestamp "2021-06-09T07:00:06+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "221 - Easy way to split data on your disk into train, test, and validation?"^^xsd:string ;
+    flow:videoId "third_batch_vid_0024"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0025> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "This video briefly introduces you to the keras unet collection library that offers a few variants of the classic U-Net model. These variants include Attention U-Net, U-Net plus plus, and R2-U-Net. For more information about the library: https://github.com/yingkaisha/keras-unet-collection Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Dataset from: https://www.epfl.ch/labs/cvlab/data/data-em/ Images and masks are divided into patches of 256x256."^^xsd:string ;
+    flow:durationMs 548000 ;
+    flow:publishTimestamp "2021-07-21T07:00:09+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "227 - Various U-Net models using keras unet collection library - for semantic image segmentation"^^xsd:string ;
+    flow:videoId "third_batch_vid_0025"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0026> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Residual Networks: Residual networks were proposed to overcome the problems of deep CNNs (e.g., VGG). Stacking convolutional layers and making the model deeper hurts the generalization ability of the network. To address this problem, ResNet architecture was introduced which adds the idea of “skip connections”. In traditional neural networks, each layer feeds into the next layer. In networks with residual blocks, each layer feeds into the next layer and directly into the layers about 2–3 hops away. Inputs can forward propagate faster through the residual connections (shortcuts) across layers. Recurrent convolutional networks: The recurrent network can use the feedback connection to store information over time. Recurrent networks use context information; as time steps increase, the network leverages more and more neighborhood information. Recurrent and CNNs can be combined for image-based applications. With recurrent convolution layers, the network can evolve over time though the input is static. Each unit is influenced by its neighboring units, includes the context information of an image. U-net can be built using recurrent or residual or a combination block instead of the traditional double-convolutional block."^^xsd:string ;
+    flow:durationMs 965000 ;
+    flow:publishTimestamp "2021-06-30T07:00:06+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "224 - Recurrent and Residual U-net"^^xsd:string ;
+    flow:videoId "third_batch_vid_0026"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0027> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "What is attention and why is it needed for U-Net? Attention in U-Net is a method to highlight only the relevant activations during training. It reduces the computational resources wasted on irrelevant activations and provides better generalization of the network. Two types of attention: 1. Hard attention Highlight relevant regions by cropping. One region of an image at a time; this implies it is non differentiable and needs reinforcement learning. Network can either pay attention or not, nothing in between. Backpropagation cannot be used. 2. Soft attention Weighting different parts of the image. Relevant parts of image get large weights and less relevant parts get small weights. Can be trained with backpropagation. During training, the weights also get trained making the model pay more attention to relevant regions. In summary – it adds weights to pixels based on the relevance. Why is attention needed in U-Net? U-net skip connection combines spatial information from the down-sampling path with the up-sampling path to retain good spatial information. But this process brings along the poor feature representation from the initial layers. Soft attention implemented at the skip connections will actively suppress activations at irrelevant regions."^^xsd:string ;
+    flow:durationMs 896000 ;
+    flow:publishTimestamp "2021-07-07T07:00:04+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "225 - Attention U-net. What is attention and why is it needed for U-Net?"^^xsd:string ;
+    flow:videoId "third_batch_vid_0027"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0028> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Is there a clear advantage of modified U-Net modules such as Attention U-Net and Residual U-Net over the standard U-Net? Watch the video to find out. Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Dataset from: https://www.epfl.ch/labs/cvlab/data/data-em/ Images and masks are divided into patches of 256x256."^^xsd:string ;
+    flow:durationMs 1626000 ;
+    flow:publishTimestamp "2021-07-14T07:00:13+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "226 - U-Net vs Attention U-Net vs Attention Residual U-Net - should you care?"^^xsd:string ;
+    flow:videoId "third_batch_vid_0028"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0029> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Loading a keras model and continuing training​ When using custom loss function and metrics​. No code to share with this video. Summary: Provide your custom optimizer or loss or metrics as custom objects during loading the model. my_model = load_model('your_trained_model.hdf5', custom_objects={'my_custom_loss': custom_loss, 'custom_metric': my_custom_metric})"^^xsd:string ;
+    flow:durationMs 543000 ;
+    flow:publishTimestamp "2021-05-08T08:00:08+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Python tips and tricks - 7: Continuing keras model training when using custom loss and metrics"^^xsd:string ;
+    flow:videoId "third_batch_vid_0029"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0030> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Dataset from: https://www.kaggle.com/humansintheloop/semantic-segmentation-of-aerial-imagery RGB to HEX: (Hexadecimel -- base 16) This number divided by sixteen (integer division; ignoring any remainder) gives the first hexadecimal digit (between 0 and F, where the letters A to F represent the numbers 10 to 15). The remainder gives the second hexadecimal digit. 0-9 -- 0-9 10-15 -- A-F Example: RGB -- R=201, G=, B= R = 201/16 = 12 with remainder of 9. So hex code for R is C9 (remember C=12) Calculating RGB from HEX: #3C1098 3C = 3*16 + 12 = 60 10 = 1*16 + 0 = 16 90 = 9*16 + 8 = 152 ############################### #CODE ######################### #Convert Hex to RGB (numpy array) Building = '#3C1098'.lstrip('#') Building = np.array(tuple(int(Building[i:i+2], 16) for i in (0, 2, 4))) # 60, 16, 152 Land = '#8429F6'.lstrip('#') Land = np.array(tuple(int(Land[i:i+2], 16) for i in (0, 2, 4))) #132, 41, 246 Road = '#6EC1E4'.lstrip('#') Road = np.array(tuple(int(Road[i:i+2], 16) for i in (0, 2, 4))) #110, 193, 228 Vegetation = 'FEDD3A'.lstrip('#') Vegetation = np.array(tuple(int(Vegetation[i:i+2], 16) for i in (0, 2, 4))) #254, 221, 58 Water = 'E2A929'.lstrip('#') Water = np.array(tuple(int(Water[i:i+2], 16) for i in (0, 2, 4))) #226, 169, 41 Unlabeled = '#9B9B9B'.lstrip('#') Unlabeled = np.array(tuple(int(Unlabeled[i:i+2], 16) for i in (0, 2, 4))) #155, 155, 155 ######################### # Now replace RGB to integer values to be used as labels. #Find pixels with combination of RGB for the above defined arrays... #if matches then replace all values in that pixel with a specific integer def rgb_to_2D_label(label): \"\"\" Supply our labale masks as input in RGB format. Replace pixels with specific RGB values ... \"\"\" label_seg = np.zeros(label.shape,dtype=np.uint8) label_seg [np.all(label == Building,axis=-1)] = 0 label_seg [np.all(label==Land,axis=-1)] = 1 label_seg [np.all(label==Road,axis=-1)] = 2 label_seg [np.all(label==Vegetation,axis=-1)] = 3 label_seg [np.all(label==Water,axis=-1)] = 4 label_seg [np.all(label==Unlabeled,axis=-1)] = 5 label_seg = label_seg[:,:,0] #Just take the first channel, no need for all 3 channels return label_seg labels = [] for i in range(mask_dataset.shape[0]): label = rgb_to_2D_label(mask_dataset[i]) labels.append(label) labels = np.array(labels) labels = np.expand_dims(labels, axis=3) print(\"Unique labels in label dataset are: \", np.unique(labels))"^^xsd:string ;
+    flow:durationMs 1090000 ;
+    flow:publishTimestamp "2021-05-14T07:00:24+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Python tips and tricks - 8: Working with RGB (and Hex) masks for semantic segmentation"^^xsd:string ;
+    flow:videoId "third_batch_vid_0030"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0031> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "This video demonstrates the process of pre-processing aerial imagery (satellite) data, including RGB labels to get them ready for U-net. The video also demonstrates the process of training a U-net and making predictions. Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists/tree/master/228_semantic_segmentation_of_aerial_imagery_using_unet My Github repo link: https://github.com/bnsreenu/python_for_microscopists Dataset from: https://www.kaggle.com/humansintheloop/semantic-segmentation-of-aerial-imagery The dataset consists of aerial imagery of Dubai obtained by MBRSC satellites and annotated with pixel-wise semantic segmentation in 6 classes. The total volume of the dataset is 72 images grouped into 6 larger tiles. The classes are: Building: #3C1098 Land (unpaved area): #8429F6 Road: #6EC1E4 Vegetation: #FEDD3A Water: #E2A929 Unlabeled: #9B9B9B Images come in many sizes: 797x644, 509x544, 682x658, 1099x846, 1126x1058, 859x838, 1817x2061, 2149x1479​ Need to preprocess so we can capture all images into numpy arrays. ​ Crop to a size divisible by 256 and extract patches.​ ​Masks are RGB and information provided as HEX color code.​ Need to convert HEX to RGB values and then convert RGB labels to integer values and then to one hot encoded. ​ ​Predicted (segmented) images need to converted back into original RGB colors. ​ ​Predicted tiles need to be merged into a large image by minimizing blending artefacts (smooth blending). ​(Next video)"^^xsd:string ;
+    flow:durationMs 2517000 ;
+    flow:publishTimestamp "2021-07-28T07:00:20+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "228 - Semantic segmentation of aerial (satellite) imagery using U-net"^^xsd:string ;
+    flow:videoId "third_batch_vid_0031"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0032> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "This video demonstrates the process of segmenting patches of images from a large image and blending patches back smoothly to minimize edge effects. Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Dataset from: https://www.kaggle.com/humansintheloop/semantic-segmentation-of-aerial-imagery Original code for smooth blending is from here: https://github.com/Vooban/Smoothly-Blend-Image-Patches The original code has been modified to fix a couple of bugs and chunks of code unnecessary for smooth tiling are removed."^^xsd:string ;
+    flow:durationMs 1113000 ;
+    flow:publishTimestamp "2021-08-04T07:00:09+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "229 - Smooth blending of patches for semantic segmentation of large images (using U-Net)"^^xsd:string ;
+    flow:videoId "third_batch_vid_0032"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0033> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "For example scaling inputs, performing preprocessing operations, converting masks ​to categorical​, etc. Code snippet from the video... #Libraries import segmentation_models as sm from sklearn.preprocessing import MinMaxScaler scaler = MinMaxScaler() from keras.utils import to_categorical #Some scaling operation to be applied to images from sklearn.preprocessing import MinMaxScaler scaler = MinMaxScaler() from keras.utils import to_categorical #Some preprocessing operation on images BACKBONE = 'resnet34' preprocess_input = sm.get_preprocessing(BACKBONE) #Define a function to perform additional preprocessing after datagen. #For example, scale images, convert masks to categorical, etc. def preprocess_data(img, mask, num_class): #Scale images img = scaler.fit_transform(img.reshape(-1, img.shape[-1])).reshape(img.shape) img = preprocess_input(img) #Preprocess based on the pretrained backbone... #Convert mask to one-hot mask = to_categorical(mask, num_class) return (img,mask) #Define the generator. #We are not doing any rotation or zoom to make sure mask values are not interpolated. #It is important to keep pixel values in mask as 0, 1, 2, 3, ..... from tensorflow.keras.preprocessing.image import ImageDataGenerator def trainGenerator(train_img_path, train_mask_path, num_class): img_data_gen_args = dict(horizontal_flip=True, vertical_flip=True, fill_mode='reflect') image_datagen = ImageDataGenerator(**img_data_gen_args) mask_datagen = ImageDataGenerator(**img_data_gen_args) image_generator = image_datagen.flow_from_directory( train_img_path, class_mode = None, batch_size = batch_size, seed = seed) mask_generator = mask_datagen.flow_from_directory( train_mask_path, class_mode = None, color_mode = 'grayscale', batch_size = batch_size, seed = seed) train_generator = zip(image_generator, mask_generator) for (img, mask) in train_generator: img, mask = preprocess_data(img, mask, num_class) yield (img, mask) train_img_path = \"data/data_for_keras_aug/train_images/\" train_mask_path = \"data/data_for_keras_aug/train_masks/\" train_img_gen = trainGenerator(train_img_path, train_mask_path, num_class=4) #Make sure the generator is working and that images and masks are indeed lined up. #Verify generator.... In python 3 next() is renamed as __next__() x, y = train_img_gen.__next__() for i in range(0,3): image = x[i] mask = np.argmax(y[i], axis=2) plt.subplot(1,2,1) plt.imshow(image) plt.subplot(1,2,2) plt.imshow(mask, cmap='gray') plt.show()"^^xsd:string ;
+    flow:durationMs 695000 ;
+    flow:publishTimestamp "2021-05-24T07:00:07+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Python tips and tricks - 9: Performing additional tasks during data augmentation in keras"^^xsd:string ;
+    flow:videoId "third_batch_vid_0033"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0034> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Semantic Segmentation of Landcover Dataset ​by loading images in batches from the drive​. Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists/tree/master/230_landcover_dataset_segmentation For all code: https://github.com/bnsreenu/python_for_microscopists Dataset from: https://landcover.ai/ Labels: 0: Unlabeled background ​ 1: Buildings​ 2: Woodlands​ 3: Water​ You can use any U-net but this code demonstrates the use of pre-trained encoder in the U-net - available as part of segmentation models library. To install the segmentation models library: pip install -U segmentation-models If you are running into generic_utils error when loading segmentation models library watch this video to fix it: https://youtu.be/syJZxDtLujs. Prepare the data first: 1. Read large images and corresponding masks, divide them into smaller patches. And write the patches as images to the local drive. 2. Save only images and masks where masks have some decent amount of labels other than 0. Using blank images with label=0 is a waste of time and may bias the model towards unlabeled pixels. 3. Divide the sorted dataset from above into train and validation datasets. 4. You have to manually move some folders and rename them appropriately if you want to use ImageDataGenerator from keras. After training, you can use the smooth blending process to segment large images."^^xsd:string ;
+    flow:durationMs 2756000 ;
+    flow:publishTimestamp "2021-08-11T07:00:00+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "230 - Semantic Segmentation of Landcover Dataset using U-Net"^^xsd:string ;
+    flow:videoId "third_batch_vid_0034"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0035> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Dataset from: https://www.kaggle.com/awsaf49/brats20-dataset-training-validation Dataset information: Multimodal scans available as NIfTI files (.nii.gz) Four 'channels' of information – 4 different volumes of the same region Native (T1) Post-contrast T1-weighted (T1CE) T2-weighted (T2) T2 Fluid Attenuated Inversion Recovery (FLAIR) volumes All the imaging datasets have been segmented manually and were approved by experienced neuro-radiologists. Annotations (labels): Label 0: Unlabeled volume Label 1: Necrotic and non-enhancing tumor core (NCR/NET) Label 2: Peritumoral edema (ED) Label 3: Missing (No pixels in all the volumes contain label 3) Label 4: GD-enhancing tumor (ET) Our approach: Step 1: Get the data ready Step 2: Define custom data generator Step 3: Define the 3D U-net model Step 4: Train and Predict Step 1: Get the data ready Download the dataset and unzip it. Segmented file name in Folder 355 has a weird name. Rename it to match others. Install nibabel library to handle nii files (https://pypi.org/project/nibabel/) Scale all volumes (using MinMaxScaler). Combine the three non-native volumes (T2, T1CE and Flair) into a single multi-channel volume. Reassign pixels of value 4 to value 3 (as 3 is missing from original labels). Crop volumes to remove useless blank regions around the actual volume of interest (Crop to 128x128x128). Drop all volumes where the amount of annotated data is less that certain percentage. (To maximize training on real labeled volumes). Save all useful volumes to the local drive as numpy arrays (npy). Split image and mask volumes into train and validation datasets. Step 2: Define custom data generator Keras image data generator only works with jpg, png, and tif images. It will not recognize npy files. We need to define a custom generator to load our data from the disk. Step 3: Define the 3D U-net model Extend the standard 2D U-Net into 3D OR copy the code from online OR use 3D segmentation models library Step 4: Train and Predict Train by loading images in batches using our custom generator. Predict and plot data for visualization."^^xsd:string ;
+    flow:durationMs 910000 ;
+    flow:publishTimestamp "2021-08-18T07:00:01+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "231 - Semantic Segmentation of BraTS2020 - Part 0 - Introduction (and plan)"^^xsd:string ;
+    flow:videoId "third_batch_vid_0035"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0036> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Dataset from: https://www.kaggle.com/awsaf49/brats20-dataset-training-validation Dataset information: Multimodal scans available as NIfTI files (.nii.gz) Four 'channels' of information – 4 different volumes of the same region Native (T1) Post-contrast T1-weighted (T1CE) T2-weighted (T2) T2 Fluid Attenuated Inversion Recovery (FLAIR) volumes All the imaging datasets have been segmented manually and were approved by experienced neuro-radiologists. Annotations (labels): Label 0: Unlabeled volume Label 1: Necrotic and non-enhancing tumor core (NCR/NET) Label 2: Peritumoral edema (ED) Label 3: Missing (No pixels in all the volumes contain label 3) Label 4: GD-enhancing tumor (ET) Our approach: Step 1: Get the data ready (this video) Step 2: Define custom data generator (next video) Step 3: Define the 3D U-net model Step 4: Train and Predict Step 1: Get the data ready Download the dataset and unzip it. Segmented file name in Folder 355 has a weird name. Rename it to match others. Install nibabel library to handle nii files (https://pypi.org/project/nibabel/) Scale all volumes (using MinMaxScaler). Combine the three non-native volumes (T2, T1CE and Flair) into a single multi-channel volume. Reassign pixels of value 4 to value 3 (as 3 is missing from original labels). Crop volumes to remove useless blank regions around the actual volume of interest (Crop to 128x128x128). Drop all volumes where the amount of annotated data is less that certain percentage. (To maximize training on real labeled volumes). Save all useful volumes to the local drive as numpy arrays (npy). Split image and mask volumes into train and validation datasets."^^xsd:string ;
+    flow:durationMs 1473000 ;
+    flow:publishTimestamp "2021-08-25T07:00:13+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "232 - Semantic Segmentation of BraTS2020 - Part 1 - Getting the data ready"^^xsd:string ;
+    flow:videoId "third_batch_vid_0036"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0037> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Dataset from: https://www.kaggle.com/awsaf49/brats20-dataset-training-validation Dataset information: Multimodal scans available as NIfTI files (.nii.gz) Four 'channels' of information – 4 different volumes of the same region Native (T1) Post-contrast T1-weighted (T1CE) T2-weighted (T2) T2 Fluid Attenuated Inversion Recovery (FLAIR) volumes All the imaging datasets have been segmented manually and were approved by experienced neuro-radiologists. Annotations (labels): Label 0: Unlabeled volume Label 1: Necrotic and non-enhancing tumor core (NCR/NET) Label 2: Peritumoral edema (ED) Label 3: Missing (No pixels in all the volumes contain label 3) Label 4: GD-enhancing tumor (ET) Our approach: Step 1: Get the data ready (Previous video) Step 2: Define custom data generator (This video) Step 3: Define the 3D U-net model Step 4: Train and Predict"^^xsd:string ;
+    flow:durationMs 856000 ;
+    flow:publishTimestamp "2021-09-01T07:00:06+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "233 - Semantic Segmentation of BraTS2020 - Part 2 - Defining your custom data generator"^^xsd:string ;
+    flow:videoId "third_batch_vid_0037"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0038> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Dataset from: https://www.kaggle.com/awsaf49/brats20-dataset-training-validation Dataset information: Multimodal scans available as NIfTI files (.nii.gz) Four 'channels' of information – 4 different volumes of the same region Native (T1) Post-contrast T1-weighted (T1CE) T2-weighted (T2) T2 Fluid Attenuated Inversion Recovery (FLAIR) volumes All the imaging datasets have been segmented manually and were approved by experienced neuro-radiologists. Annotations (labels): Label 0: Unlabeled volume Label 1: Necrotic and non-enhancing tumor core (NCR/NET) Label 2: Peritumoral edema (ED) Label 3: Missing (No pixels in all the volumes contain label 3) Label 4: GD-enhancing tumor (ET) Our approach: Step 1: Get the data ready Step 2: Define custom data generator (Previous video) Step 3: Define the 3D U-net model (This video) Step 4: Train and Predict (This video)"^^xsd:string ;
+    flow:durationMs 1841000 ;
+    flow:publishTimestamp "2021-09-08T07:00:19+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "234 - Semantic Segmentation of BraTS2020 - Part 3 - Training and Prediction"^^xsd:string ;
+    flow:videoId "third_batch_vid_0038"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0039> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists The video summarizes the concept of autoencoders and walks you though the code for using autoencoder to reconstruct a single image. It also walks you through the code for displaying feature responses of various layer in a deep learning model."^^xsd:string ;
+    flow:durationMs 1700000 ;
+    flow:publishTimestamp "2021-09-15T07:00:01+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "235 - Pre-training U-net using autoencoders - Part 1 - Autoencoders and visualizing features"^^xsd:string ;
+    flow:videoId "third_batch_vid_0039"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0040> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Dataset from: https://www.epfl.ch/labs/cvlab/data/data-em/ The video walks you through the process of training an autoencoder model and using the encoder weights for U-net."^^xsd:string ;
+    flow:durationMs 1951000 ;
+    flow:publishTimestamp "2021-09-22T07:00:13+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "236 - Pre-training U-net using autoencoders - Part 2 - Generating encoder weights for U-net"^^xsd:string ;
+    flow:videoId "third_batch_vid_0040"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0041> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "This video explains the process of loading images and masks in the right order (in python) for semantic segmentation . Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists"^^xsd:string ;
+    flow:durationMs 708000 ;
+    flow:publishTimestamp "2021-06-03T09:00:10+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Python tips and tricks - 10: Loading images and masks in the right order for semantic segmentation"^^xsd:string ;
+    flow:videoId "third_batch_vid_0041"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0042> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists To install opencv, you need to first install a lot of dependencies on the RPi. These are the ones I installed to get it working on my RPi 3B. sudo apt-get update sudo apt-get upgrade (consider full upgrade if you haven't used your Pi in a while) sudo apt-get install build-essential cmake pkg-config sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng-dev sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev sudo apt-get install libxvidcore-dev libx264-dev sudo apt-get install libfontconfig1-dev libcairo2-dev sudo apt-get install libgdk-pixbuf2.0-dev libpango1.0-dev sudo apt-get install libgtk2.0-dev libgtk-3-dev sudo apt-get install libatlas-base-dev gfortran sudo apt-get install libhdf5-dev libhdf5-serial-dev libhdf5-103 sudo apt-get install libqtgui4 libqtwebkit4 libqt4-test python3-pyqt5 sudo apt-get install python3-dev Now you can install opencv.... pip install opencv-contrib-python Now, you need to install tflite interpreter. You do not need full tensorflow to just run the tflite interpreter. The package tflite_runtime only contains the Interpreter class which is what we need. It can be accessed by tflite_runtime.interpreter.Interpreter. To install the tflite_runtime package, just download the Python wheel that is suitable for the Python version running on your RPi. Here is the download link for the wheel files based on the Python version: https://github.com/google-coral/pycoral/releases/ for Python 3.5, download: tflite_runtime-2.5.0-cp35-cp35m-linux_armv7l.whl (This is what I used in my video) for Python 3.7, download: tflite_runtime-2.5.0-cp37-cp37m-linux_armv7l.whl Download face and eye models: Go to these links, click on RAW and save as... otherwise you'd be saving html files of Github page. ' https://github.com/Itseez/opencv/blob/master/data/haarcascades/haarcascade_frontalface_default.xml https://github.com/Itseez/opencv/blob/master/data/haarcascades/haarcascade_eye.xml"^^xsd:string ;
+    flow:durationMs 1169000 ;
+    flow:publishTimestamp "2021-11-10T08:00:31+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "243 - Real time detection of facial emotion, age, and gender using TensorFlow Lite on RaspberryPi"^^xsd:string ;
+    flow:videoId "third_batch_vid_0042"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0043> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists First train a DL model and save it as h5. The convert to tflite. Dataset from: https://lhncbc.nlm.nih.gov/publication/pub9932 Binary problem: Question is: Is the cell in the image infected/parasited? If yes, probability is close to 1. If no, the probablility is close to 0. (uninfected) This is because we added label 1 to parasited images. In summary, probability result close to 1 reflects infected (parasited) image and close to 0 reflects uninfected image"^^xsd:string ;
+    flow:durationMs 1841000 ;
+    flow:publishTimestamp "2021-09-29T07:00:05+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "237 - What is Tensorflow Lite and how to convert keras model to tflite?"^^xsd:string ;
+    flow:videoId "third_batch_vid_0043"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0044> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Face and eye detection using opencv (Haar Cascade classificaion) Download face and eye models: Go to these links, click on RAW and save as... otherwise you'd be saving html files of Github page. ' https://github.com/Itseez/opencv/blob/master/data/haarcascades/haarcascade_frontalface_default.xml https://github.com/Itseez/opencv/blob/master/data/haarcascades/haarcascade_eye.xml"^^xsd:string ;
+    flow:durationMs 1154000 ;
+    flow:publishTimestamp "2021-10-06T07:00:03+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "238 - Real time face detection using opencv (and video feed from a webcam)"^^xsd:string ;
+    flow:videoId "third_batch_vid_0044"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0045> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Train a deep learning model on facial emotion detection Dataset from: https://www.kaggle.com/msambare/fer2013 This trained model will be later used towards real time emotion detection on Windows and raspberry Pi."^^xsd:string ;
+    flow:durationMs 754000 ;
+    flow:publishTimestamp "2021-10-13T07:00:11+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "239 - Deep Learning training for facial emotion detection"^^xsd:string ;
+    flow:videoId "third_batch_vid_0045"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0046> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Train deep learning models to predict age and gender. Dataset from here: https://susanqq.github.io/UTKFace/ This trained model will be later used towards real time emotion detection on Windows and raspberry Pi."^^xsd:string ;
+    flow:durationMs 637000 ;
+    flow:publishTimestamp "2021-10-20T07:00:13+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "240 - Deep Learning training for age and gender detection"^^xsd:string ;
+    flow:videoId "third_batch_vid_0046"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0047> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Live prediction of emotion, age, and gender using pre-trained models. Uses haar Cascades classifier to detect face. Then, uses pre-trained models for emotion, gender, and age to predict them from live video feed."^^xsd:string ;
+    flow:durationMs 709000 ;
+    flow:publishTimestamp "2021-10-27T07:00:11+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "241 - Real time detection of facial emotion, age, and gender (using video feed from a webcam)"^^xsd:string ;
+    flow:videoId "third_batch_vid_0047"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0048> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Live prediction of emotion, age, and gender using pre-trained models. Uses haar Cascades classifier to detect face. Then it uses pre-trained models for emotion, gender, and age to predict them from live video feed. Prediction is done using tflite models. Note that tflite with optimization takes too long on Windows, so not even try. Try it on edge devices, including RPi (next video)."^^xsd:string ;
+    flow:durationMs 1068000 ;
+    flow:publishTimestamp "2021-11-03T07:00:13+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "242 - Real time detection of facial emotion, age, and gender using TensorFlow Lite (on Windows10)"^^xsd:string ;
+    flow:videoId "third_batch_vid_0048"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0049> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Amazon link to the book: https://www.amazon.com/Automated-Machine-Learning-AutoKeras-accessible/dp/1800567642/ref=sr_1_2?dchild=1&keywords=autokeras&qid=1624553154&sr=8-2"^^xsd:string ;
+    flow:durationMs 394000 ;
+    flow:publishTimestamp "2021-06-25T18:59:56+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "My review of the 'Automated Machine Learning with AutoKeras' book"^^xsd:string ;
+    flow:videoId "third_batch_vid_0049"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0050> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Career tips on 5 things to check before applying for your first machine learning job."^^xsd:string ;
+    flow:durationMs 601000 ;
+    flow:publishTimestamp "2021-07-19T07:00:04+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "5 things to check before applying for your first machine learning job"^^xsd:string ;
+    flow:videoId "third_batch_vid_0050"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0051> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "A couple of career tips for those wanting to become a machine learning engineer."^^xsd:string ;
+    flow:durationMs 393000 ;
+    flow:publishTimestamp "2021-07-12T07:00:03+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "You want to be a machine learning engineer, now what?"^^xsd:string ;
+    flow:videoId "third_batch_vid_0051"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0052> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Embedding layer... Maps each value in the input array to a vector of a defined size.​ The weights in this layer are learned during the training process.​ Initialization is performed (just like other keras layers).​ One-hot encoding is inefficient as most indices are zero. (e.g., Text with 1000 words means most of the elements are 0) ​ Integer encoding does not reflect the relationship between words. ​ Embedding allows for the representation of similar words with similar encoding.​ Values are learned (trainable).​"^^xsd:string ;
+    flow:durationMs 1104000 ;
+    flow:publishTimestamp "2021-11-17T08:00:13+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "244 - What are embedding layers in keras?"^^xsd:string ;
+    flow:videoId "third_batch_vid_0052"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0053> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists"^^xsd:string ;
+    flow:durationMs 718000 ;
+    flow:publishTimestamp "2021-08-02T07:00:28+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Tips Tricks 14 - EasyOCR for text detection in images (using python)"^^xsd:string ;
+    flow:videoId "third_batch_vid_0053"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0054> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists"^^xsd:string ;
+    flow:durationMs 1225000 ;
+    flow:publishTimestamp "2021-11-24T08:00:27+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "245 - Advantages of keras functional API in defining complex models"^^xsd:string ;
+    flow:videoId "third_batch_vid_0054"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0055> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists"^^xsd:string ;
+    flow:durationMs 1068000 ;
+    flow:publishTimestamp "2021-12-01T08:00:09+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "246 - Training a keras model by enumerating epochs and batches"^^xsd:string ;
+    flow:videoId "third_batch_vid_0055"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0056> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Conditional Generative Adversarial Network cGAN A GAN model generates a random image from the domain. The relationship between points in the latent space and the generated images is hard to map. A GAN can be trained so that both the generator and the discriminator models are conditioned on the class label (or other modalities). As a result, the trained generator model can be used to generate images of a given type using the class label (or another condition). GAN can be conditioned using other image modalities (image to image translation). The conditioning is performed by feeding the class label into both the discriminator and generator as an additional input layer. A few applications: Image-to-Image Translation: Pix2Pix GAN CycleGAN: Transform images from one set into images that could belong to another set. Super-resolution: Increase the resolution of images, adding detail where necessary to fill in blurry areas. Text-to-Image Synthesis: Take text as input and produce images as described by the text."^^xsd:string ;
+    flow:durationMs 2391000 ;
+    flow:publishTimestamp "2021-12-08T08:00:08+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "247 - Conditional GANs and their applications"^^xsd:string ;
+    flow:videoId "third_batch_vid_0056"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0057> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Python tips and tricks - 13 How to plot keras models using plot_model on Windows10 We use the plot_model library:​ from tensorflow.keras.utils import plot_model​ Plot_model requires Pydot and graphviz libraries.​ To install Graphviz: ​ Download and install the latest version exe​ https://gitlab.com/graphviz/graphviz/-/releases ​ To check the installation,​ go to the command prompt and enter: dot -V​ Open Anaconda prompt for the ​desired environment ​ pip install pydot​ pip install graphviz​"^^xsd:string ;
+    flow:durationMs 684000 ;
+    flow:publishTimestamp "2021-07-26T07:00:17+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Tips Tricks 13 - How to visualize keras models on windows10"^^xsd:string ;
+    flow:videoId "third_batch_vid_0057"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0058> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Week of 12-18 July 2021 Links to the content referenced in the video: https://iterative-refinement.github.io/ https://arxiv.org/pdf/2104.07636.pdf https://www.nature.com/articles/s41598-021-93889-z.pdf https://www.nature.com/articles/s41467-021-23952-w.pdf https://cdn.openai.com/papers/jukebox.pdf"^^xsd:string ;
+    flow:durationMs 328000 ;
+    flow:publishTimestamp "2021-07-16T07:00:12+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "What I am reading this week about Machine Learning and AI - 16 July 2021"^^xsd:string ;
+    flow:videoId "third_batch_vid_0058"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0059> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Conditional Generative Adversarial Network cGAN A GAN model generates a random image from the domain. The relationship between points in the latent space and the generated images is hard to map. A GAN can be trained so that both the generator and the discriminator models are conditioned on the class label (or other modalities). As a result, the trained generator model can be used to generate images of a given type using the class label (or other condition). GAN can be conditioned using other image modalities (image to image translation). The conditioning is performed by feeding the class label into both the discriminator and generator as additional input layer. A few applications: Image-to-Image Translation: Pix2Pix GAN CycleGAN: Transform images from one set into images that could belong to another set. Super-resolution: Increase the resolution of images, adding detail where necessary to fill in blurry areas. Text-to-Image Synthesis: Take text as input and produce images as described by the text."^^xsd:string ;
+    flow:durationMs 1796000 ;
+    flow:publishTimestamp "2021-12-22T08:00:07+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "249 - keras implementation of Conditional GAN (cifar10 data set)"^^xsd:string ;
+    flow:videoId "third_batch_vid_0059"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0060> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists"^^xsd:string ;
+    flow:durationMs 1869000 ;
+    flow:publishTimestamp "2021-12-15T08:00:08+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "248 - keras implementation of GAN to generate cifar10 images"^^xsd:string ;
+    flow:videoId "third_batch_vid_0060"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0061> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "A review of the original publication. https://arxiv.org/abs/1611.07004 Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists The discriminator in the Pix2Pix GAN is implemented as a PatchGAN. PatchGAN discriminator tries to classify if each N×N patch in an image is real or fake. (as opposed to classifying an entire image) This discriminator is run convolutionally across the image, averaging all responses to provide the final output. The receptive field in a PatchGAN represents the relationship between one output activation to an area on the input image. A 70×70 PatchGAN will classify 70×70 patches of the input image as real or fake."^^xsd:string ;
+    flow:durationMs 1973000 ;
+    flow:publishTimestamp "2021-12-29T08:00:08+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "250 - Image to image translation using Pix2Pix GAN"^^xsd:string ;
+    flow:videoId "third_batch_vid_0061"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0062> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Data from: http://efrosgans.eecs.berkeley.edu/pix2pix/datasets/maps.tar.gz Also find other datasets here: http://efrosgans.eecs.berkeley.edu/pix2pix/datasets/ Original pix2pix paper: https://arxiv.org/pdf/1611.07004.pdf Github for the original paper: https://phillipi.github.io/pix2pix/"^^xsd:string ;
+    flow:durationMs 1368000 ;
+    flow:publishTimestamp "2022-01-05T08:00:05+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "251 - Satellite image to maps translation using pix2pix GAN"^^xsd:string ;
+    flow:videoId "third_batch_vid_0062"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0063> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Dataset link: https://drive.google.com/file/d/1HWtBaSa-LTyAMgf2uaz1T9o1sTWDBajU/view (Please read the Readme document in the dataset folder for more information. )"^^xsd:string ;
+    flow:durationMs 1306000 ;
+    flow:publishTimestamp "2022-01-12T08:00:30+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "252 - Generating realistic looking scientific images using pix2pix GAN"^^xsd:string ;
+    flow:videoId "third_batch_vid_0063"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0064> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "(No code in this tutorial, please watch the next tutorial for keras implementation) Original paper: https://arxiv.org/abs/1703.10593 The model uses instance normalization layer: Normalize the activations of the previous layer at each step, i.e. applies a transformation that maintains the mean activation close to 0 and the activation standard deviation close to 1. Standardizes values on each output feature map rather than across features in a batch. ​ Download instance normalization code from here: https://github.com/keras-team/keras-contrib/blob/master/keras_contrib/layers/normalization/instancenormalization.py Or install keras_contrib using guidelines here: https://github.com/keras-team/keras-contrib"^^xsd:string ;
+    flow:durationMs 1552000 ;
+    flow:publishTimestamp "2022-01-19T08:00:08+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "253 - Unpaired image to image translation​ using cycleGAN - An introduction"^^xsd:string ;
+    flow:videoId "third_batch_vid_0064"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0065> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Original CycleGAN paper: https://arxiv.org/abs/1703.10593 Dataset from https://people.eecs.berkeley.edu/~taesung_park/CycleGAN/datasets/"^^xsd:string ;
+    flow:durationMs 2307000 ;
+    flow:publishTimestamp "2022-01-26T08:00:00+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "254 - Unpaired image to image translation​ using cycleGAN in keras"^^xsd:string ;
+    flow:videoId "third_batch_vid_0065"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0066> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Single Image Super-Resolution Using SRGAN Understanding the concept by walking through the original publication.​ Original paper: https://arxiv.org/pdf/1609.04802.pdf"^^xsd:string ;
+    flow:durationMs 1763000 ;
+    flow:publishTimestamp "2022-02-02T08:00:14+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "255 - Single image super resolution​ using SRGAN"^^xsd:string ;
+    flow:videoId "third_batch_vid_0066"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0067> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Original paper: https://arxiv.org/pdf/1609.04802.pdf Dataset from: http://press.liacs.nl/mirflickr/mirdownload.html All images resized to 128x128 to represent HR and 32x32 to represent LR."^^xsd:string ;
+    flow:durationMs 1366000 ;
+    flow:publishTimestamp "2022-02-09T08:00:00+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "256 - Super resolution GAN (SRGAN) in keras"^^xsd:string ;
+    flow:videoId "third_batch_vid_0067"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0068> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Week of 12-18 July 2021 https://www.biorxiv.org/content/10.1101/2021.07.19.452964v1.full.pdf https://arxiv.org/pdf/2103.10697.pdf https://bair.berkeley.edu/blog/2021/07/22/spml/ https://arxiv.org/pdf/2105.00957.pdf https://arxiv.org/pdf/2101.06307.pdf https://jisrc.szabist.edu.pk/JISRC/Papers/JISR-021-10.pdf https://www.journals.resaim.com/ijresm/article/view/1018/983 https://irjmets.com/rootaccess/forms/uploads/IRJMETS149474.pdf"^^xsd:string ;
+    flow:durationMs 388000 ;
+    flow:publishTimestamp "2021-07-23T17:00:22+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "What I am reading this week about Machine Learning and AI - 23 July 2021"^^xsd:string ;
+    flow:videoId "third_batch_vid_0068"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0069> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists UTKFace dataset (Used in this video): https://susanqq.github.io/UTKFace/ Haarcascade models, if interested in detecting faces and extracting them into new images. https://github.com/opencv/opencv/tree/master/data/haarcascades Celeb Dataset (Not used in the video): https://www.kaggle.com/jessicali9530/celeba-dataset Description: Latent space is hard to interpret unless conditioned using many classes.​ But, the latent space can be exploited using generated images.​ Here is how... - Generate 10s of images using random latent vectors.​ - Identify many images within each category of interest (e.g., smiling man, neutral man, etc. )​ - Average the latent vectors for each category to get the mean representation in the latent space (for that category).​ - Use these mean latent vectors to generate images with features of interest. ​ In summary, you can find the latent vectors for Smiling Man, neutral face man, and a baby with a neutral face and then generate a smiling babyface by: Smiling Man + Neutral Man - Neutral baby = Smiling Baby"^^xsd:string ;
+    flow:durationMs 2339000 ;
+    flow:publishTimestamp "2022-02-16T08:00:13+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "257 - Exploring GAN latent space to generate images with desired features​"^^xsd:string ;
+    flow:videoId "third_batch_vid_0069"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0070> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Cross-entropy is a measure of the difference between two probability distributions.​"^^xsd:string ;
+    flow:durationMs 1109000 ;
+    flow:publishTimestamp "2021-08-09T07:00:10+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Tips Tricks 15 - Understanding Binary Cross-Entropy loss"^^xsd:string ;
+    flow:videoId "third_batch_vid_0070"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0071> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Coyote Hills Regional Park - San Francisco East Bay https://www.ebparks.org/parks/coyote_hills/"^^xsd:string ;
+    flow:durationMs 52000 ;
+    flow:publishTimestamp "2021-07-31T21:10:14+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "🚴‍♀️ around the Coyote Hills Regional Park - San Francisco East Bay"^^xsd:string ;
+    flow:videoId "third_batch_vid_0071"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0072> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Rough calculation to estimate the required memory (esp. GPU) to train a deep learning model. Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists"^^xsd:string ;
+    flow:durationMs 1008000 ;
+    flow:publishTimestamp "2021-08-16T07:00:30+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Tips Tricks 16 - How much memory to train a DL model on large images"^^xsd:string ;
+    flow:videoId "third_batch_vid_0072"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0073> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Dataset: https://www.kaggle.com/uciml/pima-indians-diabetes-database A decorator in python allows us to add new functionality to an existing object (function or class) by not requiring us to modify the object's structure. Decorators allow us to wrap another function to extend the behavior of the wrapped function, without permanently modifying it. They are typically called before defining another function that we'd like to decorate. Functions are first-class objects in python. This means they support the following operations. - Stored in a variable. - Passed as an argument to another function. - Defined inside another function. - Returned from another function. - Store in data structures such as lists. Decorators leverage this behavior of functions."^^xsd:string ;
+    flow:durationMs 2465000 ;
+    flow:publishTimestamp "2021-08-23T07:00:16+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Tips Tricks 17 - All you need to know about decorators in python"^^xsd:string ;
+    flow:videoId "third_batch_vid_0073"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0074> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Dataset: https://www.kaggle.com/jessicali9530/celeba-dataset Haarcascade models... https://github.com/opencv/opencv/tree/master/data/haarcascades"^^xsd:string ;
+    flow:durationMs 372000 ;
+    flow:publishTimestamp "2021-08-30T07:00:01+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Tips Tricks 18 - Extracting faces from images for deep learning training"^^xsd:string ;
+    flow:videoId "third_batch_vid_0074"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0075> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "References from the video: Sketch Your Own GAN: https://arxiv.org/pdf/2108.02774.pdf LARGE: Latent-Based Regression through GAN Semantics: https://arxiv.org/pdf/2107.11186.pdf PathML: A unified framework for whole-slide image analysis with deep learning: https://www.medrxiv.org/content/10.1101/2021.07.07.21260138v1.full.pdf SofGAN: A GAN Face Generator That Offers Greater Control https://www.unite.ai/sofgan-a-gan-face-generator-that-offers-greater-control/ BOOK: Making It Personal: How To Profit From Personalization Without Invading Privacy Author: Bruce Kasanoff Please search your local book store for this book."^^xsd:string ;
+    flow:durationMs 450000 ;
+    flow:publishTimestamp "2021-08-13T07:00:12+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "What I am reading this week about Machine Learning and AI - 13 August 2021"^^xsd:string ;
+    flow:videoId "third_batch_vid_0075"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0076> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Confused about paying for cloud-based systems versus purchasing your own workstation? Hopefully, this video can shed some light."^^xsd:string ;
+    flow:durationMs 2132000 ;
+    flow:publishTimestamp "2021-09-06T07:00:09+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Tips Tricks 19 - colab vs colab pro vs purchasing your own system"^^xsd:string ;
+    flow:videoId "third_batch_vid_0076"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0077> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Semi-supervised learning with generative adversarial networks. Semi-supervised refers to the training process where the model gets trained only on a few labeled images but the data set contains a lot more unlabeled images. This can be useful in situations where you have a humongous data set but only partially labeled. In regular GAN the discriminator is trained in an unsupervised manner, where it predicts whether the image is real or fake (binary classification). In SGAN, in addition to unsupervised, the discriminator gets trained in a supervised manner on class labels for real images (multiclass classification). In essence, the unsupervised mode trains the discriminator to learn features and the supervised mode trains on corresponding classes (labels). The GAN can be trained using only a handful of labeled examples. In a standard GAN our focus is on training a generator that we want to use to generate fake images. In SGAN, our goal is to train the discriminator to be an excellent classifier using only a few labeled images. We can still use the generator to generate fake images but our focus is on the discriminator. Why do we want to follow this path is CNNs can easily classify images? Apparently, this approach achieves better accuracy for limited labeled data compared to CNNs. (https://arxiv.org/abs/1606.01583) Another useful resource: https://arxiv.org/pdf/1606.03498.pdf​"^^xsd:string ;
+    flow:durationMs 2058000 ;
+    flow:publishTimestamp "2022-02-23T08:00:08+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "258 - Semi-supervised learning with GANs"^^xsd:string ;
+    flow:videoId "third_batch_vid_0077"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0078> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Semi-supervised learning with generative adversarial networks. Semi-supervised refers to the training process where the model gets trained only on a few labeled images but the data set contains a lot more unlabeled images. This can be useful in situations where you have a humongous data set but only partially labeled. In regular GAN the discriminator is trained in an unsupervised manner, where it predicts whether the image is real or fake (binary classification). In SGAN, in addition to unsupervised, the discriminator gets trained in a supervised manner on class labels for real images (multiclass classification). In essence, the unsupervised mode trains the discriminator to learn features and the supervised mode trains on corresponding classes (labels). The GAN can be trained using only a handful of labeled examples. In a standard GAN our focus is on training a generator that we want to use to generate fake images. In SGAN, our goal is to train the discriminator to be an excellent classifier using only a few labeled images. We can still use the generator to generate fake images but our focus is on the discriminator. Why do we want to follow this path is CNNs can easily classify images? Apparently, this approach achieves better accuracy for limited labeled data compared to CNNs. (https://arxiv.org/abs/1606.01583) Another useful resource: https://arxiv.org/pdf/1606.03498.pdf​"^^xsd:string ;
+    flow:durationMs 1753000 ;
+    flow:publishTimestamp "2022-03-02T08:00:25+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "259 - Semi-supervised learning with GANs - in keras"^^xsd:string ;
+    flow:videoId "third_batch_vid_0078"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0079> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Detecting anomaly images using AutoEncoders. (Sorting an entire image as either normal or anomaly) Here, we use both the reconstruction error and also the kernel density estimation based on the vectors in the latent space. We will consider the bottleneck layer output from our autoencoder as the latent space. This code uses the malarial data set but it can be easily applied to any application. Data from: https://lhncbc.nlm.nih.gov/LHC-publications/pubs/MalariaDatasets.html"^^xsd:string ;
+    flow:durationMs 2009000 ;
+    flow:publishTimestamp "2022-03-09T08:00:16+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "260 - Identifying anomaly images using convolutional autoencoders"^^xsd:string ;
+    flow:videoId "third_batch_vid_0079"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0080> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Anomaly localization in images using the global average pooling layer. Binary classification - Good vs. bad images (Uninfected vs parasiized) This code uses the malarial data set but it can be easily applied to any application. Data from: https://lhncbc.nlm.nih.gov/LHC-publications/pubs/MalariaDatasets.html Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists"^^xsd:string ;
+    flow:durationMs 1585000 ;
+    flow:publishTimestamp "2022-03-23T07:00:13+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "262 - Localizing anomalies in images"^^xsd:string ;
+    flow:videoId "third_batch_vid_0080"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0081> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "What is the Global Average Pooling (GAP layer) and how it can be used to summrize features in an image? Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists"^^xsd:string ;
+    flow:durationMs 911000 ;
+    flow:publishTimestamp "2022-03-16T07:00:16+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "261 - What is global average pooling in deep learning?"^^xsd:string ;
+    flow:videoId "third_batch_vid_0081"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0082> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Object localization in an image by leveraging the global average pool layer. Imagenet classes can be obtained from here: https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a OR https://github.com/Waikato/wekaDeeplearning4j/blob/master/docs/user-guide/class-maps/IMAGENET.md Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists"^^xsd:string ;
+    flow:durationMs 963000 ;
+    flow:publishTimestamp "2022-03-30T07:00:08+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "263 - Object localization in images​ using GAP layer"^^xsd:string ;
+    flow:videoId "third_batch_vid_0082"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0083> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Outlier detection using alibi-detect Alibi Detect is an open source Python library focused on outlier, adversarial and drift detection. The package aims to cover both online and offline detectors for tabular data, text, images and time series. The outlier detection methods should allow the user to identify global, contextual, and collective outliers. pip install alibi-detect https://github.com/SeldonIO/alibi-detect Documentation: https://docs.seldon.io/_/downloads/alibi-detect/en/v0.5.1/pdf/ We will be using VAE based outlier detection. Based on this paper: https://arxiv.org/pdf/1312.6114.pdf The Variational Auto-Encoder (VAE) outlier detector is first trained on a batch of unlabeled, but normal (inlier) data. Unsupervised training is desirable since labeled data is often scarce. The VAE detector tries to reconstruct the input it receives. If the input data cannot be reconstructed well, the reconstruction error is high and the data can be flagged as an outlier. The reconstruction error is either measured as the mean squared error (MSE) between the input and the reconstructed instance or as the probability that both the input and the reconstructed instance are generated by the same process. Data set info: https://openaccess.thecvf.com/content_CVPR_2019/papers/Bergmann_MVTec_AD_--_A_Comprehensive_Real-World_Dataset_for_Unsupervised_Anomaly_CVPR_2019_paper.pdf Data set link: https://www.mvtec.com/company/research/datasets/mvtec-ad"^^xsd:string ;
+    flow:durationMs 1846000 ;
+    flow:publishTimestamp "2022-04-06T07:00:11+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "264 - Image outlier detection using alibi-detect"^^xsd:string ;
+    flow:videoId "third_batch_vid_0083"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0084> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists The input to the Vgg 16 model is 224x224x3 pixels images. The Kernel size is 3x3 and the pool size is 2x2 for all the layers. If our image size is different, can we still use transfer learning? The answer is YES. Input image size does not matter as the weights are associated with the filter kernel size. This does not change based on the input image size, for convolutional layers. The number of channels does matter, as it affects the number of weights for the first convolutional layer. We can still use transfer learning by copying weights for the first channels from the original model and then filling the additional channel weights with the mean of existing weights along the channels."^^xsd:string ;
+    flow:durationMs 2852000 ;
+    flow:publishTimestamp "2021-09-13T07:00:04+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Tips Tricks 20 - Understanding transfer learning for different size and channel inputs"^^xsd:string ;
+    flow:videoId "third_batch_vid_0084"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0085> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists What is a better approach when working with small training data for semantic segmentation? Is it deep learning such as U-net or is it feature extraction followed by machine learning classification (e.g., Random Forest, LGBM, XGBoost, SVM, etc.)?"^^xsd:string ;
+    flow:durationMs 1860000 ;
+    flow:publishTimestamp "2022-04-13T07:00:08+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "265 - Feature engineering or deep learning (for semantic segmentation)"^^xsd:string ;
+    flow:videoId "third_batch_vid_0085"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0086> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Demo using H&E normalization and H / E signal separation. Here, we use openslide to read a whole slide image. We will then extract a lower reolution version of the image to normalize it and then to extract H and E signals separately. We will also perform the exact operation on the entire whole slide image by extracting tilee, processing them, and saving processed images separately. Please note that this code will not cover putting tiles back into a whole slide image (image pyramid). You can explore pyvips or similar package to put together tiles into an image pyramid. For an introduction to openslide, please watch video 266: For details about H&E normalization, please watch my video 122: https://youtu.be/yUrwEYgZUsA Useful references: A method for normalizing histology slides for quantitative analysis. M. Macenko et al., ISBI 2009 http://wwwx.cs.unc.edu/~mn/sites/default/files/macenko2009.pdf Efficient nucleus detector in histopathology images. J.P. Vink et al., J Microscopy, 2013 Other useful references: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5226799/ https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0169875"^^xsd:string ;
+    flow:durationMs 1724000 ;
+    flow:publishTimestamp "2022-04-27T07:00:12+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "267 - Processing whole slide images (as tiles)"^^xsd:string ;
+    flow:videoId "third_batch_vid_0086"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0087> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists OpenSlide can read virtual slides in several formats: Aperio (.svs, .tif) Hamamatsu (.ndpi, .vms, .vmu) Leica (.scn) MIRAX (.mrxs) Philips (.tiff) Sakura (.svslide) Trestle (.tif) Ventana (.bif, .tif) Generic tiled TIFF (.tif) OpenSlide allows reading a small amount of image data at the resolution closest to a desired zoom level. pip install openslide-python then download the latest windows binaries https://openslide.org/download/ Extract the contents to a place that you can locate later. If you are getting the error: [WinError 126] The specified module could not be found Open the lowlevel.py file located in: lib\\site-packages\\openslide Add this at the top, after from __future__ import division, in the lowlevel.py os.environ['PATH'] = \"path+to+binary\" + \";\" + os.environ['PATH'] path+to+binary is the path to your windows binaries that you just downloaded. In my case, it looks like this. import os os.environ['PATH'] = \"C:/Users/Admin/anaconda3/envs/py37/lib/site-packages/openslide/openslide-win64-20171122/bin\" + \";\" + os.environ['PATH'] A few useful commands to locate the sitepackages directory import sys for p in sys.path: print(p)"^^xsd:string ;
+    flow:durationMs 2017000 ;
+    flow:publishTimestamp "2022-04-20T07:00:16+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "266 - Openslide library for whole slide images"^^xsd:string ;
+    flow:videoId "third_batch_vid_0087"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0088> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "nan"^^xsd:string ;
+    flow:durationMs 10000 ;
+    flow:publishTimestamp "2021-09-15T23:37:16+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Web-deployed deep learning model, on Heroku."^^xsd:string ;
+    flow:videoId "third_batch_vid_0088"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0089> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists This video explains the process of using Flask to deploy your scikit-learn (or other) trained model into a web application."^^xsd:string ;
+    flow:durationMs 1750000 ;
+    flow:publishTimestamp "2022-05-04T07:00:07+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "268 - How to deploy your trained machine learning model into a local web application?"^^xsd:string ;
+    flow:videoId "third_batch_vid_0089"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0090> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists This video demonstrates the process of deploying your trained machine learning model as a browser-based app on Heroku (www.heroku.com)"^^xsd:string ;
+    flow:durationMs 1541000 ;
+    flow:publishTimestamp "2022-05-11T07:00:27+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "269 - How to deploy your trained machine learning model as a web app on Heroku?"^^xsd:string ;
+    flow:videoId "third_batch_vid_0090"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0091> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists This video demonstrates the process of deploying your trained deep learning model as a browser-based app on Heroku. It uses HAM10000 trained model to predict skin cancer type for the image supplied by the user. Some useful commands: Please install Heroku CLI on your system. To log in to your Heroku account from CLI: heroku login -i​ To scale dynos for your app: heroku ps:scale web=1 --app app_name"^^xsd:string ;
+    flow:durationMs 2428000 ;
+    flow:publishTimestamp "2022-05-18T07:00:21+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "270 - How to deploy your trained machine learning model as a web app on Heroku (No Docker)"^^xsd:string ;
+    flow:videoId "third_batch_vid_0091"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0092> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists This video demonstrates the process of deploying your trained deep learning model as a browser-based app on Heroku by deploying a Docker container. It uses HAM10000 trained model to predict skin cancer type for the image supplied by the user. This application is exactly the same as the one from video 270 except here we use Docker. Some useful commands: Please install Heroku CLI on your system. To log in to your Heroku account from CLI: heroku login -i​ To scale dynos for your app: heroku ps:scale web=1 --app app_name Docker: Please install Docker on your system (e.g. Docker for Windows) Our app name from this video is used as an example for the following commands. To build an image using the Docker file: docker image build -t skincancer-app . List Docker images: docker image ls To run Docker on a specific port: docker run -p 5000:5000 -d skincancer-app Open the URL to check your app. http://localhost:5000/ To list docker containers: docker container ls To stop a container: docker container stop container id To clear all containers and cleanup: docker system prune To remove a Docker image: (check the image ID via: docker image ls) docker image rm image_id ______________________ Heroku Docker deployment process from command prompt. heroku container:login heroku create name-for-your-app heroku container:push web --app name-for-your-app heroku container:release web --app name-for-your-app heroku ps:scale web=1 --app app_name"^^xsd:string ;
+    flow:durationMs 1954000 ;
+    flow:publishTimestamp "2022-05-25T07:00:09+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "271 - How to deploy your trained machine learning model as a web app on Heroku (with docker)"^^xsd:string ;
+    flow:videoId "third_batch_vid_0092"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0093> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "This video explains the process of exploring keras model saved as hdf5 (or .h5). To download the HDF Viewer: https://www.hdfgroup.org/downloads/hdfview/"^^xsd:string ;
+    flow:durationMs 1368000 ;
+    flow:publishTimestamp "2021-10-04T07:00:17+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Tips Tricks 21 - Understanding the keras-trained model saved as hdf5 (or h5)"^^xsd:string ;
+    flow:videoId "third_batch_vid_0093"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0094> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Link to the book on Amazon: https://www.amazon.com/Deep-Learning-fastai-Cookbook-easy/dp/1800208103/ref=sr_1_4?dchild=1&keywords=deep+learning+with+fastai&qid=1634237733&sr=8-4 Fastai API paper (pdf): https://arxiv.org/pdf/2002.04688.pdf"^^xsd:string ;
+    flow:durationMs 831000 ;
+    flow:publishTimestamp "2021-10-16T13:30:27+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Book Review - Deep Learning with fastai Cookbook"^^xsd:string ;
+    flow:videoId "third_batch_vid_0094"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0095> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Lung cancer subclassification using fastai​ Fastai API info: https://arxiv.org/pdf/2002.04688.pdf Direct link to the colab notebook: https://github.com/bnsreenu/python_for_microscopists/blob/master/Tips_tricks_22_fastai_lung_cancer_classification.ipynb Data set information: https://github.com/tampapath/lung_colon_image_set/ https://arxiv.org/ftp/arxiv/papers/1912/1912.12142.pdf LC25000 Lung and colon histopathological image dataset from: https://academictorrents.com/details/7a638ed187a6180fd6e464b3666a6ea0499af4af The dataset contains color 25,000 images with 5 classes of 5,000 images each. All images are 768 x 768 pixels in size and are in jpeg file format. Our dataset can be downloaded as a 1.85 GB zip file LC25000.zip. After unzipping, the main folder lung_colon_image_set contains two subfolders: colon_image_sets and lung_image_sets. The subfolder lung_image_sets contains three secondary subfolders: lung_aca subfolder with 5000 images of lung adenocarcinomas, lung_scc subfolder with 5000 images of lung squamous cell carcinomas, and lung_n subfolder with 5000 images of benign lung tissues."^^xsd:string ;
+    flow:durationMs 1728000 ;
+    flow:publishTimestamp "2021-10-23T07:00:06+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Lung cancer subclassification using fastai​ (Tips Tricks 22)"^^xsd:string ;
+    flow:videoId "third_batch_vid_0095"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0096> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code from this video is available here: https://github.com/bnsreenu/python_for_microscopists/blob/master/Tips_Tricks_23_COVID_vaccine_analysis.ipynb COVID vaccination data can be downloaded from here: https://www.kaggle.com/gpreda/covid-world-vaccination-progress"^^xsd:string ;
+    flow:durationMs 1853000 ;
+    flow:publishTimestamp "2021-11-06T07:00:09+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "COVID Vaccine analysis using pandas in python (Tips Tricks 23)"^^xsd:string ;
+    flow:videoId "third_batch_vid_0096"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0097> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "pyviz documentation: https://pyvis.readthedocs.io/en/latest/ Code used in this video is available here: https://github.com/bnsreenu/python_for_microscopists/blob/master/Tips_Tricks_24_quick_intro_to_pyviz.ipynb"^^xsd:string ;
+    flow:durationMs 1324000 ;
+    flow:publishTimestamp "2021-11-20T08:00:08+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Tips Tricks 24 - Interactive network visualization using pyviz"^^xsd:string ;
+    flow:videoId "third_batch_vid_0097"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0098> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Locating objects in large images using template matching (opencv in python) Code from this video is available here: https://github.com/bnsreenu/python_for_microscopists/blob/master/Tips_Tricks_25_locating_objects_in_large_images_via_template_matching.py"^^xsd:string ;
+    flow:durationMs 781000 ;
+    flow:publishTimestamp "2021-11-22T22:42:46+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "Tips Tricks 25 - Locating objects in large images using template matching"^^xsd:string ;
+    flow:videoId "third_batch_vid_0098"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0099> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "7 best machine learning books in 2022 Basics: The hundred-page machine learning book Deep learning with python (François Chollet) Automated machine learning with AutoKeras Deep learning for computer vision with python Advanced: Deep Learning (Ian Goodfellow) Pattern recognition and machine learning Artificial intelligence, A modern approach - Fourth Edition"^^xsd:string ;
+    flow:durationMs 751000 ;
+    flow:publishTimestamp "2021-12-24T08:00:12+00:00"^^xsd:dateTime ;
+    flow:publishYear "2021"^^xsd:gYear ;
+    flow:title "7 best machine learning books in 2022"^^xsd:string ;
+    flow:videoId "third_batch_vid_0099"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0100> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Just normalize your 16 bit image to its respective maximum pixel value and then convert to uint8 using numpy or opencv or scikit-image Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists/blob/master/Tips_Tricks_26_proper-way_to_convert_16bit_to_8bit_image.py For my other code: https://github.com/bnsreenu/python_for_microscopists"^^xsd:string ;
+    flow:durationMs 778000 ;
+    flow:publishTimestamp "2022-01-15T08:00:02+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "Tips Tricks 26 - How to properly convert 16 bit to 8 bit images in python"^^xsd:string ;
+    flow:videoId "third_batch_vid_0100"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0101> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Link to the book on Amazon: https://www.amazon.com/Machine-Learning-Biotechnology-Life-Sciences/dp/1801811911"^^xsd:string ;
+    flow:durationMs 293000 ;
+    flow:publishTimestamp "2022-03-05T08:00:03+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "Book Review - Machine Learning in Biotechnology and Life Sciences"^^xsd:string ;
+    flow:videoId "third_batch_vid_0101"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0102> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Do not waste your time doing manual things that can be automated. This video walks you through the simple python code to extract required information from your Outlook inbox. You can find the code to this video here: https://github.com/bnsreenu/python_for_microscopists/tree/master/AMT01_extracting_information_from_outlook_emails For other code, checkout my GitHub repo: https://github.com/bnsreenu/python_for_microscopists"^^xsd:string ;
+    flow:durationMs 756000 ;
+    flow:publishTimestamp "2022-02-19T00:22:39+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "AMT1 - Extracting required information from your Outlook inbox"^^xsd:string ;
+    flow:videoId "third_batch_vid_0102"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0103> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Do not waste your time doing manual things that can be automated. This video walks you through the simple python code to extract required information from your Gmail inbox. A great way pf compiling text for your natural language processing and other machine learning projects. You can find the code to this video and other videos here: https://github.com/bnsreenu/python_for_microscopists"^^xsd:string ;
+    flow:durationMs 962000 ;
+    flow:publishTimestamp "2022-02-26T08:00:05+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "AMT2 - Extracting Emails from your Gmail Inbox using python"^^xsd:string ;
+    flow:videoId "third_batch_vid_0103"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0104> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "The code snippet for this video can be downloaded from: https://github.com/bnsreenu/python_for_microscopists/blob/master/Tips_tricks_27_labeling_images_for_sem_segm_using_label_studio.py For other code available on my GitHub: https://github.com/bnsreenu/python_for_microscopists For labeling your images using Label Studio: https://labelstud.io/ Let us work in Anaconda command prompt. (You can use other command prompts) Check environments: conda env list Create a new environment to install Label Studio: conda create --name give_some_name pip (Need to specify pip as a dependency, otherwise it will not be available) (To specify python version for your env..) conda create -n give_some_name python=3.7 Now activate the env. conda activate give_some_name # Install the Label Studio package pip install -U label-studio # Launch it! label-studio Open your browser and go to the URL displayed on your screen, typically http://0.0.0.0:8080/"^^xsd:string ;
+    flow:durationMs 1628000 ;
+    flow:publishTimestamp "2022-03-12T08:00:11+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "Labeling images for semantic segmentation using Label Studio"^^xsd:string ;
+    flow:videoId "third_batch_vid_0104"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0105> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Part of the Tips and tricks series - Number: 28 Download QuPath from: https://qupath.github.io/ Download the groovy script from here: https://raw.githubusercontent.com/stardist/stardist/master/extras/qupath_export_annotations.groovy"^^xsd:string ;
+    flow:durationMs 645000 ;
+    flow:publishTimestamp "2022-03-19T07:00:01+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "Labeling images using QuPath for semantic segmentation"^^xsd:string ;
+    flow:videoId "third_batch_vid_0105"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0106> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Part of the Tips and tricks series - Number: 29 Download FiJi from here: https://imagej.net/software/fiji/ Install the LabKit plugin: https://imagej.net/plugins/labkit/"^^xsd:string ;
+    flow:durationMs 946000 ;
+    flow:publishTimestamp "2022-03-26T07:00:05+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "Labeling images using LabKit for semantic segmentation"^^xsd:string ;
+    flow:videoId "third_batch_vid_0106"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0107> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Part of the Tips and tricks series - Number: 30 Random gets used quite often in python for data analysis and machine learning. This is an explainer video on the topic of 'random' and random seeds. Also, learn about the birthday paradox. Python random uses Mersenne Twister algorithm: https://en.wikipedia.org/wiki/Mersenne_Twister Numpy random uses the Permuted congruential generator algorithm: https://en.wikipedia.org/wiki/Permuted_congruential_generator More about the Birthday paradox/problem: https://en.wikipedia.org/wiki/Birthday_problem#Understanding_the_problem"^^xsd:string ;
+    flow:durationMs 1574000 ;
+    flow:publishTimestamp "2022-04-02T07:00:01+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "Random is not so random - understanding random in python"^^xsd:string ;
+    flow:videoId "third_batch_vid_0107"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0108> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Tips tricks 31 - generating borders around objects Code on my GitHub: https://github.com/bnsreenu/python_for_microscopists Create border pixels from binary masks. We can include these border pixels as another class to train a multiclass semantic segmenter. What is the advantage? We can use border pixels to perform watershed and achieve 'instance' segmentation."^^xsd:string ;
+    flow:durationMs 542000 ;
+    flow:publishTimestamp "2022-04-09T07:00:02+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "Generating borders around objects for use in semantic segmentation"^^xsd:string ;
+    flow:videoId "third_batch_vid_0108"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0109> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists This video goes through the process of adding borders to binary objects, then using them as masks to train a multiclass U-net model, and finally segmenting images using the trained model followed by watershed separation."^^xsd:string ;
+    flow:durationMs 2028000 ;
+    flow:publishTimestamp "2022-06-01T07:00:05+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "272 - Instance segmentation via semantic segmentation by using border class"^^xsd:string ;
+    flow:videoId "third_batch_vid_0109"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+<http://flow.ai/video/third_batch_vid_0110> a flow:Video ;
+    flow:belongsToDataset <http://flow.ai/dataset/third_batch> ;
+    flow:description "Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists Object segmentation and analysis using voronoi otsu labeling in the pyclesperanto library in python We will be using a multichannel CZI (Zeiss) input image for this exercise. This requires czi file library. pip install czifile For standard images (e.g., jpg, tif, etc.) use skimage, cv2, or tifffile to read input images. # For installation instructions of the pyclesperanto package, please refer to the following link # https://github.com/clEsperanto/pyclesperanto_prototype"^^xsd:string ;
+    flow:durationMs 1213000 ;
+    flow:publishTimestamp "2022-06-22T07:00:12+00:00"^^xsd:dateTime ;
+    flow:publishYear "2022"^^xsd:gYear ;
+    flow:title "275 - Object segmentation and analysis using voronoi otsu labeling"^^xsd:string ;
+    flow:videoId "third_batch_vid_0110"^^xsd:string ;
+    prov:wasDerivedFrom <http://flow.ai/dataset/third_batch> .
+
+flow:Transformation a owl:Class ;
+    rdfs:label "Transformation" ;
+    rdfs:comment "Processing step such as cleaning or merging that generated the dataset." ;
+    rdfs:subClassOf prov:Activity .
+
+ex:Dataset a owl:Class ;
+    rdfs:label "Dataset" ;
+    rdfs:comment "A dataset (e.g., a CSV batch) that groups multiple video records; typically mapped to a Named Graph." ;
+    rdfs:subClassOf prov:Collection .
+
+flow:Dataset a owl:Class ;
+    rdfs:label "Dataset" ;
+    rdfs:comment "A collection of videos grouped as a batch (e.g., first_batch)." ;
+    rdfs:subClassOf prov:Collection .
+
+ex:Video a owl:Class ;
+    rdfs:label "Video" ;
+    rdfs:comment "A video resource indexed in the KG (one-to-one with an original source/video)." ;
+    rdfs:subClassOf schema1:CreativeWork,
+        prov:Entity .
+
+flow:Video a owl:Class ;
+    rdfs:label "Video" ;
+    rdfs:comment "A video object recorded from preprocessed metadata." ;
+    rdfs:subClassOf schema1:VideoObject,
+        prov:Entity .
+
+<http://flow.ai/dataset/third_batch> a flow:Dataset ;
+    schema1:name "third_batch"^^xsd:string .
+
