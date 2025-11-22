@@ -1,0 +1,92 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix flow: <http://flow.ai/schema/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+################################################################################
+# SHACL Shapes for Flow Provenance Knowledge Graph
+# Purpose: Validate class membership, datatypes, and required properties
+################################################################################
+
+flow:VideoShape a sh:NodeShape ;
+    sh:targetClass flow:Video ;
+    rdfs:label "Video Shape" ;
+    rdfs:comment "Ensures that every Video node in the KG conforms to Flow ontology expectations." ;
+
+    # --- Required string properties ---
+    sh:property [
+        sh:path flow:videoId ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Each Video must have a single unique videoId." ;
+    ] ;
+
+    sh:property [
+        sh:path flow:title ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:message "Each Video must have a title." ;
+    ] ;
+
+    sh:property [
+        sh:path flow:description ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:message "Each Video must include a description." ;
+    ] ;
+
+    # --- Numeric and temporal properties ---
+    sh:property [
+        sh:path flow:durationMs ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 0 ;
+        sh:message "durationMs must be a non-negative integer." ;
+    ] ;
+
+    sh:property [
+        sh:path flow:publishTimestamp ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:message "Each Video must have a valid publish timestamp." ;
+    ] ;
+
+    sh:property [
+        sh:path flow:publishYear ;
+        sh:datatype xsd:gYear ;
+        sh:minCount 1 ;
+        sh:message "Each Video must have a publish year." ;
+    ] ;
+
+    # --- Provenance relation ---
+    sh:property [
+        sh:path flow:belongsToDataset ;
+        sh:class flow:Dataset ;
+        sh:minCount 1 ;
+        sh:message "Each Video must belong to a Dataset (Named Graph provenance)." ;
+    ] .
+
+################################################################################
+# Dataset Shape: ensure Dataset nodes have valid names and types
+################################################################################
+
+flow:DatasetShape a sh:NodeShape ;
+    sh:targetClass flow:Dataset ;
+    rdfs:label "Dataset Shape" ;
+    rdfs:comment "Validates dataset resources used as provenance sources (named graphs)." ;
+
+    sh:property [
+        sh:path schema:name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:message "Each Dataset must have a name." ;
+    ] .
+
+################################################################################
+# Validation Notes
+################################################################################
+# 1. Run these SHACL shapes in any RDF validation engine (e.g., pySHACL, TopBraid).
+# 2. Validation target: combined KG or per-named-graph Turtle files.
+# 3. Outputs: validation_report.ttl (recommended location: /validation/validation_report.ttl)
+# 4. Ensure prefix bindings match ontology/schema definitions.
