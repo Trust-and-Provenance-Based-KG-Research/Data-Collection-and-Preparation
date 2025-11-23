@@ -1,0 +1,136 @@
+@prefix : <http://flow.ai/ontology/> .
+@prefix ex: <http://flow.ai/ontology/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+###############################################################################
+# Flow Provenance Ontology (lightweight extension)
+# Purpose: canonical classes and properties to represent video metadata +
+# provenance (Named Graphs using prov-o) in the Flow provenance KG.
+# File: provenance_ontology.ttl
+###############################################################################
+
+# Ontology header
+: a owl:Ontology ;
+   rdfs:label "Flow Provenance Ontology" ;
+   rdfs:comment "Lightweight ontology combining PROV-O and Schema.org for video metadata, plus Flow-specific provenance primitives." .
+
+################################################################################
+# Classes
+################################################################################
+
+# Video as both a creative work and a provenance entity
+:Video a owl:Class ;
+    rdfs:label "Video" ;
+    rdfs:subClassOf prov:Entity , schema:CreativeWork ;
+    rdfs:comment "A video resource indexed in the KG (one-to-one with an original source/video)." .
+
+:Dataset a owl:Class ;
+    rdfs:label "Dataset" ;
+    rdfs:subClassOf prov:Collection ;
+    rdfs:comment "A dataset (e.g., a CSV batch) that groups multiple video records; typically mapped to a Named Graph." .
+
+:Transformation a owl:Class ;
+    rdfs:label "Transformation" ;
+    rdfs:subClassOf prov:Activity ;
+    rdfs:comment "A processing step (cleaning, enrichment, deduplication) applied to dataset records." .
+
+################################################################################
+# Datatype and Object Properties
+################################################################################
+
+# Identifiers
+:videoId a owl:DatatypeProperty ;
+    rdfs:label "videoId" ;
+    rdfs:domain :Video ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Stable identifier assigned during preprocessing (e.g., first_batch_vid_0001)." .
+
+# Core metadata mapped to schema.org
+:durationMs a owl:DatatypeProperty ;
+    rdfs:label "durationMs" ;
+    rdfs:domain :Video ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Approximate duration in milliseconds." .
+
+:description a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    rdfs:domain :Video ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Original textual description for the video." .
+
+:title a owl:DatatypeProperty ;
+    rdfs:label "title" ;
+    rdfs:domain :Video ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Original title of the video." .
+
+:datePublished a owl:DatatypeProperty ;
+    rdfs:label "datePublished" ;
+    rdfs:domain :Video ;
+    rdfs:range xsd:dateTime ;
+    rdfs:comment "ISO 8601 publish timestamp." .
+
+:publishYear a owl:DatatypeProperty ;
+    rdfs:label "publishYear" ;
+    rdfs:domain :Video ;
+    rdfs:range xsd:gYear ;
+    rdfs:comment "Derived publish year for temporal aggregation." .
+
+# Provenance / batch tag
+:batchSource a owl:ObjectProperty ;
+    rdfs:label "batchSource" ;
+    rdfs:domain :Video ;
+    rdfs:range :Dataset ;
+    rdfs:comment "Link to the Dataset (batch) the video was originally found in; each Dataset is typically stored as a Named Graph." .
+
+# Link to original dataset row or URI (string fallback)
+:sourceRow a owl:DatatypeProperty ;
+    rdfs:label "sourceRow" ;
+    rdfs:domain :Video ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Optional: original CSV row identifier or pointer (e.g., line number or file path)." .
+
+################################################################################
+# PROV-O alignment (use prov vocabulary directly in triples)
+################################################################################
+
+# Common provenance relations will be asserted using PROV semantics
+# Examples (no separate predicates necessary because we will reuse prov:wasDerivedFrom etc.)
+
+################################################################################
+# Example Dataset instances (templates)
+################################################################################
+
+# Note: These are templates to show expected Dataset URIs and Named Graph URIs.
+# Graph URIs should be used to create Named Graphs in the triple-store, e.g.
+# <http://flow.ai/graph/first_batch>
+
+:dataset_first_batch a :Dataset ;
+    rdfs:label "First batch (2019)" ;
+    rdfs:comment "CSV: first_batch_metadata_preprocessed.csv" .
+
+:dataset_second_batch a :Dataset ;
+    rdfs:label "Second batch (2020)" ;
+    rdfs:comment "CSV: second_batch_metadata_preprocessed.csv" .
+
+################################################################################
+# Recommended usage notes (human-readable)
+################################################################################
+
+# 1 Store each Dataset's triples inside its own Named Graph. Use the Dataset URI
+#    as a classifier and record a prov:wasGeneratedBy / prov:wasDerivedFrom chain
+#    for transformations.
+
+# 2 For provenance trails, link :Video instances using prov:wasDerivedFrom,
+#    prov:wasGeneratedBy, and prov:hadPrimarySource to capture transformations.
+
+# 3 Keep textual fields (title, description) as literals; add additional
+#    annotation properties when applying NLP enrichment (keywords, embeddings).
+
+# 4 If you add embeddings or similarity scores, define a separate namespace
+#    (e.g. :embeddingVector a owl:DatatypeProperty with xsd:string or a binary
+#    blob reference) rather than overloading description.

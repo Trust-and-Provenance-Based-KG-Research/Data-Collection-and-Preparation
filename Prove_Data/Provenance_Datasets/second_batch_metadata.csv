@@ -1,0 +1,668 @@
+Approx Duration (ms),Video Description (Original),Video Title (Original),Video Publish Timestamp
+691000,"Discrete cosine transformation (DCT) is similar to discrete Fourier transform except DCT uses real cosine coefficients. Most of the information for DCT is contained in a handful of coefficients making it ideal for data compression, e.g. JPEG compression. DCT is a linear function with respect to spatial domain therefore, any image processing operation would yield similar results when performed in spatial or DCT domains.
+
+This tutorial demonstrates image denoising by averaging images in real and DCT spaces, respectively.
+
+The code from this video is available at: https://github.com/bnsreenu/python_for_microscopists",112 - Averaging image stack in real and DCT space for denoising,2020-03-30T07:00:11+00:00
+1023000,"If the image histogram is confined only to a small region (low contrast images), histogram equalization can be used to stretch the histogram to include all ranges. But, this type of stretching may not result in ideal results and gives too bright and too dark regions in the image. This can be especially very bad for images with large intensity variations. 
+
+Contrast limited adaptive histogram equalization (CLAHE)
+Regular histogram equalization uses global contrast of the image. This results in too bright and too dark regions as the histogram stretches and is not confined to specific region.
+
+Adaptive histogram equalization divides the image into small tiles and within 
+each tile the histogram is equalized. Tile size is typically 8x8. If the image contains noise, it gets amplified during this process. Therefore, 
+contrast limiting is applied to limit the contrast below a specific limit. Bilinear interpolation is performed between tile borders. 
+
+This tutorial demonstrates the use of histogram equalization and CLAHE in Python to enhance low contrast images.
+
+The code from this video is available at: https://github.com/bnsreenu/python_for_microscopists",113 - Histogram equalization and CLAHE,2020-04-01T07:00:27+00:00
+551000,"BRISQUE calculates the no-reference image quality score for an image using the Blind/Referenceless Image Spatial Quality Evaluator (BRISQUE). 
+
+BRISQUE score is computed using a support vector regression (SVR) model trained on an image database with corresponding differential mean opinion score (DMOS) values. The database contains images with known distortion such as compression artifacts, blurring, and noise, and it contains pristine versions of the distorted images. The image to be scored must have at least one of the distortions for which the model was trained.
+
+This tutorial explains the use of BRISQUE in Python. 
+
+Mittal, A., A. K. Moorthy, and A. C. Bovik. ""No-Reference Image Quality Assessment in the Spatial Domain.
+"" IEEE Transactions on Image Processing. Vol. 21, Number 12, December 2012, pp. 4695–4708.
+
+https://live.ece.utexas.edu/publications/2012/TIP%20BRISQUE.pdf
+
+To install imquality:
+https://pypi.org/project/image-quality/
+
+The code from this video is available at: https://github.com/bnsreenu/python_for_microscopists",114 - Automatic image quality assessment using BRISQUE,2020-04-03T07:00:09+00:00
+462000,"Otsu is a well known approach for image segmentation but it is limited to binary segmentation only. Most images contain information about multiple features requiring segmentation of multiple regions. Multi-Otsu calculates several thresholds based on the number supplied by the user. It is almost magical!
+
+This tutorial explains the use of multi-otsu in Python followed by image segmentation. 
+
+Liao, P-S., Chen, T-S. and Chung, P-C.,  “A fast algorithm for multilevel thresholding”, 
+Journal of Information Science and Engineering 17 (5): 713-727, 2001
+
+The code from this video is available at: https://github.com/bnsreenu/python_for_microscopists",115 - Auto segmentation using multi-otsu,2020-04-06T07:00:16+00:00
+1282000,"Social distancing is a social responsibility that helps minimize the rapid spread of a disease during pandemics. This video explains the importance of social distancing and how it can reduce the load on the healthcare system in a given amount of time. A few lines of python code were also written as part of the video to explain the SEIR epidemiological model. 
+
+I urge every citizen of the world to maintain social distancing for the next few weeks (or months) and help save valuable lives. 
+(Video recorded and uploaded on: 19th May 2020)
+
+Code available on Github: https://github.com/bnsreenu/python_for_microscopists
+
+Please subscribe to my channel: https://www.youtube.com/channel/UC34rW-HtPJulxr5wp2Xa04w
+
+References:
+1. Christian Hubbs' blog: https://towardsdatascience.com/social-distancing-to-slow-the-coronavirus-768292f04296
+
+2. Feasibility of controlling 2019-nCoV outbreaks by isolation of cases and contacts. Hellewell et al.
+
+3. Epidemic analysis of COVID-19 in China by dynamical modeling. Peng et al.",Effect of Social Distancing on the spread of COVID-19 pandemic - A quick Python simulation,2020-03-20T00:54:20+00:00
+1147000,"Data analysis is a key step that often follows image processing. This video provides a quick review of Pandas using an actively developing COVID-19 data set. In the video you'll learn about downloading the latest data from an online server, pre-process the data for plotting, and study the plots. 
+
+This is part 1 of the 2 part videos. The second part covers more plotting using Seaborn. 
+
+Code available at: https://github.com/bnsreenu/python_for_microscopists
+
+References:
+https://github.com/midas-network/COVID-19/tree/master/parameter_estimates/2019_novel_coronavirus",107 - Analysis of COVID-19 data using Python - Part 1,2020-03-23T07:00:01+00:00
+1610000,"Data analysis is a key step that often follows image processing. This video provides a quick review of Pandas using an actively developing COVID-19 data set. In the video you'll learn about a few ways to plot the latest COVID-19 data downloaded from an online server.  
+
+This is part 2 of the 2 part videos. 
+
+Code available at: https://github.com/bnsreenu/python_for_microscopists
+
+References:
+https://github.com/midas-network/COVID-19/tree/master/parameter_estimates/2019_novel_coronavirus",108 - Analysis of COVID-19 data using Python - Part 2,2020-03-25T07:00:13+00:00
+914000,"This video explains the process of fitting data to a curve (e.g. exponential) to model data and make predictions. Actively developing COVID-19 data set has been used for demonstration. 
+
+Code available at: https://github.com/bnsreenu/python_for_microscopists
+
+References:
+https://github.com/midas-network/COVID-19/tree/master/parameter_estimates/2019_novel_coronavirus",109 - Predicting COVID-19 cases using Python,2020-03-26T05:00:01+00:00
+1259000,"This video describes the process of reading an actively developing COVID-19 data set into Python and plotting the data many ways for easy analysis.  
+
+Code available at: https://github.com/bnsreenu/python_for_microscopists
+
+References:
+Data set: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series
+
+Thanks to the blog article by Mr. Santiago.
+https://blog.rmotr.com/learn-data-science-by-analyzing-covid-19-27a063d7f442",110 - Visualizing COVID-19 cases & death information using Python and plotly,2020-03-27T23:20:09+00:00
+505000,"This video covers the topic of digging into the evolving COVID-19 data-set to find answers to questions like, what are the top 10 countries with highest cases and deaths. We will be using Python and plotly to visualize the results. 
+
+Code available at: https://github.com/bnsreenu/python_for_microscopists
+
+References:
+Data set: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series
+
+Thanks to the blog article by Mr. Santiago.
+https://blog.rmotr.com/learn-data-science-by-analyzing-covid-19-27a063d7f442",111 - What are the top 10 countries with highest COVID-19 cases and deaths?,2020-03-28T09:00:18+00:00
+661000,"This video explains the process of measuring and reporting properties of labeled / segmented objects in images. The process is plain and simple in Python.
+
+Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists",116 - Measuring properties of labeled / segmented regions,2020-04-14T07:00:14+00:00
+568000,"Microscope (or other) images acquired under non-uniform illumination conditions make it challenging, sometimes impossible, to extract information via thresholding and segmentation. These images can be corrected using rolling ball background subtraction. This video explains the process of applying rolling ball background subtraction and CLAHE in Python.
+
+Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists",117 - Shading correction using rolling ball background subtraction,2020-04-16T07:00:15+00:00
+728000,"This video explains the process of detecting objects in an image based on a template reference  image. This process is not scale invariant, the template image must be of the same scale as the objects of interest. 
+
+Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists",118 - Object detection by template matching,2020-04-21T07:00:06+00:00
+363000,"This video explains the process of registering images to subpixel accuracy using python.
+
+The register_translation function uses cross-correlation in Fourier space, 
+and also by employing an upsampled matrix-multiplication DFT to achieve subpixel precision. 
+
+Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists
+
+Reference:
+Manuel Guizar-Sicairos, Samuel T. Thurman, and James R. Fienup, 
+“Efficient subpixel image registration algorithms,” Optics Letters 33, 156-158 (2008). 
+https://pdfs.semanticscholar.org/b597/8b756bdcad061e3269eafaa69452a0c43e1b.pdf",119 - Sub-pixel image registration in Python,2020-04-23T07:00:11+00:00
+742000,"There are many useful libraries in python with functions to register images. This video explains 4 different ways to register images using the functions available in image_registration and scikit-image packages. It specifically covers image registration using chi squared, cross correlation, optical flow and register_translation methods.
+
+References:
+https://image-registration.readthedocs.io/en/latest/image_registration.html
+https://scikit-image.org/docs/dev/api/skimage.registration.html
+
+Code for this tutorial is available at: https://github.com/bnsreenu/python_for_microscopists",120 - Image registration methods in python,2020-04-28T07:00:15+00:00
+568000,"This video provides a review of COVID19 in India as of April 22, 2020. I've used Python based data analysis and plotting for the review. The data for the video can be downloaded from Kaggle; you need to sign up for an account to download. 
+https://www.kaggle.com/sudalairajkumar/covid19-in-india
+
+Code used in this video is available at:
+https://github.com/bnsreenu/python_for_microscopists",A review of COVID19 situation in India using Python data analysis and plotting,2020-04-22T23:30:06+00:00
+980000,"Pystackreg may be one-stop solution for your image registration needs. This is because it allows you to register individual images or slices in tif stacks using many registration types. Images can be registered using one of the following five methods:
+1. Translation
+2. Rigid body (translation + rotation)
+3. Scaled rotation (translation + rotation + scaling)
+4. Affine (translation + rotation + scaling + shearing)
+5. Bilinear (non-linear transformation; does not preserve straight lines)
+
+This video tutorial uses adapted code from the pystackreg documentation to demonstrate registration of microscope images. 
+
+References: https://pypi.org/project/pystackreg/
+
+Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists",121 - Image registration using pystackreg library in Python,2020-04-30T07:00:02+00:00
+805000,"Hematoxylin and eosin (H&E) stain is one of the primary tissue stains for histology. This is because H stain makes nuclei easily visible in blue against a pink background of cytoplasm (and other issue regions). This enables a pathologist to easily identify and evaluate the tissue; a highly manual process.
+
+For automated image analysis these H&E stained images need to be normalized. This is because of the significant variation in image colors arising from both sample preparation and imaging conditions.  
+
+This video explains the python code written to normalize H&E images and also to digitally separate images corresponding H and E stains, respectively. 
+
+The code used in the video is a python adaptation of original MATLAB code. The original code can be found here:
+https://github.com/mitkovetta/staining-normalization/blob/master/normalizeStaining.m
+
+Also, original publications and links to additional references are given below.
+Workflow based on the following papers:
+
+A method for normalizing histology slides for quantitative analysis. M. Macenko et al., ISBI 2009
+http://wwwx.cs.unc.edu/~mn/sites/default/files/macenko2009.pdf
+
+Efficient nucleus detector in histopathology images. J.P. Vink et al., J Microscopy, 2013
+
+Other useful references:
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5226799/
+https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0169875
+
+Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists",122 - Normalizing H&E images and digitally separating Hematoxylin and Eosin components,2020-05-05T07:00:24+00:00
+775000,"This video explains the use of a few image quality metrics in Python. 
+
+References:
+https://scikit-image.org/docs/dev/api/skimage.measure.html
+https://pypi.org/project/sewar/
+https://sewar.readthedocs.io/en/latest/_modules/sewar/full_ref.html#ergas
+
+Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists",123 - Reference based image quality metrics,2020-05-14T07:00:22+00:00
+429000,"This video explains the implementation of 'Sharpness Estimation for Document and Scene Images' by Jayant Kumar et.al
+
+In summary, the use of difference of differences in grayscale values 
+of a median-filtered image as an indicator of edge sharpness. 
+
+References:
+Sharpness Estimation for Document and Scene Images
+by Jayant Kumar , Francine Chen , David Doermann
+http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=33CD0038A0D2D24AE2C4F1A30B6EF1A4?doi=10.1.1.359.7002&rep=rep1&type=pdf
+
+https://github.com/umang-singhal/pydom
+pip install git+https://github.com/umang-singhal/pydom.git
+
+Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists",124 - Image quality by estimating sharpness,2020-05-19T07:00:06+00:00
+721000,"Generative adversarial networks (GANs) are deep learning architectures that use two neural networks (Generator and Discriminator), competing one against the other. The generator tries to create realistic looking fake data (e.g. images) and the discriminator tries to classify whether the data is real or fake. After a few thousand (or million) epochs, the generator trained model can be used to create new fake data that can pass for real data.
+
+This tutorial provides a quick overview of GANs. The next tutorial in the playlist covers the implemetation of GAN using Keras in Python.
+
+References from the video: 
+https://www.thispersondoesnotexist.com/
+http://www.wisdom.weizmann.ac.il/~vision/courses/2018_2/Advanced_Topics_in_Computer_Vision/files/DomainTransfer.pdf
+
+Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists",125 - What are Generative Adversarial Networks (GAN)?,2020-05-21T07:00:30+00:00
+2014000,"Generative adversarial networks (GANs) are deep learning architectures that use two neural networks (Generator and Discriminator), competing one against the other. The generator tries to create realistic looking fake data (e.g. images) and the discriminator tries to classify whether the data is real or fake. After a few thousand (or million) epochs, the generator trained model can be used to create new fake data that can pass for real data.
+
+This tutorial the implementation of GAN using Keras in Python. It uses fully connected dense layers for both the generator and discriminator. It also explains the use of trained model in generating realistic looking fake handwritten digits. 
+
+References from the video: 
+https://www.thispersondoesnotexist.com/
+http://www.wisdom.weizmann.ac.il/~vision/courses/2018_2/Advanced_Topics_in_Computer_Vision/files/DomainTransfer.pdf
+
+Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists",126 - Generative Adversarial Networks (GAN) using keras in python,2020-05-25T07:00:14+00:00
+1210000,Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists,127 - Data augmentation using keras,2020-05-26T07:00:08+00:00
+772000,"Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists
+
+Dataset link: https://www.kaggle.com/datasets/iarunava/cell-images-for-detecting-malaria",128 - Malarial cell classification using CNN and data augmentation,2020-05-28T07:00:18+00:00
+606000,Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists,"129 - What are Callbacks, Checkpoints and Early Stopping in deep learning (Keras and TensorFlow)",2020-06-01T07:00:25+00:00
+590000,Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists,130 - Evaluating the deep learning trained model (Keras and TensorFlow),2020-06-04T07:00:04+00:00
+354000,Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists,131 - How to load a partially trained deep learning model and continue training?,2020-06-08T07:00:01+00:00
+425000,,132 - What are Activation functions in deep learning (Keras & Tensorflow)?,2020-06-11T07:00:02+00:00
+410000,,133 - What are Loss functions in machine learning?,2020-06-15T07:00:00+00:00
+516000,,134 - What are Optimizers in deep learning? (Keras & TensorFlow),2020-06-18T07:00:06+00:00
+614000,Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists,135 - A quick introduction to Metrics in deep learning. (Keras & TensorFlow),2020-06-22T07:00:19+00:00
+698000,Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists,136 understanding deep learning parameters batch size,2020-06-25T07:00:11+00:00
+738000,Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists,137 - What is one hot encoding in machine learning?,2020-06-29T07:00:16+00:00
+892000,"Scaling / Normalizing
+Batchnormalization
+Dropout
+Using Keras
+
+Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists","138 - The need for scaling, dropout, and batch normalization in deep learning",2020-07-02T07:00:09+00:00
+1597000,Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists,"139 - The topology of deep neural networks, designing your model.",2020-07-07T07:00:06+00:00
+834000,,"140 - What in the world is regression, multi-label, multi-class and binary classification?",2020-07-09T07:00:07+00:00
+1307000,Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists,141 - Regression using Neural Networks and comparison to other models,2020-07-14T07:00:00+00:00
+1163000,Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists,142 - Multilabel classification using Keras,2020-07-16T07:00:08+00:00
+695000,Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists,143 - Multiclass classification using Keras,2020-07-21T07:00:08+00:00
+878000,"Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists
+
+Data set link : https://www.kaggle.com/datasets/iarunava/cell-images-for-detecting-malaria",144 - Binary classification using Keras,2020-07-23T07:00:08+00:00
+1500000,Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists,"145 - Confusion matrix,  ROC and AUC in machine learning",2020-07-28T07:00:02+00:00
+1506000,"This video explains the process of extracting features from multiple training images, fitting a classifier (e.g Random Forest or SVM), and segmenting images using a saved model. The video builds on topics discussed in videos 57-67 except applies it on multiple training images. 
+
+The code from this video is available at: https://github.com/bnsreenu/python_for_microscopists
+
+The dataset used in this video can be downloaded from the link below. This dataset can be used to train and test machine learning algorithms designed for multiclass semantic segmentation. Please read the Readme document for more information. 
+
+https://drive.google.com/file/d/1HWtBaSa-LTyAMgf2uaz1T9o1sTWDBajU/view?usp=sharing",67b - Feature based image segmentation using traditional machine learning. (Multi-training images),2020-06-24T20:15:22+00:00
+444000,"The western world can afford to purchase notebooks, Macbooks and workstations for python and deep learning. But our friends from other regions do not have the same luxury. This video provides a very brief overview of Raspberry Pi and sets stage for the next tutorial, Getting started with Google Colaboratory.",146 - Raspberry Pi - Learning python and deep learning on a tight budget,2020-08-04T07:00:15+00:00
+906000,"Most of us cannot afford to purchase our own Nvidia graphics card for deep learning. Luckily, Google makes it possible for us to get started with deep learning using Tensorflow and GPU/TPU. 
+
+This video provides a quick overview of Google Colab and walks you through the process of mounting Google Drive and getting started with deep learning using GPU acceleration.",147 - Getting started with Google Colaboratory for deep learning,2020-08-06T07:00:09+00:00
+2204000,"Imbalanced data is part of life! With a proper knowledge of the data set and a few techniques from this video imbalanced data can be easily managed. 
+
+Prerequisites: Pick the right metrics as overall accuracy does not provide information about the accuracy of individual classes. Look at confusion matrix and ROC_AUC.
+
+Technique 0: Collect more data, if possible. 
+Technique 1: Pick decision tree based approaches as they work better than logistic regression or SVM. Random Forest is a good algorithm to try but beware of over fitting. 
+Technique 2: Up-sample minority class
+Technique 3: Down-sample majority class 
+Technique 4: A combination of Over and under sampling. 
+Technique 5: Penalize learning algorithms that increase cost of classification 
+mistakes on minority classes.
+Technique 6: Generate synthetic data (SMOTE, ADASYN)
+Technique 7: Add appropriate weights to your deep learning model. 
+
+References:
+https://imbalanced-learn.org/stable/over_sampling.html?highlight=smote
+https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html
+
+Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists",148 - 7 techniques to work with imbalanced data for machine learning in python,2020-08-11T07:00:07+00:00
+1620000,"Imbalanced data is part of life! With a proper knowledge of the data set and appropriate techniques imbalanced data can be easily managed. 
+
+This video uses the Indian Liver Disease data (link below) to demonstrate the use of data up-scaling (and SMOTE) for minority class to improve accuracy. 
+
+References:
+Dataset:
+https://www.kaggle.com/uciml/indian-liver-patient-records
+
+ROCAUC using Yellowbrick:
+https://www.scikit-yb.org/en/latest/api/classifier/rocauc.html
+
+Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists",149 - Working with imbalanced data for ML - Demonstrated using liver disease data,2020-08-13T07:00:03+00:00
+659000,"Image transformation operations, including the ones provided by ImageDataGenerator class from keras, modify numpy arrays based on the user description. The modification of these arrays may yield unintended results as the data may be modified from interpolation. If the user is not careful in spotting these issues the results may turn out to be meaningless. This is especially true when working with categorical labels where each label value needs to be conserved throughout the training and prediction process. 
+
+This video walks you through this issue and also offers suggestions on how to handle data augmentation for categorical labels. Custom code for augmentation can be downloaded here: https://github.com/bnsreenu/python_for_microscopists",150 - Warning about keras' data augmentation when working with categorical labels,2020-08-18T07:00:05+00:00
+387000,"Images in JPG format are excellent for social media sharing and quick email exchanges. They may also be used for scientific image analysis if the features of interest are large enough and are relatively unaffected by JPG compression. JPG cannot be used for applications requiring categorical labels, applications such as semantic segmentation. This video demonstrates the reasons behind the warning. 
+
+Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists",151 Warning about JPG files when working with categorical labels,2020-08-20T07:00:07+00:00
+664000,"This tutorial explains the few lines of code to visualize outputs of convolutional layers in any deep learning model. 
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",152 - How to visualize convolutional filter outputs in your deep learning model?,2020-08-24T23:10:31+00:00
+1915000,"Want to learn about artificial neural network (ANN) from the perspective of linear regression? This tutorial explains ANN using heart disease data set and walks you through the process of calculating results using trained weights and biases. 
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",153 - Artificial Neural Networks - Explanation for those who understand linear regression,2020-08-26T23:44:44+00:00
+1667000,"Loss curves contain a lot of information about training of an artificial neural network. This video goes through the interpretation of various loss curves generated using the Wisconsin breast cancer data set. 
+https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",154 - Understanding the training and validation loss curves,2020-09-01T05:00:07+00:00
+358000,"A very short video to explain the process of assigning GPU memory for TensorFlow calculations. 
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",156 - How to limit GPU memory usage for TensorFlow?,2020-09-08T06:00:03+00:00
+1133000,"TensorBoard can be very useful to view training model and loss/accuracy curves in a dashboard. This video explains the process of setting up TensorBoard callback during training and also to open the recorded logs in a browser. 
+
+Dataset downloaded from: https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",157 - What is TensorBoard and how to launch it in a browser?,2020-09-10T06:00:02+00:00
+1634000,"Deep learning is far superior to traditional machine learning with loads of training data. But, for limited training data traditional machine learning (e.g. Random Forest or SVM) may outperform deep learning. For image processing applications features need to be extracted / engineered for improved accuracy. Alternatively, features can be extracted from convolutional filters that are part of convolutional neural networks. 
+
+This video goes through the process of extracting features using convolutional filters and using them as inputs to a traditional Random Forest classifier to develop an image classification solution. This approach is specifically designed for image classification of custom datasets.
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",158 - Convolutional filters + Random Forest for image classification.,2020-09-15T06:00:02+00:00
+1144000,"Deep learning is far superior to traditional machine learning with loads of training data. But, for limited training data traditional machine learning (e.g. Random Forest or SVM) may outperform deep learning. For image processing applications features need to be extracted / engineered for improved accuracy. Alternatively, features can be extracted from convolutional filters that are part of convolutional neural networks. 
+
+This video goes through the process of extracting features using convolutional filters and using them as inputs to a traditional Random Forest classifier to develop an image segmentation solution. You will find this approach to be easier to implement compared to U-net and you'll also find the results to be spectacular!!!
+
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+The dataset used in this video can be downloaded from the link below. This dataset can be used to train and test machine learning algorithms designed for multiclass semantic segmentation. Please read the Readme document for more information. 
+
+https://drive.google.com/file/d/1HWtBaSa-LTyAMgf2uaz1T9o1sTWDBajU/view?usp=sharing",159 - Convolutional filters + Random Forest for image segmentation.,2020-09-17T09:00:03+00:00
+1446000,"No one can give a definite answer to the question about number of neurons and hidden layers. This is because the answer depends on the data itself. This video goes through the thought process of determining the number of hidden layers and neurons using simple code as example. 
+
+#Dataset link:
+https://cdn.scribbr.com/wp-content/uploads//2020/02/heart.data_.zip?_ga=2.217642335.893016210.1598387608-409916526.1598387608
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",155 - How many hidden layers and neurons do you need in your artificial neural network?,2020-09-03T06:00:04+00:00
+1488000,"Data set link: https://www.epfl.ch/labs/cvlab/data/data-em/
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",160 - When to retrain your ML model and what is the best way to re-train?,2020-09-22T08:00:06+00:00
+1099000,"Dataset from: https://www.kaggle.com/rakannimer/air-passengers
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",162 - An introduction to time series forecasting - Part 2 Exploring data using python,2020-09-29T08:00:16+00:00
+1280000,"Dataset from: https://www.kaggle.com/rakannimer/air-passengers
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",163 - An introduction to time series forecasting - Part 3 Using ARIMA in python,2020-10-01T08:00:03+00:00
+1256000,"Dataset from: https://www.kaggle.com/rakannimer/air-passengers
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",164 - An introduction to time series forecasting - Part 4 Using feed forward neural networks,2020-10-06T08:00:06+00:00
+1172000,"RNN - Recurrent neural networks
+
+Long short-term memory (LSTM) is an artificial recurrent neural network (RNN) architecture used in the field of deep learning. Unlike standard feed forward neural networks, LSTM has feedback connections.",165 - An introduction to RNN and LSTM,2020-10-08T08:00:03+00:00
+1422000,"Dataset from: https://www.kaggle.com/rakannimer/air-passengers
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",166 - An introduction to time series forecasting - Part 5 Using LSTM,2020-10-13T08:00:00+00:00
+778000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",161 - An introduction to time series forecasting - Part 1,2020-09-24T08:00:04+00:00
+1534000,"This video explains the process of using pretrained weights (VGG16) as feature extractors for traditional machine learning classifiers (Random Forest). 
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+Keras pretrained models: https://keras.io/api/applications/",158b - Transfer learning using CNN (VGG16) as feature extractor and Random Forest classifier,2020-09-22T21:52:36+00:00
+397000,A brief summary about myself...,Who is Sreeni and what does he do with the ad-revenue from his YouTube channel?,2020-09-29T17:22:09+00:00
+1749000,"LSTMs are great for timeseries forecasting and sequence predictions. This makes them appropriate for natural language prediction. This tutorial explains the process of training an LSTM network on English text and predicting letters based on the training. 
+
+Reference: https://www.gutenberg.org/
+Text file link: http://www.gutenberg.org/ebooks/236
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",167 - Text prediction using LSTM (English text),2020-10-15T07:00:13+00:00
+1135000,"LSTMs are great for timeseries forecasting and sequence predictions. This makes them appropriate for natural language prediction. This tutorial explains the process of training an LSTM network on Hindi and Telugu text and predicting letters based on the training. 
+
+Reference: Reference: https://www.gutenberg.org/
+Telugu text file: http://www.gutenberg.org/ebooks/39561
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",168 - Text prediction using LSTM - Non-English example using Hindi and Telugu letters.,2020-10-20T07:00:08+00:00
+1310000,"For image annotation and to run this code as a workflow online:
+www.apeer.com
+
+NOTE: APEER is free to use for individuals, students, researchers and non-profits. 
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+The dataset used in this video can be downloaded from the link below. This dataset can be used to train and test machine learning algorithms designed for multiclass semantic segmentation. Please read the Readme document for more information. 
+
+https://drive.google.com/file/d/1HWtBaSa-LTyAMgf2uaz1T9o1sTWDBajU/view?usp=sharing
+
+This video explains the process of extracting features using pretrained VGG16 imagenet weights and using the feature to train a Random Forest model for semantic segmentation. You find find the results to be better than U-net for limited training data.",159b - Pretrained CNN (VGG16 - imagenet) features for semantic segmentation using Random Forest,2020-10-02T22:43:09+00:00
+811000,"AutoKeras is an AutoML system based on Keras. The goal of AutoKeras is to make machine learning accessible for everyone. It suggests the best machine learning model by fitting data to various models and hyperparameters. 
+
+This video explains the process of getting your system ready for AutoKeras installation and verifying the installation by running AutoKeras on mnist data set. 
+
+Installation instructions: https://autokeras.com/
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",169 - Deep Learning made easy with AutoKeras,2020-10-22T07:00:01+00:00
+948000,"AutoKeras is an AutoML system based on Keras. The goal of AutoKeras is to make machine learning accessible for everyone. It suggests the best machine learning model by fitting data to various models and hyperparameters. 
+
+This video explains the use of AutoKeras for structured data classification. 
+
+Installation instructions: https://autokeras.com/
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",170 - AutoKeras for structured data classification using the Wisconsin breast cancer data set,2020-10-27T07:00:03+00:00
+730000,"AutoKeras is an AutoML system based on Keras. The goal of AutoKeras is to make machine learning accessible for everyone. It suggests the best machine learning model by fitting data to various models and hyperparameters. 
+
+This video explains the use of AutoKeras for image classification. 
+
+Installation instructions: https://autokeras.com/
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",171 - AutoKeras for image classification using cifar10 data set,2020-10-29T07:00:05+00:00
+97000,,Digital Sreeni Channel name change from Python for Microscopists,2020-10-07T00:19:18+00:00
+426000,"Top k accuracy is how many times the correct label is within 
+the top k classes predicted by the network.
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",172 - Top k accuracy for multiclass machine learning classification,2020-11-05T08:00:03+00:00
+893000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+The dataset used in this video can be downloaded from the link below. This dataset can be used to train and test machine learning algorithms designed for multiclass semantic segmentation. Please read the Readme document for more information. 
+
+https://drive.google.com/file/d/1HWtBaSa-LTyAMgf2uaz1T9o1sTWDBajU/view?usp=sharing",173 - Intersection over Union (IoU) for semantic segmentation,2020-11-10T08:00:00+00:00
+488000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",174  - What is PCA and how to use it to speed up machine learning training,2020-11-12T08:00:10+00:00
+942000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",175 - Speeding up ML training using PCA - Breast cancer data set example,2020-11-17T08:00:07+00:00
+754000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",176 -- Speeding up ML training using PCA - Multiclass image classification example,2020-11-19T08:00:08+00:00
+551000,Make a plan and learn the basics.,This is the proper way to get started with python,2020-10-23T07:00:04+00:00
+1445000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+Segmentation Models library info:
+pip install segmentation-models
+
+https://github.com/qubvel/segmentation_models
+Recommended for colab execution
+TensorFlow ==2.1.0
+keras ==2.3.1
+
+
+For this demo it is working on a local workstation...
+Python 3.5
+TensorFlow ==1.
+keras ==2
+
+Dataset link: https://www.epfl.ch/labs/cvlab/data/data-em/",177 - Semantic segmentation made easy (using segmentation models library),2020-11-24T08:00:04+00:00
+1030000,"Data download links: 
+https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv
+
+https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",166b - Forecasting COVID-19 cases using LSTM networks,2020-11-03T08:00:01+00:00
+1059000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",178 - An introduction to variational autoencoders (VAE),2020-11-26T08:00:05+00:00
+2063000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",179 - Variational autoencoders using keras on MNIST data,2020-12-01T08:00:01+00:00
+1613000,"LSTM encoder - decoder network for anomaly detection.
+Just look at the reconstruction error (MAE) of the autoencoder, define a threshold value for the error and tag any data above the threshold as anomaly.
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",180 - LSTM Autoencoder for anomaly detection,2020-12-03T08:00:01+00:00
+1360000,"For a dataset just search online for 'yahoo finance GE' or any other stock of your interest. Then select history and download csv for the dates you are interested. 
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",181 - Multivariate time series forecasting using LSTM,2020-12-08T08:00:18+00:00
+1317000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",182 - How to batch process multiple images in python?,2020-12-10T08:00:04+00:00
+443000,"Optical character recognition (OCR)
+
+References:
+https://keras-ocr.readthedocs.io/en/latest/
+https://github.com/clovaai/CRAFT-pytorch
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",183 - OCR in python using keras-ocr,2020-12-15T08:00:13+00:00
+971000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",184 - Scheduling learning rate in keras,2020-12-17T08:00:08+00:00
+283000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",185 - Hyperparameter tuning using GridSearchCV,2020-12-22T08:00:06+00:00
+329000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",186 - A note about parallelization during hyperparameter search using GridSearchCV,2020-12-24T08:00:11+00:00
+934000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",187 - Hyperparameter tuning for learning rate and momentum,2020-12-29T08:00:28+00:00
+782000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists","188 - Hyperparameter tuning for activation function, optimizer and weight initialization",2020-12-31T08:00:31+00:00
+624000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists","189 - Hyperparameter tuning for dropout, # neurons, batch size, # epochs, and weight constraint",2021-01-05T08:00:02+00:00
+758000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",190 - Finding the best model between Random Forest & SVM via hyperparameter tuning,2021-01-07T08:00:06+00:00
+743000,"Comparing images using using SIFT/ORB key point descriptors and SSIM. 
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",191 - Measuring image similarity in python,2021-01-12T08:00:00+00:00
+1224000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists",192 - Working with 3D and multi-dimensional images in python,2021-01-14T08:00:10+00:00
+1262000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+Dataset used in the video: https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(diagnostic)
+
+XGBoost documentation:
+https://xgboost.readthedocs.io/en/latest/
+
+Video by original author: https://youtu.be/ufHo8vbk6g4",193 - What is XGBoost and is it really better than Random Forest and Deep Learning?,2021-01-19T08:00:06+00:00
+1962000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+The dataset used in this video can be downloaded from the link below. This dataset can be used to train and test machine learning algorithms designed for multiclass semantic segmentation. Please read the Readme document for more information. 
+
+https://drive.google.com/file/d/1HWtBaSa-LTyAMgf2uaz1T9o1sTWDBajU/view?usp=sharing
+
+XGBoost documentation:
+https://xgboost.readthedocs.io/en/latest/
+
+Video by original author: https://youtu.be/ufHo8vbk6g4",194 - Semantic segmentation using XGBoost and VGG16 imagenet as feature extractor,2021-01-21T08:00:04+00:00
+1033000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+XGBoost documentation:
+https://xgboost.readthedocs.io/en/latest/
+
+Video by original author: https://youtu.be/ufHo8vbk6g4",195 - Image classification using XGBoost and VGG16 imagenet as feature extractor,2021-01-26T08:00:00+00:00
+1145000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+XGBoost documentation:
+https://xgboost.readthedocs.io/en/latest/
+
+https://lightgbm.readthedocs.io/en/latest/
+pip install lightgbm
+
+Dataset:
+https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)",196 - What is Light GBM and how does it compare against XGBoost?,2021-01-28T08:00:27+00:00
+1565000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+The dataset used in this video can be downloaded from the link below. This dataset can be used to train and test machine learning algorithms designed for multiclass semantic segmentation. Please read the Readme document for more information. 
+
+https://drive.google.com/file/d/1HWtBaSa-LTyAMgf2uaz1T9o1sTWDBajU/view?usp=sharing
+
+Note: Annotate images at www.apeer.com to create labels. 
+
+XGBoost documentation:
+https://xgboost.readthedocs.io/en/latest/
+
+https://lightgbm.readthedocs.io/en/latest/
+pip install lightgbm",197 - Light GBM vs XGBoost for semantic image segmentation,2021-02-02T08:00:29+00:00
+1010000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+https://pypi.org/project/Boruta/
+pip install Boruta
+
+XGBoost documentation:
+https://xgboost.readthedocs.io/en/latest/
+
+Dataset:
+https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)",198 - Feature selection using Boruta in python,2021-02-04T08:00:06+00:00
+705000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+https://en.wikipedia.org/wiki/Hough_transform
+
+The origin is the top left corner of the original image. X and Y axis are 
+horizontal and vertical edges respectively. The distance is the minimal 
+algebraic distance from the origin to the detected line. The angle accuracy 
+can be improved by decreasing the step size in the theta array.
+
+https://scikit-image.org/docs/dev/auto_examples/edges/plot_line_hough_transform.html#sphx-glr-auto-examples-edges-plot-line-hough-transform-py
+
+Image downloaded from: https://geometryhelp.net/wp-content/uploads/2019/04/intersecting-lines.jpg
+Then inverted to dark background.",199 - Detecting straight lines using Hough transform in python,2021-02-09T08:00:01+00:00
+1460000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+To install rasterio:
+Download and install GDAL first
+https://www.lfd.uci.edu/~gohlke/pythonlibs/#gdal
+Since I have python 3.7 I downloaded: GDAL-3.1.4-cp37-cp37m-win_amd64.whl
+cp37 stands for python3.7
+
+Download and install rasterio
+https://www.lfd.uci.edu/~gohlke/pythonlibs/#rasterio
+Since I have python 3.7 I downloaded: rasterio-1.1.8-cp37-cp37m-win_amd64.whl
+cp37 stands for python3.7
+
+Images from: https://landsatonaws.com/L8/042/034/LC08_L1TP_042034_20180619_20180703_01_T1",201 - Working with geotiff files using rasterio in python (also quick demo of NDVI calculation),2021-02-16T08:00:10+00:00
+1603000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+Dataset link:
+https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000
+Data description: 
+https://arxiv.org/ftp/arxiv/papers/1803/1803.10417.pdf
+
+The 7 classes of skin cancer lesions included in this dataset are:
+Melanocytic nevi (nv)
+Melanoma (mel)
+Benign keratosis-like lesions (bkl)
+Basal cell carcinoma (bcc) 
+Actinic keratoses (akiec)
+Vascular lesions (vas)
+Dermatofibroma (df)",202 - Two ways to read HAM10000 dataset into python for skin cancer lesion classification,2021-02-18T02:28:38+00:00
+1722000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+Dataset link:
+https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000
+Data description: 
+https://arxiv.org/ftp/arxiv/papers/1803/1803.10417.pdf
+
+The 7 classes of skin cancer lesions included in this dataset are:
+Melanocytic nevi (nv)
+Melanoma (mel)
+Benign keratosis-like lesions (bkl)
+Basal cell carcinoma (bcc) 
+Actinic keratoses (akiec)
+Vascular lesions (vas)
+Dermatofibroma (df)",203 - Skin cancer lesion classification using the HAM10000 dataset,2021-02-23T08:00:16+00:00
+1401000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+Reference: 
+https://scikit-image.org/docs/dev/auto_examples/features_detection/plot_glcm.html",200 - Image classification using gray-level co-occurrence matrix (GLCM) features and LGBM classifier,2021-02-11T08:00:00+00:00
+1620000,"Do not apply a model trained on smaller images to directly segment large images -will not work!!! (Code shared to prove this point).
+
+Divide images into patches of smaller sizes and then perform the prediction. 
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+Dataset info: Electron microscopy (EM) dataset from
+https://www.epfl.ch/labs/cvlab/data/data-em/
+
+To annotate images and generate labels, you can use APEER (for free):
+www.apeer.com 
+
+To install patchify: pip install patchify",206 - The right way to segment large images by applying a trained U-Net model on smaller patches,2021-03-04T08:00:05+00:00
+1143000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+Dataset info: Electron microscopy (EM) dataset from
+https://www.epfl.ch/labs/cvlab/data/data-em/
+
+To annotate images and generate labels, you can use APEER (for free):
+www.apeer.com",207 - Using IoU (Jaccard) as loss function to train U-Net for semantic segmentation,2021-03-09T08:00:02+00:00
+1880000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+The dataset used in this video can be downloaded from the link below. This dataset can be used to train and test machine learning algorithms designed for multiclass semantic segmentation. Please read the Readme document for more information. 
+
+https://drive.google.com/file/d/1HWtBaSa-LTyAMgf2uaz1T9o1sTWDBajU/view?usp=sharing
+
+To annotate images and generate labels, you can use APEER (for free):
+www.apeer.com",208 - Multiclass semantic segmentation using U-Net,2021-03-11T08:00:08+00:00
+988000,"Multiclass semantic segmentation using U-Net - prediction on large images
+and 3D volumes (slice by slice)
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+The dataset used in this video can be downloaded from the link below. This dataset can be used to train and test machine learning algorithms designed for multiclass semantic segmentation. Please read the Readme document for more information. 
+
+https://drive.google.com/file/d/1HWtBaSa-LTyAMgf2uaz1T9o1sTWDBajU/view?usp=sharing
+
+
+To annotate images and generate labels, you can use APEER (for free):
+www.apeer.com",209 - Multiclass semantic segmentation using U-Net: Large images and 3D volumes (slice by slice),2021-03-17T07:00:07+00:00

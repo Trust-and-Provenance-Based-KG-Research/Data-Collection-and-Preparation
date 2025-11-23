@@ -1,0 +1,1766 @@
+Approx Duration (ms),Video Description (Original),Video Title (Original),Video Publish Timestamp
+616000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+Grain segmentation using less than 10 lines of code in python
+uses Voronoi labeling from the pyclesperanto library in python
+
+# For installation instructions of the pyclesperanto package, 
+please refer to the following link
+# https://github.com/clEsperanto/pyclesperanto_prototype",276 - Grain segmentation using less than 10 lines of code in python,2022-06-29T07:00:12+00:00
+614000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+Do not waste your time with deep learning to segment relatively easy to segment objects against a background. This tutorial explains the simple process for 3D object segmentation by using Voronoi labeling from the pyclesperanto library in python
+
+# For installation instructions of the pyclesperanto package, 
+please refer to the following link
+# https://github.com/clEsperanto/pyclesperanto_prototype",277 - 3D object segmentation in python,2022-07-06T07:00:00+00:00
+758000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+A Voronoi diagram divides the plane into separate regions where ​each region contains exactly one generating point (seed) and​ every point in a given region is closer to its seed than to any other. ​The regions around the edge of the cluster of points extend out to infinity. 
+
+This video explains Voronoi using python.",273 - What is Voronoi - explanation using python code,2022-06-08T07:00:13+00:00
+877000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+Step by step... 
+Refer to the next tutorial for a single step function that does the job. 
+
+Steps...
+#Step 1: gaussian blur the image and detect maxima for each nuclei
+#Step 2: threshold the input image after applying light gaussian blur (sigma=1)
+#Step 3: Exclude maxima locations from the background, to make sure we only include the ones from nuclei
+#Step 4: Separate maxima locations into labels using masked voronoi
+#Step 5: Separate objects using watershed.
+
+# For installation instructions of the pyclesperanto package, 
+please refer to the following link
+# https://github.com/clEsperanto/pyclesperanto_prototype",274 - Object segmentation using voronoi and otsu,2022-06-15T07:00:30+00:00
+603000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+RGB to Haematoxylin-Eosin-DAB (HED) color space conversion followed by nuclei segmentation and analysis using Stardist.",282 -  IHC color separation followed by nuclei segmentation using StarDist in python,2022-08-10T07:00:06+00:00
+853000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+RGB to Haematoxylin-Eosin-DAB (HED) color space conversion followed by nuclei segmentation and analysis using Voronoi otsu
+
+Separate the immunohistochemical (IHC) staining from the hematoxylin counterstaining. The IHC staining expression of the FHL2 protein is here revealed with diaminobenzidine (DAB) which gives a brown color.
+
+A. C. Ruifrok and D. A. Johnston, “Quantification of histochemical staining by color deconvolution,” Analytical and quantitative cytology and histology / the International Academy of Cytology [and] American Society of Cytology, vol. 23, no. 4, pp. 291-9, Aug. 2001. PMID: 11531144
+
+https://scikit-image.org/docs/dev/auto_examples/color_exposure/plot_ihc_color_separation.html#sphx-glr-auto-examples-color-exposure-plot-ihc-color-separation-py
+
+Try WSI datasets from here
+https://zenodo.org/record/1485967#.Yd31lv7MKbh
+https://www.wouterbulten.nl/blog/tech/peso-dataset-whole-slide-image-prosate-cancer/",278 - IHC color separation followed by nuclei segmentation using python,2022-07-13T07:00:06+00:00
+1244000,"For details on installing StarDist library and other examples:
+https://github.com/stardist/stardist
+
+Stardist helps with object detection of star-convex shapes, both in 2D and 3D. 
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/blob/master/279_An_introduction_to_object_segmentation_using_StarDist.ipynb
+
+All other code:
+https://github.com/bnsreenu/python_for_microscopists",279 - An introduction to object segmentation using StarDist library in Python,2022-07-20T07:00:04+00:00
+1471000,"Code generated in the video can be downloaded from here: 
+Train: https://github.com/bnsreenu/python_for_microscopists/blob/master/280a_custom_object_segmentation_using_stardist_TRAIN.ipynb
+Predict: https://github.com/bnsreenu/python_for_microscopists/blob/master/280b_custom_object_segmentation_using_stardist_PREDICT.ipynb
+
+All other code: 
+https://github.com/bnsreenu/python_for_microscopists
+
+This video tutorial explains the process of training your own StarDist model for object segmentation. It walks you through the process of importing training images and corresponding masks, training a model, and segmenting (any size) images using the trained model. 
+
+Warning: You may find this approach more efficient compared to U-net or Mask-RCNN",280 - Custom object segmentation using StarDist library in python,2022-07-27T07:00:06+00:00
+819000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+This video tutorial walks you through the process of importing whole slide H&E stained images (e.g., .svs format), segmenting nuclei using a pre-trained model, and reporting the measurements of the segmented nuclei. 
+
+Prepare to be amazed by the power of StarDist.",281 - Segmenting whole slide images (WSI) for nuclei using StarDist in python,2022-08-03T07:00:15+00:00
+445000,"Tips Tricks - 32 
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+This tutorial explains the process of automating mouse movement in Windows using python. This technique can be used to keep any programs running without getting timed out (e.g., colab). This can also be used to keep your micromanaging manager happy but showing your status in teams (or similar s/w) as Active (green).",Automate periodic mouse movements using python,2022-04-22T07:00:16+00:00
+636000,"Tips and tricks - 33: Learn about hyperparameters visually using the neural network playground
+
+Link to the playground: http://playground.tensorflow.org/",Learn about neural network hyperparameters visually,2022-04-30T07:00:14+00:00
+808000,"Tips and tricks video # 34: 
+10 best image annotation tools for computer vision applications
+
+Free:
+1. Make Sense: https://www.makesense.ai/
+2. VGG Image Annotator: https://www.robots.ox.ac.uk/~vgg/software/via/
+3. Computer Vision Annotator Tool (CVAT): https://github.com/openvinotoolkit/cvat
+4. Labelme: http://labelme.csail.mit.edu/
+5. Dash Doodler: https://github.com/Doodleverse/dash_doodler
+6. LabelImg: https://github.com/tzutalin/labelImg
+7. Label Studio: https://labelstud.io/
+
+Paid:
+8. LabelBox: https://labelbox.com/
+9. Scale: https://scale.com/
+10. Superannotate: https://www.superannotate.com/",10 best annotation tools for computer vision​ applications,2022-05-07T07:00:05+00:00
+645000,"Tips and Tricks 35 - Loading Kaggle data directly into Google Colab
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/blob/master/Tips_tricks_35_loading_kaggle_data_to_colab.ipynb
+
+My GitHub repo link:
+https://github.com/bnsreenu/python_for_microscopists",Loading Kaggle data directly into Google Colab,2022-05-20T07:00:30+00:00
+1426000,"283 What is mask RCNN - 
+
+CNN – Convolutional Neural Network​
+R-CNN – Region-based Convolutional Neural Network​
+Faster R-CNN – Faster Region-based Convolutional Neural Network​
+Mask R-CNN – Mask (faster) Region-based Convolutional Neural Network​
+
+Mask R-CNN is built using Faster R-CNN​
+In addition to class label and bounding box, Mask R-CNN outputs an object mask. ​
+Uses a trick called ROIAlign to locate relevant areas down to pixel level. ​",283 - What is Mask R-CNN?,2022-08-17T07:00:07+00:00
+1304000,"Installing Mask RCNN for Windows on Python 3.7 and TensorFlow 2.2.
+
+Link to the original repo from matterport that works on TF1.x:
+https://github.com/matterport/Mask_RCNN
+
+Link to the repo that works on TF2.x :
+https://github.com/ahmedfgad/Mask-RCNN-TF2
+
+requirements.txt from the file used in the video:
+numpy==1.20.3
+scipy==1.4.1
+Pillow==8.4.0
+cython==0.29.24
+matplotlib
+scikit-image==0.16.2
+tensorflow==2.2.0
+keras==2.3.1
+opencv-python==4.5.4.60
+h5py==2.10.0
+imgaug==0.4.0
+IPython[all]",284 - Installing Mask RCNN and troubleshooting errors,2022-08-24T07:00:10+00:00
+1621000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+This video helps you get started with your first Mask RCNN project that uses existing annotated data. Annotated data used in this video can be downloaded from:
+https://www.kaggle.com/datasets/mbkinaci/fruit-images-for-object-detection
+
+XML data in PascalVOC format
+XML annotation file for each image
+
+Please note that this video assumes you have installed Mask RCNN on your system. For installation instructions, please watch the previous video (Video numbered 284).
+
+coco weights can be downloaded from: https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5",285 - Object detection using Mask RCNN (with XML annotated data),2022-08-31T07:00:05+00:00
+1665000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/tree/master/286-Object%20detection%20using%20mask%20RCNN%20-%20end%20to%20end
+
+All other code:
+https://github.com/bnsreenu/python_for_microscopists
+
+This video helps you with end-to-end Mask RCNN project, all the way from annotations to training to prediction. Handling of VGG and Coco style JSON annotations is demonstrated in the video. Code is also made available for both approaches. 
+
+For this video, I've used the annotation tool from https://www.makesense.ai/
+
+You can try other annotation tools like:
+https://www.makesense.ai/
+https://labelstud.io/
+https://github.com/Doodleverse/dash_doodler
+http://labelme.csail.mit.edu/Release3.0/
+https://github.com/openvinotoolkit/cvat
+https://www.robots.ox.ac.uk/~vgg/software/via/
+
+coco weights can be downloaded from: https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5",286 - Object detection using Mask RCNN: end-to-end from annotation to prediction,2022-09-07T07:00:17+00:00
+1226000,"Tips and Tricks 36: 
+
+Code from this video is available at: 
+https://github.com/bnsreenu/python_for_microscopists/tree/master/tips_tricks_36_pyscript_python_in_the_browser
+
+Useful resources: 
+https://pyscript.net/
+https://github.com/pyscript/pyscript
+
+If we want to load an external python file as a module into the html file, the best way would be to start a local webserver. 
+
+If the html file is located at /my_dir/my_file.html
+if you just open the my_file.html in a browser, it will not recognize other files referenced.
+
+You need to start a local webserver.
+
+Open the command prompt (or conda prompt) - wherever you can just type python to execute python commands.
+Now type: python -m http.server (or python3 - depending on how you access your local python)
+
+This should start a webserver. Now just go to the browser and type: http://localhost:8000/
+You should see a list of files in that local directory. Now, click the html file.",PyScript – Running python in your browser​,2022-05-21T03:00:23+00:00
+1437000,"Tips Tricks 37 - MAE vs MSE vs Huber
+Understanding Mean Absolute Error and Mean Squared Error as ML metrics and loss functions
+
+Code from this video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists/blob/master/tips_tricks_37_Understanding%20MAE%20and%20MSE.py
+
+Use MSE if outliers are important.​
+
+USE MAE if outliers are not important (most cases).​
+
+Use Huber to get a balance between giving outliers some weight but not a lot (like in MSE). ​",Understanding Mean Absolute Error and Mean Squared Error as ML metrics and loss functions,2022-05-28T07:00:11+00:00
+863000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+Want to learn about the basics of GMM and how to use it for image segmentation: https://youtu.be/kkAirywakmk","52b - Understanding Gaussian Mixture Model (GMM) using 1D, 2D, and 3D examples",2022-07-01T07:00:04+00:00
+577000,"Installing Conda in Google Colab
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/blob/master/tips_tricks_38_Installing_conda_in_Google_Colab.ipynb
+
+All other code: https://github.com/bnsreenu/python_for_microscopists
+
+This tutorial guides you through the process of installing Conda in your Colab.
+
+Why do you need conda on Colab? Among other benefits, certain packages require Conda for installation. For example, trackpy installation: http://soft-matter.github.io/trackpy/dev/installation.html
+
+Trackpy strongly recommends using Conda and not pip. Therefore, we need to set up conda environment for our colab notebook.
+
+Miniconda system requirements: https://docs.conda.io/en/latest/miniconda.html#system-requirements",Installing Conda in Google Colab - Tips Tricks 38,2022-07-08T07:00:19+00:00
+1861000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/blob/master/287_tracking_particles_using_trackpy.ipynb
+
+All other code: 
+https://github.com/bnsreenu/python_for_microscopists
+
+This video provides an introduction to the Trackpy library that can be used to segment objects using blob detection and then track them in a time series of images (video). 
+
+Trackpy installation: http://soft-matter.github.io/trackpy/dev/installation.html
+
+Trackpy strongly recommends using Conda and not pip. Therefore, we need to set up conda environment for our colab notebook.
+Miniconda versions: https://docs.conda.io/en/latest/miniconda.html#system-requirements
+
+This specific topic has been covered in a separate tutorial: https://youtu.be/v4qskw8EHXQ
+
+For more examples of trackpy and to download sample data sets: https://github.com/soft-matter/trackpy-examples",287 - Tracking particles and objects using Trackpy in python,2022-09-14T07:00:32+00:00
+1487000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/blob/master/288_nuclei_tracking_trackpy_stardist.ipynb
+
+All other code:
+https://github.com/bnsreenu/python_for_microscopists
+
+This video walks you through the process of segmenting nuclei in fluorescence microscope images using StarDist (pre-trained deep learning model), followed by tracking them using trackpy. 
+
+Trackpy installation: http://soft-matter.github.io/trackpy/dev/installation.html
+
+Trackpy strongly recommends using Conda and not pip. Therefore, we need to set up conda environment for our colab notebook.
+
+This specific topic has been covered in a separate tutorial: https://youtu.be/v4qskw8EHXQ",288 - Nuclei segmentation using StarDist and tracking using Trackpy in python,2022-09-28T07:00:17+00:00
+1204000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/blob/master/289_tracking_particles_in_3D.ipynb
+
+All other code: 
+https://github.com/bnsreenu/python_for_microscopists
+
+This video walks you through the process of tracking 3D objects using trackpy. 
+
+Trackpy installation: http://soft-matter.github.io/trackpy/dev/installation.html
+
+Trackpy strongly recommends using Conda and not pip. Therefore, we need to set up conda environment for our colab notebook.
+
+We will be using this data set: https://github.com/soft-matter/trackpy-examples/blob/master/sample_data/pmma_colloids.zip
+
+This specific topic has been covered in a separate tutorial: https://youtu.be/v4qskw8EHXQ",289 - 3D object tracking using trackpy in python,2022-10-12T07:00:16+00:00
+744000,"Tips and tricks 39: Installing napari library in python for scientific image visualization
+
+Napari allows for visualization-focused image analysis in python. Installation of napari is extremely easy, especially if you follow their directions. This video provides a walkthrough tutorial of installing napari and using it via Anaconda Spyder IDE. 
+
+For more information about napari, please visit: https://napari.org/index.html",Installing napari library in python for scientific image visualization - Tips and Tricks 39,2022-07-15T07:00:16+00:00
+256000,"Machine Learning with scikit-learn and scientific python toolkits
+
+https://www.amazon.com/dp/B08BTFY8YW/ref=cm_sw_r_tw_dp_P34RZ4XB5CY0SNPB0T5S",Book Review - Machine Learning with scikit-learn and scientific python toolkits,2022-07-18T15:35:44+00:00
+898000,"7 (+2) AI-powered fun and useful web applications
+
+
+
+1. https://this-person-does-not-exist.com/en
+2. https://bigspeak.ai/
+3. https://www.magiceraser.io/
+4. https://www.craiyon.com/
+5. https://rytr.me/
+6. https://namelix.com/
+7. https://letsenhance.io/
+8. https://imglarger.com/
+9. https://experiments.withgoogle.com/thing-translator",7 (+2) AI-powered fun and useful web applications,2022-08-13T07:00:10+00:00
+1290000,"What is the difference between Data science, data analytics, AI, machine learning, and deep learning? What skills do you need to learn these topics and how to structure your learning plan?",How to get started with Data Science and Machine Learning​,2022-08-19T07:00:02+00:00
+691000,"23b - Image segmentation using color spaces​
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+This video walks you through the process of segmenting images using color spaces. Here, we use simple thresholding of a specific color by converting RGB image to HSL.
+
+For example: Blue marbles in an image showing marbles of various colors.  
+
+To select specific color range in HSL space...
+#https://stackoverflow.com/questions/10948589/choosing-the-correct-upper-and-lower-hsv-boundaries-for-color-detection-withcv/48367205#48367205",23b - Image segmentation using color spaces​ - in python,2022-08-26T07:00:01+00:00
+420000,"tips tricks 42 - How to remove text from images
+
+Code generated in the video can be downloaded from here: 
+https://raw.githubusercontent.com/bnsreenu/python_for_microscopists/master/Tips_Tricks_42_How%20to%20remove%20text%20from%20images.py
+
+Other code:
+https://github.com/bnsreenu/python_for_microscopists
+
+General Approach.....
+Use keras OCR to detect text, define a mask around the text, and inpaint the masked regions to remove the text. To apply the mask we need to provide the coordinates of the starting and the ending points of the line, and the thickness of the line.",How to remove text from images using python?,2022-09-02T07:00:02+00:00
+601000,"tips tricks 43 - Color segmentation of images ​followed by text removal​ in python
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+Remove text from images, only from segmented regions
+Here, we use simple thresholding of a specific color by converting RGB image to HSL.
+
+For example: The yellow/orange part from the traffic sign. 
+
+To select specific color range in HSL space...
+#https://stackoverflow.com/questions/10948589/choosing-the-correct-upper-and-lower-hsv-boundaries-for-color-detection-withcv/48367205#48367205",Color segmentation of images ​followed by text removal​ in python,2022-09-09T07:00:06+00:00
+1175000,"Deep Learning based edge detection using holistically nested edge detection (HED)
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/tree/master/290-Deep%20Learning%20based%20edge%20detection%20using%20HED
+
+All other code: 
+https://github.com/bnsreenu/python_for_microscopists
+
+Original HED paper: https://arxiv.org/pdf/1504.06375.pdf
+
+Caffe model is encoded into two files
+1. Proto text file: https://github.com/s9xie/hed/blob/master/examples/hed/deploy.prototxt
+2. Pretrained caffe model: http://vcl.ucsd.edu/hed/hed_pretrained_bsds.caffemodel
+NOTE: In future, if these links do not work, I cannot help. Please Google 
+and find updated links (information current as of October 2022)
+
+HED is a deep learning model that uses fully convolutional neural networks and deeply-supervised nets to do image-to-image prediction.​
+
+The output of earlier layers is called side output. ​
+HED makes use of the side outputs of intermediate layers. ​
+The output of all 5 convolutional layers is fused to generate the final predictions. ​
+Since the feature maps generated at each layer is of different size, it’s effectively looking at the image at different scales. ​
+
+The model is VGGNet with few modifications:​
+Side output layer is connected to the last convolutional layer in each stage, respectively conv1_2, conv2_2, conv3_3, conv4_3,conv5_3. The receptive field size of each of these convolutional layers is identical to the corresponding side-output layer.​
+
+Last stage of VGGNet is removed including the 5th pooling layer and all the fully connected layers.​
+
+The final HED network architecture has 5 stages, with strides 1, 2, 4, 8 and 16, respectively, and with different receptive field sizes, all nested in the VGGNet. ​",290 - Deep Learning based edge detection using HED,2022-10-26T07:00:17+00:00
+1100000,"291 - Object segmentation using Deep Learning based edge detection (HED) followed by connected component based labeling in opencv
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+Original HED paper: https://arxiv.org/pdf/1504.06375.pdf
+
+Caffe model is encoded into two files
+1. Proto text file: https://github.com/s9xie/hed/blob/master/examples/hed/deploy.prototxt
+2. Pretrained caffe model: http://vcl.ucsd.edu/hed/hed_pretrained_bsds.caffemodel
+Alternate Link: https://github.com/ashukid/hed-edge-detector/blob/master/hed_pretrained_bsds.caffemodel
+
+NOTE: In future, if these links do not work, I cannot help. Please Google 
+and find updated links (information current as of October 2022)
+
+HED is a deep learning model that uses fully convolutional neural networks and deeply-supervised nets to do image-to-image prediction.​",291 - Object segmentation using Deep Learning based edge detection (HED)​,2022-11-09T08:00:20+00:00
+1016000,"Denoising images using deep learning (Noise2Void)​
+Do not let noise distract you from the truth​
+
+Classical​ denoising
+Gaussian​, Total Variation​, Median​, Non-local means (NLM)​, Block-matching and 3D filtering (BM3D)​
+
+Deep Learning​ denoising
+Autoencoders​, Deep CNNs​, GANs​, Noise2Noise​, Noise2Void​
+
+Noise2Void:
+https://arxiv.org/abs/1811.10980
+https://github.com/juglab/n2v
+
+Noise2Void learns directly from noisy images without the need for clean images, making it the ideal choice for denoising confocal images.​
+
+Only requires noisy images, no need for additional noisy or clean images. ​
+
+Assumption:​
+Signal has a structure and noise does not. ​
+Therefore, it is possible to predict signal by looking at the surrounding pixels but impossible to predict noise. ​
+
+For information about ZEN: https://www.zeiss.com/microscopy/en/products/software/zeiss-zen.html",292 - Denoising images using deep learning (Noise2Void)​,2022-11-23T08:00:21+00:00
+1442000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/blob/master/293_denoising_RGB_images_using_deep%20learning.ipynb
+
+All other code:
+https://github.com/bnsreenu/python_for_microscopists
+
+This video covers the topic training a Noise2Void denoising model using RGB images. Images need to be in lossless format (e.g., png or tiff). JPG format is not allowed if you're using the DataGenerator object but you can use skimage or other libraries to load them. The same approach can be used for grey-scale images, for example SEM or CT images. 
+
+Next video in this series will cover multichannel and 3D image denoising. 
+
+Noise2Void:
+https://arxiv.org/abs/1811.10980
+https://github.com/juglab/n2v
+
+Noise2Void learns directly from noisy images without the need for clean images, making it the ideal choice for denoising confocal images.​
+
+Only requires noisy images, no need for additional noisy or clean images. ​
+
+Assumption:​
+Signal has a structure and noise does not. ​
+Therefore, it is possible to predict signal by looking at the surrounding pixels but impossible to predict noise. ​",293  - Denoising RGB images using deep learning (Noise2Void),2022-12-07T08:00:04+00:00
+1343000,"294 - Denoising 3D multi-channel scientific images using Noise2Void deep learning approach
+
+This video explains the process of denoising 2D and 3D multichannel scientific images (e.g., CZI images) using Noise2Void deep learning approach. The same approach can be taken for any scientific image in any format, as long as you have an appropriate library to read the files. To read CZI images, we will be using czifile library. 
+
+Please note that CZI files are from ZEISS light microscopes.
+
+Noise2Void:
+https://arxiv.org/abs/1811.10980
+https://github.com/juglab/n2v
+
+Noise2Void learns directly from noisy images without the need for clean images, making it the ideal choice for denoising confocal images.​
+
+Only requires noisy images, no need for additional noisy or clean images. ​
+
+Assumption:​
+Signal has a structure and noise does not. ​
+Therefore, it is possible to predict signal by looking at the surrounding pixels but impossible to predict noise. ​
+
+For information about ZEN: https://www.zeiss.com/microscopy/en/products/software/zeiss-zen.html
+
+Code from this video:
+2D multichannel: https://github.com/bnsreenu/python_for_microscopists/blob/master/294_n2v_2D_multi_ch_czi.ipynb
+
+3D multichannel: https://github.com/bnsreenu/python_for_microscopists/blob/master/294_n2v_3D_multi_ch_czi.ipynb
+
+All my code: https://github.com/bnsreenu/python_for_microscopists/",294 - Denoising 3D multi-channel scientific images using Noise2Void deep learning approach,2022-12-21T08:00:30+00:00
+1264000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/blob/master/296-Converting%20keras-trained%20model%20to%20ONNX%20format-Img%20Classification.py
+
+All other code:
+https://github.com/bnsreenu/python_for_microscopists
+
+This tutorial covers the following topics...
+1. Training a keras model for multiclass classification using the cifar10 dataset.
+2. Saving the keras model as .h5
+3. Classification using the saved keras .h5 model
+4. Converting the keras model to onnx format
+5.Classification using the onnx model (and comparison to the keras results)
+
+pip install keras2onnx  #For older tensorflow (up to 2.3.1)
+pip install tf2onnx  #For newer tensorflow (I tested on 2.4.4)
+pip install onnxruntime
+pip install h5py",296 - Converting keras trained model to ONNX format - Image Classification example,2023-01-18T08:00:22+00:00
+1131000,"Code generated in the video can be downloaded from here: 
+Main file: https://github.com/bnsreenu/python_for_microscopists/blob/master/297-Converting%20keras-trained%20model%20to%20ONNX-Sem%20Segm.py
+
+Unet model: https://github.com/bnsreenu/python_for_microscopists/blob/master/297-simple_unet_model.py
+
+All other code:
+https://github.com/bnsreenu/python_for_microscopists
+
+Semantic segmentation using ONNX model
+
+A complete project that walks through the process of training a keras model using data augmentation, exporting it to ONNX, and segmenting using the ONNX model. 
+
+In this project, we will be working with Mitochondria data set https://www.epfl.ch/labs/cvlab/data/data-em/
+We will be using small dataset (12 images and masks of 768x1024 each - further divided into 256x256 patches)
+Augmentation is used to artificially enhance the number of training images. 
+NOTE: While augmentation helps, you cannot augment your way out of having limited training data.
+
+We will use a simple 2D U-net model for segmentation.
+
+The trained model will be saved as a keras (.h5) model.
+We will segment a few images using the trained keras model. 
+
+This model will then be saved as ONNX. 
+The ONNX model will be used to segment some images.",297 - Converting keras trained model to ONNX format​ - Semantic Segmentation,2023-02-01T08:00:01+00:00
+865000,"ONNX – open format for machine learning models​.
+
+ONNX is a new standard for exchanging deep learning models. ​
+It is an intermediary machine learning framework used to convert between different machine learning frameworks.​
+
+Useful blogs:
+https://towardsdatascience.com/an-empirical-approach-to-speedup-your-bert-inference-with-onnx-torchscript-91da336b3a41​
+https://cloudblogs.microsoft.com/opensource/2022/04/19/scaling-up-pytorch-inference-serving-billions-of-daily-nlp-inferences-with-onnx-runtime/​
+
+Example scenario – You are deploying your trained model via an iOS app​:
+Modern Apple devices come with Apple Neural Engine (ANE) as part of the chip​.
+Deep learning models can work on CPU only, CPU+GPU, or all CPU/GPU/ANE​
+Fastest way is to run it on ANE, especially for heavy applications​
+The framework optimized for deep learning inference on iOS is CoreML​
+CoreML is built into the OS  No need to compile, link, or ship binaries of ML libraries with the app. ​",295 - ONNX – open format for machine learning models​,2023-01-04T08:00:00+00:00
+1286000,"Tips and Tricks 44:
+
+Code from this video can be found here:
+https://github.com/bnsreenu/python_for_microscopists/blob/master/tips_tricks_44_underscores_in_python.ipynb
+
+Learn about: Underscores in python​
+
+Single underscore ONLY: _
+Commonly used for unused variables.
+
+Single underscore after: abc_
+Allows us to use reserved keywords as variables (e.g., id, def, class, etc.)
+
+Single underscore before: _abc
+Usually represents objects/variables that are used internally.
+
+Double underscore before and after: __abc__
+These are used under 'dunder' class methods and dunder literally stands for Double Underscore.
+We are familiar with our constructor of class: __init__ which creates an instance of a class.
+
+Double underscore before: __abc
+Used for name mangling - process that overwrites identifiers in a class to avoid conflicts of names between the current class and its subclasses.
+In other words, __abc will have a different name in the class.",What are various underscores used in python​?,2022-10-22T07:00:01+00:00
+2012000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+Direct link: https://github.com/bnsreenu/python_for_microscopists/tree/master/301-Evaluating%20keras%20model%20using%20KFold%20cross%20validation
+
+We will start with the normal way most of us approach the problem of binary classification using neural networks (deep learning). In this example, we will split our data set the normal way into train and test groups. 
+
+Then, we will learn to divide data using K Fold splits.
+We will iterate through each split to train and evaluate our model. 
+
+Normally, we would use cross_val_score in sklearn to automatically evaluate
+the model over all splits and report the cross validation score. But, that method is designed to handle traditional sklearn models such as SVM, RF, 
+gradient boosting etc. - NOT deep learning models from TensorFlow or pytorch.
+
+Therefore, in order to use cross_val_score, we will find a way to make our
+keras model available to the function. This is done using the KerasClassifier
+from tensorflow.keras.wrappers.scikit_learn
+
+Note that the cross_val_score() function takes the dataset and cross-validation configuration and returns a list of scores calculated for each fold.
+
+
+Wisconsin breast cancer example
+Dataset link: https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data",301 - Evaluating keras model using KFold cross validation​,2023-03-29T07:00:16+00:00
+1150000,"298 What is k fold cross validation?
+
+Cross validation (according to Wikipedia) is a resampling method that uses different portions of the data to test and train a model on different iterations.​
+
+In machine learning, cross validation is used to compare various models and its parameters.​
+
+K-fold is a specific data sampling method that splits data for training and testing used for cross validation. ​
+
+K refers to the number of groups the data gets split into. ​",298 - What is k fold cross validation?,2023-02-15T08:00:07+00:00
+1664000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+Let us start by understanding the Binary classification using keras . This is the normal way most of us approach the problem of binary classification
+using sklearn (SVM). In this example, we will split our data set the normal way into train and test groups. 
+
+We will then learn to divide data using K Fold splits.
+We will iterate through each split to train and evaluate our model. 
+
+We will finally use the cross_val_score() function to perform the evaluation. 
+It takes the dataset and cross-validation configuration and returns a list of 
+scores calculated for each fold.
+
+KFOLD is a model validation technique.
+
+Cross-validation between multiple folds allows us to evaluate the model performance. 
+
+KFold library in sklearn provides train/test indices to split data in train/test sets. Splits dataset into k consecutive folds (without shuffling by default).
+Each fold is then used once as a validation while the k - 1 remaining folds 
+form the training set.
+
+Split method witin KFold generates indices to split data into training and test set. The split will divide the data into n_samples/n_splits groups. 
+One group is used for testing and the remaining data used for training.
+All combinations of n_splits-1 will be used for cross validation.  
+
+Wisconsin breast cancer example
+Dataset link: https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data",299 - Evaluating sklearn model using KFold cross validation​ in python,2023-03-01T08:00:02+00:00
+1125000,"Tuning deep learning hyperparameters using Gridsearch
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/blob/master/302-Tuning%20deep%20learning%20hyperparameters/302-Tuning%20deep%20learning%20hyperparameters%E2%80%8B.py
+
+All other code:
+https://github.com/bnsreenu/python_for_microscopists
+
+The grid search provided by GridSearchCV exhaustively generates candidates from a grid of parameter values specified with the param_grid parameter.
+
+The GridSearchCV instance when “fitting” on a dataset, all the possible 
+combinations of parameter values are evaluated, and the best combination is retained.
+
+cv parameter can be defined for the cross-validation splitting strategy.
+
+GridSearch is designed to work with models from sklearn. But, we can also use it to tune deep learning hyper parameters - at least for keras models. 
+
+Wisconsin breast cancer example
+Dataset link: https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data",302 - Tuning deep learning hyperparameters​ using GridSearchCV,2023-04-12T07:00:28+00:00
+1129000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists
+
+Picking the best model and corresponding hyperparameters
+using cross validation inside a Gridsearch
+
+The grid search provided by GridSearchCV exhaustively generates candidates 
+from a grid of parameter values specified with the param_grid parameter
+Example:
+    param1 = {}
+    param1['classifier__n_estimators'] = [10, 50, 100, 250]
+    param1['classifier__max_depth'] = [5, 10, 20]
+    param1['classifier__class_weight'] = [None, {0:1,1:5}, {0:1,1:10}, {0:1,1:25}]
+    param1['classifier'] = [RandomForestClassifier(random_state=42)]
+
+The GridSearchCV instance when “fitting” on a dataset, all the possible 
+combinations of parameter values are evaluated and the best combination is retained.
+
+cv parameter can be defined for the cross-validation splitting strategy.
+
+Wisconsin breast cancer example
+Dataset link: https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data",300 - Picking the best model and corresponding hyperparameters using Gridsearch,2023-03-15T07:00:11+00:00
+849000,"Tips and tricks 45 
+
+Code from this video is available at: https://github.com/bnsreenu/python_for_microscopists/tree/master/Tips_Tricks_45_white-balance_using_python
+
+The tutorial is about white balancing images using two different approaches:
+    1. Gray-world algorithm
+    2. White patch reference
+
+Gray-world assumes that average pixel value is neutral gray (128) because of good distribution of colors. So, we can estimate pixel color by looking at the average color. 
+
+White patch is about picking a patch from the image that is supposed to be white and using it as reference to rescale each channel in the image.",White balancing your pictures using python,2022-12-23T08:00:23+00:00
+730000,"Reinhard color transfer 
+Based on the paper: https://www.cs.tau.ac.il/~turkel/imagepapers/ColorTransfer.pdf
+
+Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists/tree/master/303%20-%20Reinhard%20color%20transformation%E2%80%8B
+
+All other code: 
+https://github.com/bnsreenu/python_for_microscopists
+
+This approach is suitable for stain normalization of pathology images where the 'look and feel' of all images can be normalized to a template image. This can be a good preprocessing step for machine learning and deep learning of pathology images.",303 - Reinhard color transformation​,2023-06-07T07:00:11+00:00
+1244000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/tree/master/304%20-%20Augmentation%20of%20histology%20images%E2%80%8B
+
+All other code:
+https://github.com/bnsreenu/python_for_microscopists
+
+Random Stain Normalization and Augmentation (RandStainNA) is a hybrid framework designed to fuse stain normalization (SN) and stain augmentation (SA) to generate more realistic stain variations. It incorporates randomness to stain normalization by automatically sorting out a random virtual template from pre-estimated stain style distributions. More specifically, from the perception of SN’s viewpoint, stain styles ‘visible’ to the deep neural network are enriched in the training stage. Meanwhile, from the perception from the SA’s viewpoint, RandStainNA imposes a restriction on the distortion range and consequently, only a constrained practicable range is ‘visible’ to CNN. 
+
+https://github.com/yiqings/RandStainNA
+https://arxiv.org/abs/2206.12694",304 - Augmentation of histology images​ to train stain-agnostic deep learning models,2023-06-21T07:00:15+00:00
+1804000,"What is Cellpose algorithm for instance segmentation? and how to train your own Cellpose model?
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/blob/master/305_What_is_Cellpose_algorithm_for_segmentation.ipynb
+
+All other code: 
+https://github.com/bnsreenu/python_for_microscopists
+
+Useful links: 
+https://cellpose.readthedocs.io/en/latest/
+https://www.cellpose.org/
+Data set used in this video can be downloaded from: https://www.kaggle.com/datasets/batuhanyil/electron-microscopy-particle-segmentation
+Cellpose GitHub: Code: https://github.com/mouseland/cellpose​
+
+Original paper: https://www.biorxiv.org/content/10.1101/2020.02.02.931238v1.full.pdf​
+Cellpose 2.0 paper: https://www.nature.com/articles/s41592-022-01663-4​
+
+Cellpose is a generalist algorithm for cellular segmentation which can very precisely segment a wide range of image types out of-the-box and does not require model retraining or parameter adjustments. 
+
+This video demonstrates the use of Cellpose in Google Colab on a custom data set.",305 - What is Cellpose algorithm for segmentation?,2023-07-26T07:00:22+00:00
+1695000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/tree/master/306%20-%20Content%20based%20image%20retrieval%E2%80%8B%20via%20feature%20extraction
+
+In this video, we will create a content-based image retrieval system which is basically an image-based search. We achieve this task by storing features from images into a database that we will search to retrieve images. Features can be generated many ways. In this tutorial I will extract custom features using a few digital image filters. I will also show feature extraction using pre-trained VGG16 and ResNet50 networks on Imagenet database. 
+
+You will learn about the importance of features along the way. 
+
+The features from this query image are compared against features from the indexed database and a match score gets reported. The match is performed using the cosine distance method. 
+https://en.wikipedia.org/wiki/Cosine_similarity
+
+The top 3 matching image names are then printed on the screen.",306 - Content based image retrieval​ via feature extraction in python,2024-01-10T08:00:27+00:00
+18000,"In the video, the outcome of two simulations using the genetic algorithm is displayed. In one simulation, the background was set to yellow, resembling the color of the African savannah. In the other simulation, the background was set to green, representing the color of a leaf. It becomes evident that as the generations progress, the evolutionary process reaches an equilibrium, where the antelope and caterpillar assume colors that match their respective backgrounds.
+
+Be sure to keep an eye on my YouTube channel for some upcoming tutorials on this subject.",Camouflage simulation using the Genetic Algorithm,2023-02-02T19:01:29+00:00
+1121000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/tree/master/tips_tricks_46-Feature%20engineering%20vs%20feature%20learning
+
+All other code:
+https://github.com/bnsreenu/python_for_microscopists
+
+Feature engineering refers to the process of selecting and designing relevant features from raw data to improve the performance of machine learning algorithms. It involves domain expertise and creativity to identify informative features that capture the underlying patterns in the data.
+
+On the other hand, feature learning, also known as representation learning, is a technique that enables a machine learning model to automatically learn relevant features from raw data. It involves using neural networks to discover useful features that can be used for downstream tasks.
+
+This video tutorial demonstrates that with enough knowledge, features can be engineered from images using handcrafted algorithms. However, the tutorial also shows that pre-trained networks such as VGG16, which were trained on large datasets, can automatically learn rich features from images with no prior knowledge. This illustrates the power of feature learning, where pre-trained models can be leveraged to extract informative features, making it a more efficient and effective method than feature engineering.
+
+Related tutorials:
+https://youtu.be/9GzfUzJeyi0
+https://youtu.be/IuoEiemAuIY
+https://youtu.be/5ct8Yqkiioo
+https://youtu.be/vgdFovAZUzM",Feature engineering vs Feature Learning (tips tricks 46 ),2023-02-18T08:00:26+00:00
+1013000,"Segment your images in python without training using Segment Anything Model (SAM) by Meta AI
+
+Code from this video is available here: https://github.com/bnsreenu/python_for_microscopists/tree/master/307%20-%20Segment%20your%20images%20in%20python%20without%20training
+
+All other code: https://github.com/bnsreenu/python_for_microscopists
+
+Useful links:
+SAM demo page: https://segment-anything.com/demo
+Blog page: https://ai.facebook.com/blog/segment-anything-foundation-model-image-segmentation/
+Github: https://github.com/facebookresearch/segment-anything
+Trained models: https://github.com/facebookresearch/segment-anything#model-checkpoints",307 - Segment your images in python without training using Segment Anything Model (SAM),2023-04-08T07:00:16+00:00
+1596000,"Video 308: An introduction to language models​, With a special focus on GPT​
+
+Language models are the foundation of many natural language processing (NLP) tasks.​
+They help machines understand and generate human language by predicting the likelihood of a sequence of words.​
+Over the years, advances in algorithms and computational power have driven progress in language modeling, enabling breakthroughs in NLP applications.
+
+LSTM networks, introduced by Hochreiter and Schmidhuber in 1997, are a type of recurrent neural network (RNN) designed to handle long-term dependencies.​
+Traditional RNNs struggled with the vanishing gradient problem, making it difficult to capture context over longer sequences.​
+LSTMs addressed this issue with their unique gating mechanisms, which enabled them to retain information for more extended periods, paving the way for improved language modeling.​
+(Watch my video on this topic: https://youtu.be/zyCpntcVKSo​)
+
+The transformer architecture, introduced by Vaswani et al. in 2017, revolutionized NLP by utilizing self-attention mechanisms and parallel processing.​
+
+The Transformer model is based on the encoder-decoder architecture.​
+Encoder: Processes input sequence, generating contextualized representations of each token.​
+Decoder: Generates output sequence step by step, using encoder's output as context for informed predictions.​
+
+Self-attention allows the model to weigh the importance of different words in a sequence, enabling better context understanding.​
+Parallel processing overcomes the sequential processing limitations of RNNs, leading to faster training and improved performance on various NLP tasks.​
+
+BERT (Bidirectional Encoder Representations from Transformers) is well-suited for tasks that require understanding the context of both preceding and following tokens. Some good applications for BERT include:​
+
+Sentiment analysis​
+Named entity recognition​
+Question-answering systems​
+Text classification​
+Semantic role labeling​
+
+GPT (Generative Pre-trained Transformer) is primarily designed for text generation tasks, and it is a unidirectional model, meaning it processes text in a left-to-right fashion. Some good applications for GPT include:​
+
+Text completion​
+Machine translation​
+Summarization​
+Chatbots and conversational AI​
+Creative writing assistance​
+
+GPT, developed by OpenAI, is a transformer-based model with a focus on decoding and adaptability.​
+
+GPT models, particularly GPT-3, have demonstrated impressive capabilities in zero-shot and few-shot learning, where they can learn new tasks with minimal or no examples.​
+
+While GPT excels at text generation and learning from examples without fine-tuning, it is important to consider its limitations, such as the size and computational requirements of the model, when evaluating its practical applications.​",308 - An introduction to language models with focus on GPT,2023-04-19T07:00:03+00:00
+1368000,"309 - Training your own Chatbot using GPT​
+
+Code from this video is available on my GitHub page: 
+https://github.com/bnsreenu/python_for_microscopists 
+
+Direct link to the code: https://github.com/bnsreenu/python_for_microscopists/blob/master/309_Training_your_own_Chatbot_using_GPT%E2%80%8B.ipynb
+
+
+This video tutorial explains how to implement a chatbot using the GPT-2 language model from Hugging Face's Transformers library.
+https://huggingface.co/transformers/v2.2.0/pretrained_models.html​",309 - Training your own Chatbot using GPT​,2023-04-26T07:00:04+00:00
+1936000,"310 - Understanding sub word tokenization used for NLP
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/tree/master/310-Understanding%20sub-word%20tokenization%20used%20for%20NLP
+
+All other code:
+https://github.com/bnsreenu/python_for_microscopists
+
+Subword tokenization algorithm's philosophy is…​
+- frequently used words should not be split into smaller sub-words ​
+- rare words should be divided into meaningful sub-words. ​
+
+Example: DigitalSreeni is not a real word and a rare word (unless I get super famous). It may be divided as:​
+Digital (common word)​
+Sr​
+E​
+E​
+Ni (Common sub-word – Nice, Nickel, Nimble, etc.)​
+
+Advantages of sub-word tokenization:​
+Not very large vocabulary sizes while maintaining the ability to provide context-independent representations.​
+Handle rare and out-of-vocabulary words by breaking them into known sub-word units.​
+
+Byte Pair Encoding (BPE) reference:
+​https://arxiv.org/abs/1508.07909
+
+​BPE Starts with pre-tokenizer that splits the training data into words. Pre-tokenization can be just space tokenization where words separated by space are represented by individual tokens  (e.g., GPT-2). ​
+
+Using pre-tokenized tokens, it learns merge rules to form a new word (token) from two tokens of the base vocabulary. ​
+
+This process is iterated until the vocabulary has attained the desired vocabulary size, set by the user (hyperparameter). ​
+
+Both ByteLevelBPETokenizer and SentencePieceBPETokenizer are tokenizers used for subword tokenization, but they use different algorithms to learn the vocabulary and perform tokenization.
+
+ByteLevelBPETokenizer is a tokenizer from the Hugging Face tokenizers library that learns byte-level BPE (Byte Pair Encoding) subwords. It starts by splitting each input text into bytes, and then learns a vocabulary of byte-level subwords.
+using the BPE algorithm. This tokenizer is particularly useful for languages 
+with non-Latin scripts, where a character-level tokenizer may not work well.
+
+On the other hand, SentencePieceBPETokenizer is a tokenizer from the SentencePiece library that learns subwords using a unigram language model. It first tokenizes the input text into sentences, and then trains a unigram language model on the resulting sentence corpus to learn a vocabulary of subwords. This tokenizer can handle a wide range of languages and text types, and can learn both character-level 
+and word-level subwords.
+
+In terms of usage, both tokenizers are initialized and trained in a similar way.",310 - Understanding sub word tokenization used for NLP,2023-05-03T07:00:24+00:00
+891000,"311 - Fine tuning GPT2 using custom documents​
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/blob/master/311_fine_tuning_GPT2.ipynb
+
+All other code:
+https://github.com/bnsreenu/python_for_microscopists
+
+This tutorial explains the simple process of fine-tuning GPT2 using your own documents. It also demonstrates the advantages of structuring your training data as Q & A rather than long text.",311 - Fine tuning GPT2 using custom documents​,2023-05-10T07:00:17+00:00
+787000,"Genetic Algorithms (GA) are a type of evolutionary algorithm inspired by the process of natural selection in biological evolution.​
+
+They can be used to solve optimization problems, including finding the optimal values for various parameters.​
+
+GAs involve creating a population of candidate solutions, which are then evolved through the application of selection, crossover, and mutation operators.​
+
+The fittest individuals from each generation are selected to create the next generation, creating a process of natural selection over multiple generations.​
+
+GAs involve the application of selection, crossover, and mutation operators to create the next generation of individuals.​
+
+The selection operator involves selecting the fittest individuals from the current generation to create the next generation.​
+
+The crossover operator involves combining the genetic material of two individuals to create a new individual.​
+
+The mutation operator involves randomly changing the genetic material of an individual to introduce new variations in the population.​
+
+​GAs have been successfully applied to various optimization problems, including finding the optimal values for various parameters in machine learning models.​
+
+They have also been used for feature selection, where the algorithm selects the best set of features for a particular task.​
+
+Other applications of GAs include optimization of engineering designs, scheduling problems, and financial forecasting.​
+
+​
+​",312 - What are genetic algorithms?,2024-01-24T08:00:23+00:00
+1088000,"Genetic algorithms simulate evolution and natural selection to produce adaptive traits.​
+
+Camouflage is a common adaptation that helps animals blend into their environment and avoid predators.​
+
+Insects can be represented as a string of genes that code for specific visual features such as color, shape, and texture.​
+
+A fitness score is used to evaluate an individual's ability to blend in with their environment.​
+
+Individuals with higher fitness scores are selected for reproduction, passing on their genes to the next generation.​
+
+Over time, the population evolves and becomes better adapted to their environment, producing offspring that are increasingly difficult to detect by predators.​
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/blob/master/313_GeneticAlgorithm_Camouflage.ipynb",313 - Using genetic algorithms to simulate ​evolution,2024-02-07T08:00:35+00:00
+1219000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/blob/master/314_How_to_code_the_genetic_algorithm_in_python.ipynb
+
+The genetic algorithm is a stochastic method for function optimization inspired by the process of natural evolution - select parents to create children using the crossover and mutation processes.
+
+The code is an implementation of the genetic algorithm for optimization. The algorithm is used to find the minimum value of a two-dimensional inverted Gaussian function centered at (7,9). The algorithm consists of the following steps:
+
+Initialize a population of binary bitstrings with random values.
+Decode the binary bitstrings into numerical values, and evaluate the fitness (the objective function) for each individual in the population.
+Select the best individuals from the population using tournament selection based on the fitness scores.
+Create new offsprings from the selected individuals using the crossover operation.
+Apply the mutation operation on the offsprings to maintain diversity in the population.
+Repeat steps 2 to 5 until a stopping criterion is met.
+The implementation includes functions for decoding, selection, crossover, and mutation.",314 - How to code the genetic algorithm in python?,2024-02-21T08:00:12+00:00
+1416000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/blob/master/315_Optimization_using_Genetic_Algorithm_Heart_disease.ipynb
+
+The genetic algorithm is a stochastic method for function optimization inspired by the process of natural evolution - select parents to create children using the crossover and mutation processes.​
+
+Coding it in python: The algorithm consists of the following key steps:​
+
+Initialize a population of binary bitstrings with random values.​
+
+Decode the binary bitstrings into numerical values and evaluate the fitness (the objective function) for each individual in the population.​
+
+Select the best individuals from the population using tournament selection based on the fitness scores.​
+
+Create new offsprings from the selected individuals using the crossover operation.​
+
+Apply the mutation operation on the offsprings to maintain diversity in the population.​
+
+Repeat steps 2 to 5 until a stopping criterion is met.​
+
+​",315 - Optimization using Genetic Algorithm,2024-03-06T08:00:20+00:00
+989000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/blob/master/316_Optimizing_Steel_Strength_using_Metaheuristic_algo.ipynb
+
+In this example, we will work with the steel alloy data set.​
+Download from here: https://www.kaggle.com/datasets/fuarresvij/steel-test-data​
+
+
+The data set contains the elemental composition of different alloys and their respective yield and tensile strengths. ​
+
+A machine learning model can be trained on this data, allowing us to predict the strength of an alloy based on its chemical composition. ​
+
+But, for this exercise, let us try to find the optimized alloy composition with the best yield strength.​
+
+Let us explore metaheuristic approaches, especially the genetic algorithm and the differential evolution algorithm.​
+
+Note: Differential evolution (DE) is quite similar to the genetic algorithm (GA) with a few differences. DE relies on the distance and directional information through unit vectors for reproduction. Also, in DE, the crossover is applied after mutation unlike GA. In addition, the mutation operator is not created from a probability distribution, but from the creation of the unit vector.​","316  - Optimizing Steel Strength using Metaheuristic algorithms (e.g., Genetic)",2024-03-20T07:00:31+00:00
+866000,"Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/blob/master/317_HyperParameter_Optimization_using_Genetic_algo.ipynb
+
+In this example, we will use the same dataset (steel alloy strength) from the previous tutorial to fit and tune Random Forest Regressor.​
+
+The dataset can be downloaded from here: https://www.kaggle.com/datasets/fuarresvij/steel-test-data​
+
+The data set contains the elemental composition of different alloys and their respective yield and tensile strengths. ​
+
+A machine learning model can be trained on this data, allowing us to predict the strength of an alloy based on its chemical composition.​",317 - HyperParameter Optimization using Genetic algorithms,2024-04-03T07:00:02+00:00
+59000,"Tips and Tricks: 48
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/blob/master/tips_tricks_48_overlay_image_comparison.ipynb
+
+All other code:
+https://github.com/bnsreenu/python_for_microscopists
+
+Link to leafmap: https://leafmap.org/",Overlaying images for easy comparison (in python),2023-05-09T07:00:17+00:00
+2593000,"323 - How to train a chatbot on your own documents?
+Using openAI and Langchain
+
+Code generated in the video can be downloaded from here: 
+https://github.com/bnsreenu/python_for_microscopists/tree/master/323-Train%20a%20chatbot%20on%20your%20own%20documents
+
+All other code:
+https://github.com/bnsreenu/python_for_microscopists",323 - How to train a chatbot on your own documents?,2023-05-17T07:00:10+00:00
+1043000,"324 - Chat-based data analysis​ using openAI and pandasAI
+
+A very short introduction to pandasAI
+Dataset from: https://www.kaggle.com/datasets/vivovinco/nba-player-stats
+
+Link to  code: https://github.com/bnsreenu/python_for_microscopists/tree/master/324-Chat-based%20data%20analysis%E2%80%8B-pandasAI
+
+pandasAI: https://github.com/gventuri/pandas-ai",324 - Chat-based data analysis​ using openAI and pandasAI,2023-05-24T07:00:09+00:00
+819000,"Metaheuristic algorithms are optimization techniques that use iterative search strategies to explore the solution space and find optimal or near-optimal solutions.​
+
+They do not guarantee finding the global optimum, but instead aim to efficiently explore the search space and converge to a good solution. ​
+
+These algorithms use heuristic rules to guide the search and modify the solutions over iterations to improve the fitness.​
+
+Genetic algorithms, simulated annealing, and particle swarm optimization are three examples of metaheuristic algorithms that have been successfully applied in various optimization problems.​",318 - Introduction to Metaheuristic Algorithms​,2024-04-17T07:00:14+00:00
+857000,"319 - What is Simulated Annealing Optimization​?
+
+Code link: https://github.com/bnsreenu/python_for_microscopists/blob/master/319_what_is_simulated_annealing.ipynb
+
+Simulated annealing is inspired by the physical process of annealing, in which a material is gradually cooled to form a crystalline structure with a minimum energy state. ​
+
+It works by iteratively adjusting the temperature of the system and accepting or rejecting candidate solutions based on a probabilistic function that depends on the current temperature and the change in the objective function value.​
+
+At high temperatures, the algorithm accepts solutions with a worse fitness to explore the search space and avoid local optima. As the temperature decreases, the algorithm becomes more selective and converges to a better solution. ​
+
+The cooling schedule determines the rate of temperature reduction and plays an important role in the algorithm's performance.​
+
+Simulated annealing is well-suited for finding the global optimum in a large search space with many local optima, such as in combinatorial optimization and network design problems.​
+
+Simulated annealing has been used for image registration, object tracking, and texture synthesis in microscopy images.​",319 - What is Simulated Annealing Optimization​?,2024-05-01T07:00:02+00:00
+652000,"320 - Understanding Simulated Annealing​ using steel optimization
+
+Code link: https://github.com/bnsreenu/python_for_microscopists/blob/master/320_Optimizing_Steel_Strength_using_simulated_annealing.ipynb
+
+Finding the best alloy with maximum yield strength using simulated annealing algorithm
+
+In this example, we will work with the steel alloy data set.
+Download from here: https://www.kaggle.com/datasets/fuarresvij/steel-test-data
+
+The data set contains the elemental composition of different alloys and their respective yield and tensile strengths. A machine learning model can be trained on this data, allowing us to predict the strength of an alloy based on its chemical composition. But, for this exercise, let us try to find the optimized alloy composition with the best yield strength.
+
+Let us explore simulated annealing algorithm for optimization.",320 - Understanding Simulated Annealing​ using steel optimization,2024-05-15T07:00:02+00:00
+583000,"Code link: https://github.com/bnsreenu/python_for_microscopists/blob/master/321_what_is_particle_swarm_optimization.ipynb
+
+Particle Swarm Optimization
+
+PSO is a swarm intelligence algorithm that is inspired by the behavior of social organisms such as flocks of birds or schools of fish.
+
+The algorithm creates a population of particles, each representing a candidate solution, that move through the search space based on their individual velocity and the collective influence of the best solutions found by the swarm.
+
+The algorithm updates the particles' positions and velocities based on the fitness of the current solution and the local and global best solutions found so far. It aims to balance exploration and exploitation by encouraging particles to explore new regions of the search space while also following promising solutions.
+
+PSO is suitable for solving nonlinear and dynamic optimization problems, such as in control systems, machine learning, and signal processing.
+
+PSO has been used for feature selection, image segmentation, and classification in microscopy images. For example, it has been used to optimize the parameters of texture descriptors for image segmentation, and to select the most discriminative features for cell classification.",321 - What is Particle Swarm Optimization PSO?,2024-05-29T07:00:11+00:00
+875000,"Code link: https://github.com/bnsreenu/python_for_microscopists/blob/master/322_Optimizing_Steel_Strength_using_PSO.ipynb
+
+Finding the best alloy with maximum yield strength using Particle Swarm Optimization
+
+In this example, we will work with the steel alloy data set.
+Download from here: https://www.kaggle.com/datasets/fuarresvij/steel-test-data
+
+The data set contains the elemental composition of different alloys and their respective yield and tensile strengths. A machine learning model can be trained on this data, allowing us to predict the strength of an alloy based on its chemical composition. But, for this exercise, let us try to find the optimized alloy composition with the best yield strength.
+
+Let us explore PSO:
+
+Particle Swarm Optimization
+
+PSO is a swarm intelligence algorithm that is inspired by the behavior of social organisms such as flocks of birds or schools of fish.
+
+The algorithm creates a population of particles, each representing a candidate solution, that move through the search space based on their individual velocity and the collective influence of the best solutions found by the swarm.
+
+The algorithm updates the particles' positions and velocities based on the fitness of the current solution and the local and global best solutions found so far. It aims to balance exploration and exploitation by encouraging particles to explore new regions of the search space while also following promising solutions.
+
+PSO is suitable for solving nonlinear and dynamic optimization problems, such as in control systems, machine learning, and signal processing.
+
+PSO has been used for feature selection, image segmentation, and classification in microscopy images. For example, it has been used to optimize the parameters of texture descriptors for image segmentation, and to select the most discriminative features for cell classification.",322 - PSO Using steel optimization,2024-06-12T07:00:19+00:00
+4170000,"325: Transcriptomics Unveiled – An In-Depth Exploration of Single Cell RNASeq Analysis using python
+
+Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists/blob/master/325_Transcriptomics_Unveiled.ipynb
+
+Dataset from: https://cell2location.cog.sanger.ac.uk/tutorial/mouse_brain_visium_wo_cloupe_data.zip
+
+Useful resources: 
+mRNA-Seq whole-transcriptome analysis of a single cell: https://www.nature.com/articles/nmeth.1315
+
+A practical guide to single-cell RNA-sequencing for biomedical research and clinical applications: https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-017-0467-4
+
+An introduction to spatial transcriptomics for biomedical research: https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-022-01075-1
+
+Spatially resolved, highly multiplexed RNA profiling in single cells: https://www.science.org/doi/10.1126/science.aaa6090
+
+Comparative analysis of MERFISH spatial transcriptomics with bulk and single-cell RNA sequencing: https://www.biorxiv.org/content/10.1101/2022.03.04.483068v1
+
+Spatial omics technologies at multimodal and single cell/subcellular level: https://pubmed.ncbi.nlm.nih.gov/36514162/
+
+Description:
+The DNA sequence is the same in almost all cells of a given type of organism (Genome). DNA sequence of an organism’s genome contains the instructions necessary for development, functioning and maintenance of that organism. For a specific organism (e.g., Mouse), the DNA sequence is generally consistent across different cells within that organism. Every cell in the mouse's body contains the same set of genes with the same DNA sequence. However, cells may have specific (combination of) genes turned on or off, making them perform their specific function – gene expression or gene regulation. Different cell types have specific gene expression profiles (e.g., genes involved in muscle contraction will be turned on in muscle cells and not in skin cells). Cellular diversity and cell-specific function is best assessed not at the DNA level, but at the protein level. However, there are no commercially available methods for quantifying the thousands of proteins within individual cells of our bodies. In 2009 the first description came for entire mRNA (~20,000 genes) from a single cell, known as the transcriptome – which opened doors to transcriptomics. 
+
+Why study RNA?
+Studying RNA can provide insights into which genes are turned on (expressed) or off (not expressed) in a given cell as:
+- RNA molecules are synthesized from DNA templates. 
+- analyzing RNA in a cell can provide information on which genes are actively being transcribed, hence expressed. 
+
+RNA Sequencing allows researchers to determine the identity and abundance of different RNA molecules, including messenger RNA (mRNA) transcripts
+
+By comparing the RNA-seq data across different samples or conditions, researchers can identify which genes are upregulated (turned on) or downregulated (turned off) under specific circumstances.
+
+What is scRNA-seq?
+scRNA-seq permits comparison of the transcriptomes of individual cells to assess transcriptional similarities and differences within a population of cells and to identify rare cell populations that would otherwise go undetected in analyses of pooled cells. It can also help in tracing lineage and developmental relationships between heterogeneous, yet related, cellular states in scenarios such as embryonal development, cancer.
+
+Why spatial transcriptomics? 
+Sc-RNA Seq is good but comes with a requirement of liberating viable cells from whole tissue without inducing stress, cell death, and/or cell aggregation. But in spatial transcriptomics methods, spatial information is preserved by studying intact tissue.
+
+Data processing:
+For all techniques, including Visium, Slide-seq, SeqFISH, MERFISH, and Drop-seq, the end result is a table that represents the gene expression profiles of individual cells.
+
+The table typically consists of rows representing individual cells or spatial locations within the tissue and columns representing genes. The values in the table correspond to the gene expression intensities or counts for each cell or location.
+
+Downstream analysis includes, quality control, dimensionality reduction, clustering, differential expression analysis, cell type identification, spatial analysis, and visualization. 
+
+These analyses help extract biological insights and understand the cellular composition, heterogeneity, and spatial organization within the tissue.",325: Transcriptomics Unveiled – An In-Depth Exploration of Single Cell RNASeq Analysis using python,2023-05-27T07:00:09+00:00
+2604000,"326 - Cell type annotation for single-cell RNA-seq data
+
+Code from this video is available here: https://github.com/bnsreenu/python_for_microscopists/blob/master/326_Cell_type_annotation_for_single_cell_RNA_seq_data%E2%80%8B.ipynb
+
+Previous video: Transcriptomics Unveiled – An In-Depth Exploration of Single Cell RNASeq Analysis using python: https://youtu.be/IPePGXrSZHE
+
+GitHub link for the scsa library: https://github.com/bioinfo-ibms-pumc/SCSA
+
+Reference paper: Cao Y, Wang X and Peng G (2020) SCSA: A Cell Type Annotation Tool for Single-Cell RNA-seq Data. Front. Genet. 11:490. doi: https://doi.org/10.3389/fgene.2020.00490
+
+https://www.frontiersin.org/articles/10.3389/fgene.2020.00490/full
+
+Description: 
+
+scRNA-seq permits comparison of the transcriptomes of individual cells ​that helps to assess transcriptional similarities and differences within a population of cells​. It also helps in identifying rare cell populations that would otherwise go undetected in analyses of pooled cells​. There are many techniques for scRNA-seq
+including Visium, Slide-seq, SeqFISH, MERFISH, and Drop-seq. For all these techniques, the end result is a table that represents the gene expression profiles of individual cells.​
+
+​The table typically consists of rows representing individual cells or spatial locations within the tissue and columns representing genes. The values in the table correspond to the gene expression intensities or counts for each cell or location.​ Downstream analysis includes, quality control, dimensionality reduction, clustering, differential expression analysis, cell type identification, spatial analysis, and visualization. 
+
+This video explains the process of cell type identification using the scsa library in python. Cell type annotation is the process of assigning or identifying the specific cell types or cell identities present in a biological sample, based on gene expression patterns. ​
+
+The SCSA library allows for accurate cell type annotation by comparing scRNA-seq data to reference cell type profiles.​ It calculates specificity scores for each cell type, measuring the likelihood of a cell belonging to a specific cell type based on its gene expression profile.​ The library includes pre-built reference databases for various organisms, enabling cell type annotation in different biological contexts.​ Users can also create custom reference databases tailored to their specific experimental systems or incorporate external reference datasets.​
+
+​
+
+​",326 - Cell type annotation for single cell RNA seq data​,2023-06-03T07:00:09+00:00
+896000,"Interpolation for resizing 3D volumetric data (Tips and Tricks 50)
+
+The video explains the process of interpolation on an input 3D image (array) to create a new image with adjusted pixel size and slice thickness by using RegularGridInterpolator from SciPy. 
+
+https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.RegularGridInterpolator.html
+
+The code from this video is available here: https://github.com/bnsreenu/python_for_microscopists/blob/master/Tips_and_Tricks_50_interpolate_images_in_a_stack.ipynb
+
+RegularGridInterpolator takes a 3D grid of values with certain intervals, adjusts the grid dimensions and fills in the values using interpolation to create a new 3D image with the desired pixel size and slice thickness.
+
+FIB-SEM and volumetric EM data are typically acquired with specific pixel sizes and slice thicknesses where slice thickness usually containing lower resolution (thicker slices) compared to x/y pixel dimensions. Therefore, it may be necessary to change these parameters to match specific requirements, such as downstream analysis methods requiring isometric voxels. The code allows for adjusting the pixel size and slice thickness, ensuring the resulting data is consistent with the desired parameters.
+
+Dataset from: https://paperswithcode.com/dataset/3d-platelet-em",Interpolation for resizing 3D volumetric data (Tips and Tricks 50),2023-06-16T07:00:07+00:00
+746000,"327 - An introduction to Single Molecule Fluorescence In Situ Hybridization (smFISH​)
+
+smFISH uses a set of short, fluorescently labeled oligonucleotide probes that bind to specific target RNA molecules. Each probe is designed to hybridize to a specific sequence within the target RNA. The probes are designed to be complementary to the target RNA, allowing for specific and precise binding. Upon hybridization, the fluorescent probes generate a signal that can be visualized using fluorescence microscopy.
+
+Why smFISH for studying gene expression?
+
+High sensitivity: smFISH enables the detection of individual RNA molecules, providing high sensitivity and resolution. 
+Single-cell resolution: It allows the examination of gene expression patterns at the single-cell level, providing insights into cellular heterogeneity.
+Quantitative analysis: smFISH enables the quantification of gene expression levels in individual cells or tissues. 
+Spatial information: It provides spatial localization of RNA molecules within cells, allowing for the investigation of subcellular distribution patterns.
+
+smFISH experimental workflow – at a high level
+Sample preparation: Cells or tissues are fixed, permeabilized, and then hybridized with fluorescently labeled probes.
+Imaging: The samples are imaged using fluorescence microscopy, capturing the signals emitted by the labeled probes.
+Image analysis: The acquired images are processed and analyzed to extract quantitative data on gene expression patterns.
+
+Analyzing smFISH data
+Specific analysis approach depends on the research question and the desired insights. However, a general workflow typically involves a few key steps:
+
+Spot and Cluster detection: Detect individual spots or clusters corresponding to the bound fluorescent probes.
+Cellular and nuclear segmentation: crucial for assigning spots to specific cellular compartments and extracting cell-specific information.
+Statistical analysis: such as average distance of mRNA spots from the cell boundary, proportion of mRNA spots within the nucleus versus the cytoplasm. Note that multiplex analysis involves additional steps such as colocalization
+Visualization and interpretation: heatmaps or scatter plots to interpret the analyzed data effectively.",327 - An introduction to Single Molecule Fluorescence In Situ Hybridization (smFISH​),2023-06-28T07:00:34+00:00
+2989000,"328 - smFISH Analysis using Big FISH library in python​
+
+Code from this video is available at:
+1. https://github.com/bnsreenu/python_for_microscopists/blob/master/328a_smFISH_analysis_using_Big_FISH_singleplex.ipynb
+
+2. https://github.com/bnsreenu/python_for_microscopists/blob/master/328b_smFISH_analysis_using_Big_FISH_multiplex.ipynb
+
+This video tutorial is a walkthrough of smFISH (single-molecule fluorescence in situ hybridization) analysis using the Big-FISH library. The code demonstrates various steps involved in the analysis, including image reading, normalization and filtering, spot detection, segmentation of nuclei and cells, extraction of cell-level results, and computation of features for each cell - in a singleplex (and multiplex) dataset.
+
+By analyzing the extracted features and the spatial distribution of spots within cells, researchers can gain insights into various aspects of cellular processes, including gene expression, RNA localization, and spatial organization. These insights can contribute to understanding the functional organization of cells and uncovering potential relationships between gene expression patterns and cellular phenotypes.
+
+The ""spots"" in smFISH analysis refer to individual mRNA molecules that have been labeled with fluorescent probes and can be visualized as discrete signals in the images. Each spot represents the presence of a specific mRNA molecule within the cell.
+
+The brightness of a spot generally corresponds to the abundance or level of the mRNA molecule it represents. Bright spots indicate a higher concentration of the mRNA molecule, suggesting higher expression levels of the corresponding gene. Conversely, dimmer spots may indicate lower expression levels.
+
+""Clusters"" refer to groups of spots that are in close proximity to each other. Clusters can arise due to various reasons, such as multiple mRNA molecules originating from the same gene or co-localization of mRNA molecules from different genes. The presence of clusters may indicate co-regulation or co-localization of specific mRNA molecules within the cell.
+
+Spots that are classified as ""inside"" the nucleus are localized within the nuclear boundary, indicating that the corresponding mRNA molecules are likely involved in nuclear processes, such as transcription, splicing, or RNA processing. On the other hand, spots classified as ""outside"" the nucleus are located in the cytoplasm, suggesting that the corresponding mRNA molecules have been transported out of the nucleus and are involved in cytoplasmic processes, such as translation.
+
+Analyzing the distribution of spots inside and outside the nucleus can provide insights into gene expression regulation and mRNA localization. For example, certain genes may exhibit preferential nuclear localization, indicating their involvement in nuclear processes. On the other hand, cytoplasmic localization may be associated with mRNA molecules that are actively being translated or are involved in cytoplasmic functions.
+
+Researchers often work with fluorescence in situ hybridization (FISH) images that involve multiple channels containing spots from multiple RNA molecules. FISH techniques can be designed to target specific RNA molecules of interest using fluorescently labeled probes. Each RNA molecule can be labeled with a different fluorophore, allowing researchers to distinguish and visualize multiple RNA species simultaneously.
+
+There are multiple data sets to play with but for this exercise we will be using two datasets. 
+
+1. The first one (singleplex) involves example images provided via the big-fish library.
+
+Running this line: stack.check_input_data(path_input, input_segmentation=True) will place four images in your directory of choice.
+experiment_1_dapi_fov_1.tif experiment_1_smfish_fov_1.tif example_nuc_full.tif example_cell_full.tif
+
+experiment_1_dapi_fov_1.tif
+experiment_1_smfish_fov_1.tif
+example_nuc_full.tif
+example_cell_full.tif
+We will be primarily working with the first two images where dapi is used to segment nuclei and smfish image gets used to segment cells and spot detection. As mntioned above, in real situations you may be working with multichannel images representing signals from multiple RNA molecules.
+
+2. The second one (multiplex) can be downloaded from: https://github.com/LieberInstitute/dotdotdot/blob/master/images/Mouse1.czi
+
+The z-stack consists of 14 z slices, each 201 x 201 pixels and 4 channels: ""Cy5"", ""DsRed"" (red), ""EGFP"" (green), and ""DAPI"" (blue) in that order. Scaling is 0.31 um x 0.31 um x 0.40 um. The data was collected on ZEISS LSM700, AxioObserver microscope with plan Apochromat objective at 40x/1.3 oil DIC.
+
+Other datasets of use:
+This is a good reference paper that mentions a few datasets: https://static-content.springer.com/esm/art%3A10.1038%2Fs41592-022-01669-y/MediaObjects/41592_2022_1669_MOESM1_ESM.pdf",328 - smFISH Analysis using Big FISH library in python​,2023-07-12T07:00:17+00:00
+1435000,"This video provides an introduction to Detectron2 in python using pre-trained models for instance and panoptic segmentation. 
+
+Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists/blob/master/329_Detectron2_intro.ipynb
+
+All other code:
+https://github.com/bnsreenu/python_for_microscopists
+
+Detectron2 repo: https://github.com/facebookresearch/detectron2​
+
+What is Detectron2?
+An open-source object detection and segmentation framework developed by Facebook AI Research.​
+
+Built on top of PyTorch and provides a unified API for a variety of tasks, including object detection, instance segmentation, and panoptic segmentation.​
+
+Designed to be flexible and easy-to-use, it puts a focus on enabling rapid research.​
+
+It includes high-quality implementations of state-of-the-art algorithms like Mask R-CNN, RetinaNet, and DensePose.​
+
+It includes a Model Zoo with models for object detection, instance segmentation, and more. ​",329 - What is Detectron2? An introduction.,2023-08-09T07:00:08+00:00
+3022000,"This video tutorial explains the process of fine tuning Detectron2 for instance segmentation using custom data. It walks you through the entire process, from annotating your data, to training a model, to segmenting images, to measuring object morphological parameters, to exporting individual masks (results) as images for further processing. 
+
+Code generated in the video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists/blob/master/330_Detectron2_Instance_3D_EM_Platelet.ipynb
+
+All other code:
+https://github.com/bnsreenu/python_for_microscopists
+
+Detectron2 repo: https://github.com/facebookresearch/detectron2​
+
+Annotations were done using Makesense: https://www.makesense.ai/
+
+Dataset from: https://leapmanlab.github.io/dense-cell/
+Direct link to the dataset: https://www.dropbox.com/s/68yclbraqq1diza/platelet_data_1219.zip
+
+Data courtesy of:
+Guay, M.D., Emam, Z.A.S., Anderson, A.B. et al. ​
+Dense cellular segmentation for EM using 2D–3D neural network ensembles. Sci Rep 11, 2561 (2021). ​
+
+Data annotated for 4 classes:
+1: Cell
+2: Mitochondria​
+3: Alpha granule​
+4: Canalicular vessel​",330 - Fine tuning Detectron2 for instance segmentation using custom data,2023-08-23T07:00:14+00:00
+2647000,"This tutorial walks you through the process of fine-tuning a Segment Anything Model (SAM) using custom data.
+
+Code from this video is available here: https://github.com/bnsreenu/python_for_microscopists/blob/master/331_fine_tune_SAM_mito.ipynb
+
+What is SAM?
+SAM is an image segmentation model developed by Meta AI. It was trained over 11 billion segmentation masks from millions of images. It is designed to take human prompts, in the form of points, bounding boxes or even a text prompt describing what should be segmented.
+
+What are the key features of SAM?
+Zero-shot generalization: SAM can be used to segment objects that it has never seen before, without the need for additional training.
+
+Flexible prompting: SAM can be prompted with a variety of input, including points, boxes, and text descriptions.
+
+Real-time mask computation: SAM can generate masks for objects in real time. This makes SAM ideal for applications where it is necessary to segment objects quickly, such as autonomous driving and robotics.
+
+Ambiguity awareness: SAM is aware of the ambiguity of objects in images. This means that SAM can generate masks for objects even when they are partially occluded or overlapping with other objects.
+
+How does SAM work?
+SAM works by first encoding the image into a high-dimensional vector representation. The prompt is encoded into a separate vector representation. The two vector representations are then combined and passed to a mask decoder, which outputs a mask for the object specified by the prompt.
+
+The image encoder is a vision transformer (ViT-H) model, which is a large language model that has been pre-trained on a massive dataset of images. The prompt encoder is a simple text encoder that converts the input prompt into a vector representation. The mask decoder is a lightweight transformer model that predicts the object mask from the image and prompt embeddings.
+
+SAM paper: https://arxiv.org/pdf/2304.02643.pdf​
+
+Link to the dataset used in this demonstration: https://www.epfl.ch/labs/cvlab/data/data-em/
+Courtesy: EPFL
+
+This code has been heavily adapted from this notebook but modified to work with a truly custom dataset where we have a bunch of images and binary masks. https://github.com/NielsRogge/Transformers-Tutorials/blob/master/SAM/Fine_tune_SAM_(segment_anything)_on_a_custom_dataset.ipynb",331 - Fine-tune Segment Anything Model (SAM) using custom data,2023-09-06T07:00:03+00:00
+1596000,"This video tutorial walks you through the process of converting binary or labeled masks, often associated with scientific images, into coco style json annotations using python code. It also walks you through the process of converting the coco json annotations to YOLO v8 compatible annotations. As a bonus, I share code to display YOLO v8 annotations using python code. 
+
+Code from this video is available here: https://github.com/bnsreenu/python_for_microscopists/tree/master/332%20-%20All%20about%20image%20annotations%E2%80%8B
+
+
+Part 1: Convert binary annotations to COCO JSON
+
+For each binary mask, the code extracts contours using OpenCV. 
+These contours represent the boundaries of objects within the images. This is a key step in converting binary masks to polygon-like annotations. 
+
+Then, convert the contours into annotations, including bounding boxes, area, and segmentation information. Each annotation is associated with an image ID, category ID, and other properties required by the COCO format.
+
+The code also creates an images section containing metadata about the images, such as their filenames, widths, and heights. In my example, I have used exactly the same file names for all images and masks so that a given mask can be easily mapped to the image. 
+
+All the annotations, images, and categories are assembled into a dictionary that follows the COCO JSON format. This includes sections for ""info,"" ""licenses,"" ""images,"" ""categories,"" and ""annotations.""
+
+Finally, the assembled COCO JSON data is saved to a file, making it ready to be used with tools and frameworks that support the COCO data format.
+
+Part 2: Converting COCO JSON annotation to YOLO v8 
+
+It reads coco style json annotations supplied as a single json file and also 
+images as input. 
+
+Here are the key steps in the code:
+
+1. Convert Images to YOLO Format: The convert_to_yolo function takes paths for input images and annotations (in JSON format), and directories to store the output images and labels. It then performs the following operations:
+- Reads the input JSON file containing annotations.
+- Copies all PNG images from the input directory to the output directory.
+- Normalizes the polygon segmentation data related to each image and writes them to text files, mapping them to the appropriate category (e.g., Alpha, Cells, Mito, Vessels).
+- The resulting text files contain information about the object category and the normalized coordinates of the polygons that describe the objects.
+
+2. Create YAML Configuration File: The create_yaml function takes paths to the input JSON file containing categories, training, validation, and optional test paths. It then:
+- Extracts the category names and the number of classes.
+- Constructs a dictionary containing information about class names, the number of classes, and paths to the training, validation, and test datasets.
+- Writes this dictionary to a YAML file, which can be used as a configuration file for training a model (e.g., a YOLO model).",332 - All about image annotations​,2023-09-20T07:00:09+00:00
+2127000,"This video walks you through the process of training a custom YOLO v8 model using your own data. 
+
+Code generated in this video is available here: https://github.com/bnsreenu/python_for_microscopists/blob/master/334_training_YOLO_V8_EM_platelets_converted_labels.ipynb
+
+In this exercise, I use a public dataset that shows multiple classes for segmentation. This is the same dataset from tutorial 330 (Detectron2) - https://youtu.be/cEgF0YknpZw
+
+Dataset from: https://leapmanlab.github.io/dense-cell/
+Direct link to the dataset: https://www.dropbox.com/s/68yclbraqq1diza/platelet_data_1219.zip
+
+Data courtesy of: Guay, M.D., Emam, Z.A.S., Anderson, A.B. et al. ​Dense cellular segmentation for EM using 2D–3D neural network ensembles. Sci Rep 11, 2561 (2021). ​
+
+To prepare this dataset for YOLO, the binary masks were converted to the YOLO format. Please follow this tutorial to learn about this process.
+(https://youtu.be/NYeJvxe5nYw)
+
+If you already have annotations in COCO format JSON file, for example by annotating using makesense (https://www.makesense.ai/) then the annotations can be imported to Roboflow for conversion to YOLO format. Otherwise, if you are starting from scratch, just annotate datasets on Roboflow. (https://roboflow.com/). You just need to upload your images along with the JSON file and Roboflow will convert them to any other format, in our case YOLO v8.
+
+For information about YOLO models:
+https://docs.ultralytics.com/models/yolov8/#key-features",334 - Training custom instance segmentation model using YOLO v8,2023-11-01T07:00:33+00:00
+1124000,"This video explains the basics of YOLO v8 and walks you through a few lines of code to help explore YOLO v8 for object detection and instance segmentation using pre-trained weights. More information about YOLO v8 can be found here.
+https://docs.ultralytics.com/models/yolov8/#key-features
+
+Code generated in this video is available here: https://github.com/bnsreenu/python_for_microscopists/blob/master/333_Intro_to_YOLO_V8.ipynb",333 - An introduction to YOLO v8​,2023-10-18T07:00:13+00:00
+2751000,"Tips and Tricks 51 :  A Holistic View of Software Languages, Databases, and Frameworks
+
+The aim for this video is to provide clarity, helping you understand when and why certain tools are chosen over others.​ The video walks you through the most common languages and frameworks used in various contexts including, interfacing with hardware, software for desktop, web, and Apps. It also provides an introduction to various tools for Big Data handling and processing. Finally, a walkthrough of learning plan to build a hypothetical product is included. 
+
+
+​","A Holistic View of Software Languages, Databases, and Frameworks",2023-09-13T07:00:30+00:00
+1719000,"335 - Converting COCO JSON annotations to labeled masks
+
+This video walks you through the process of converting COCO JSON annotations to labeled mask images. The four main parts of this video tutorial are: 
+1. Downloading data​
+2. Opening the (large) JSON file in python to understand the data​
+3. Visualizing a few annotations on respective images to confirm the quality of annotations​
+4. Converting JSON annotations to labeled masks
+
+Code from this video is available here: https://github.com/bnsreenu/python_for_microscopists/tree/master/335%20-%20Converting%20COCO%20JSON%20annotations%20to%20labeled%20mask%20images
+
+Dataset from: https://github.com/sartorius-research/LIVECell/tree/main
+Note that the dataset comes with: Creative Commons Attribution - NonCommercial 4.0 International Public License
+In summary, you are good to use it for research purposes but for commercial
+use you need to investigate whether trained models using this data must also comply with this license - it probably does apply to any derivative work so please be mindful. 
+
+You can directly download from the source github page. Links below.
+Training json: http://livecell-dataset.s3.eu-central-1.amazonaws.com/LIVECell_dataset_2021/annotations/LIVECell/livecell_coco_train.json
+Validation json: http://livecell-dataset.s3.eu-central-1.amazonaws.com/LIVECell_dataset_2021/annotations/LIVECell/livecell_coco_val.json
+Test json: http://livecell-dataset.s3.eu-central-1.amazonaws.com/LIVECell_dataset_2021/annotations/LIVECell/livecell_coco_test.json
+Images: Download images.zip by following the link: http://livecell-dataset.s3.eu-central-1.amazonaws.com/LIVECell_dataset_2021/images.zip
+
+If these links do not work, follow the instructions on their github page.",335 - Converting COCO JSON annotations to labeled mask images,2023-10-04T07:00:11+00:00
+419000,"Tips and Tricks 52​  : Simplifying code with defaultdict in python
+
+Code from this video is available here: https://github.com/bnsreenu/python_for_microscopists/blob/master/tips_tricks_52_Hidden%20Gems%20-%20defaultdict/Tips%20Tricks%2052%20-Hidden%20Gems%20-%20defaultdict.py
+
+Simplifying Code with defaultdict
+
+You start with an empty notebook, and you want to add three types of fruits: 
+    apples, bananas, and cherries.
+
+To do this, you open the notebook and look for the page for ""apples."" 
+But the notebook is empty, so there's no page for ""apples.""
+
+You have to create a page for ""apples"" first and write down that you have 2 apples.
+
+Next, you want to add bananas. You look for the page for ""bananas,"" 
+but it's not there, so you create a new page for ""bananas"" and write down that you have 1 banana.
+
+You repeat this process for cherries, creating a page for them and writing 
+that you have 3 cherries.
+
+Now, imagine someone asks you, ""How many dates do you have?"" You try to look for a ""dates"" page in your notebook, but it doesn't exist.
+
+You have to be careful not to make mistakes and accidentally forget to create a page for any fruit or forget to update the count correctly. 
+This manual checking and updating make your notebook longer and more error-prone.
+
+The need for defaultdict:
+
+You start with a magical notebook (a defaultdict) that automatically creates a page for any fruit you mention.
+
+You confidently write down the counts of your fruits without worrying if the 
+pages exist or not. For example, you just say, ""I have 2 apples,"" and the notebook creates an ""apples"" page for you if it doesn't already exist.
+
+You add bananas and cherries the same way, without needing to manually check or create pages.
+
+Now, when someone asks about dates, you confidently check the ""dates"" page in your notebook. If it doesn't exist, the notebook kindly tells you that you have 0 dates.
+
+Your magical notebook simplifies your record-keeping. You don't have to write extra code to handle missing pages or worry about making mistakes, making your record-keeping shorter and more accurate.",Simplifying code with defaultdict in python,2023-09-27T07:00:06+00:00
+785000,"Tips and Tricks 53:   Extracting a Targeted Subset from a COCO JSON
+
+Code from this video is available here: https://github.com/bnsreenu/python_for_microscopists/tree/master/tips_tricks_53_Extracting%20a%20Targeted%20Subset%20from%20a%20COCO%20JSON
+
+This video tutorial is all about extracting a subset dataset from a mega-dataset with coco json annotations. The extracted subset can be used for rapid testing of your code or help you in targeting a specific subset category of data within the large dataset.",Extracting a Targeted Subset from a COCO JSON annotated dataset,2023-10-11T07:00:19+00:00
+3428000,"This video tutorial is an entire project spanning from data download to training object detection models to analysis and plotting. It covers the following key tasks, with downloadable code for every task:​
+
+
+
+- Downloading data from Kaggle​
+- Cleaning up the data​
+- Converting masks to coco json and YOLOv8 annotations​
+- Visualizing annotations​
+- Training Detectron2 (Mask R-CNN) for object detection​
+- Training YOLOv8 for object detection​
+
+
+Code is available here: https://github.com/bnsreenu/python_for_microscopists/tree/master/336-Nuclei-Instance-Detectron2.0_YOLOv8_code
+
+
+Dataset downloaded from: https://www.kaggle.com/datasets/ipateam/nuinsseg?resource=download
+Dataset description: https://arxiv.org/abs/2308.01760
+
+
+Summary of the dataset:
+The NuInsSeg dataset contains more than 30k manually segmented nuclei from 31 human and mouse organs and 665 image patches extracted from H&E-stained whole slide images. We also provide ambiguous area masks for the entire dataset to show in which areas manual semantic/instance segmentation were impossible.
+
+
+Human organs:
+
+
+cerebellum, cerebrum (brain), colon (rectum), epiglottis, jejunum, kidney, liver, lung, melanoma, muscle, oesophagus, palatine tonsil, pancreas, peritoneum, placenta, salivary gland, spleen, stomach (cardia), stomach (pylorus), testis, tongue, umbilical cord, and urinary bladder
+
+
+Mouse organs:
+
+
+cerebellum, cerebrum, colon, epiglottis, lung, melanoma, muscle, peritoneum, stomach (cardia), stomach (pylorus), testis, umbilical cord, and urinary bladder)",336 - Nuclei segmentation and analysis using Detectron2 & YOLOv8​,2023-11-15T08:00:14+00:00
+1771000,"This tutorial builds upon the exercise covered in our previous tutorial (https://youtu.be/R-N-YXzvOmY), where we trained Detectron2 and YOLOv8 models for Nuclei detection. In this continuation, we will utilize these trained models for segmenting whole slide images with .svs extensions. Additionally, we will demonstrate the use of memory-mapping to efficiently handle large arrays.
+
+Sample svs file used in the tutorial: https://github.com/camicroscope/Distro/blob/master/images/sample.svs
+A few large svs images can be downloaded from here: https://openslide.cs.cmu.edu/download/openslide-testdata/Aperio/
+
+Code from this tutorial is available here: (Just look for number 337 directory on my GitHub page: https://github.com/bnsreenu/python_for_microscopists/
+
+Direct link here: https://github.com/bnsreenu/python_for_microscopists/tree/master/337%20-%20Whole%20Slide%20Image%20segmentation%20for%20nuclei%E2%80%8B%20using%20Detectron2%20and%20YOLOv8",337 - Whole Slide Image segmentation for nuclei​ using Detectron2 and YOLOv8,2023-11-29T08:00:13+00:00
+2597000,"Tips Tricks 54 : Exploring Metadata in Scientific Images
+
+What is Metadata?
+It is the additional information about a file, providing details such as the 
+creation date, author, location, pixel size, experimental settings, etc. 
+
+Why is Metadata important? 
+For your travel images, it is important, so you know when and where the image was taken. Please note that metadata is not necessary but useful when some information is needed at a future date. May be your grandkids want to take a picture in future at the same location on your 100th birthday!
+
+For scientific images, it is important to ensure traceability, interoperability,
+and reproducibility. 
+
+Metadata provides a detailed history of the image, including acquisition parameters, equipment settings, and processing steps. This traceability is crucial for tracking the origin and evolution of the data, ensuring accountability and transparency in scientific research.
+
+Standardized metadata formats enable different software and systems to understand and interpret information consistently. This promotes interoperability, allowing researchers to share and collaborate on data across various platforms and tools without losing critical details.
+
+Metadata contains essential information about the experimental setup and conditions. Reproducing scientific experiments requires accurate knowledge of these factors. With comprehensive metadata, other researchers can precisely replicate experiments, verify results, and build upon existing work, contributing to the reliability and credibility of scientific findings.
+
+Images come in many formats, let us explore metadata from a few most-common image formats including JPG, DICOM, TIFF, GEO-TIFF, OME-TIFF, and .CZI
+
+Code from this video can be downloaded from here: https://github.com/bnsreenu/python_for_microscopists/blob/master/Tips_Tricks_54_Exploring_metadata_in_scientific_images.py
+
+Useful links: 
+DICOM metadata tags: https://www.dicomlibrary.com/dicom/dicom-tags/
+TIFF tags: https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml
+Open microscopy standard: https://docs.openmicroscopy.org/ome-model/6.0.1/",Exploring Metadata in Scientific Images,2023-12-06T08:00:05+00:00
+3009000,"This video tutorial is all about perfecting your prompts for generative AI (e.g., chatGPT) by asking the right questions to get the best output on your marketing related activities. This includes Creating a Marketing Plan, Defining a Campaign for a New Product​, Composing Social Media Posts for Your New Product​, SEO Keywords Analysis​, and even generating python code to perform user analysis. 
+
+All documents from this video, including the presentation slides, are available here: https://github.com/bnsreenu/python_for_microscopists/tree/master/Prompt%20Engineering%20for%20Marketers%20-%20Tips%20Tricks%2055
+
+If you are too lazy to watch the video, he is the essence:
+Please make sure you incorporate these 5 elements in your prompts: Persona, Context, Action, Tone and the Output Format. 
+
+Example of a good prompt below. Noice how it has all the 5 elements for a good prompt: 
+You are a content expert at a startup, Webgenix, with a software product that generates web page designs using AI and no coding necessary. ​
+
+You are tasked to write a product caption no longer than 5 words. ​
+
+Write 10 product captions for Webgenix and provide a short explanation recommending each caption.​
+
+Please keep the tone professional. ​
+
+Please format the output in a table that can be copied to Excel. 
+
+The video primarily uses chatGPT and Microsoft Copilot.",Generative AI and Prompt Engineering for Marketers,2023-12-15T08:00:37+00:00
+1704000,"A Deep Dive into Why GPUs Outpace CPUs - A Hands-On Tutorial
+
+FLOPS is commonly used to quantify the computational power of processors and other computing devices. It is an important metric for tasks that involve complex mathematical calculations, such as scientific simulations, artificial intelligence and machine learning algorithms.
+
+FLOPS stands for ""Floating Point Operations Per Second"" which means the number of floating-point calculations a computer system can perform in one second. The higher the FLOPS value, the faster the computer or processor can perform floating-point calculations, indicating better computational performance.
+
+In this tutorial, let us use FLOPS as a metric to evaluate the performance of CPU versus GPU. We will begin by employing the DAXPY (Double-precision A*X plus Y) operation, a commonly used operation in numerical computing. This operation involves multiplying a scalar (A) with a vector (X) and adding the result to another vector (Y). We will calculate FLOPS to perform the DAXPY operation using both the CPU and GPU, respectively.
+
+The DAXPY operation is executed using NumPy operations (A * X + Y). NumPy can leverage optimized implementations, and the actual computation may occur in optimized C or Fortran libraries. Therefore, a more effective way to compare speeds is by conducting matrix multiplications using TensorFlow. The second part of our code is designed to accomplish precisely this task. We will perform matrix multiplications of various-sized matrices and explore how the true advantage of GPUs lies in working with large matrices (datasets in general).
+
+In the second part of this tutorial, we will verify the GPU speed advantage over CPU for different matrix sizes. The relative efficiency of the GPU compared to the CPU can vary based on the computational demands of the specific task.
+
+In order to make sure we start with a common base line for each matrix multiplication task, we will clear the default graph and release the GPU memory. We will also disable the eager execution in TensorFlow for the matrix multiplication task. Please note that eager execution is a mode that allows operations to be executed immediately as they are called, instead of requiring them to be explicitly executed within a session. Eager execution is enabled by default in TensorFlow 2.x. By disabling eager execution, operations are added to a computation graph, and the graph is executed within a session.
+
+Finally, Forget FLOPS, it's all about the memory bandwidth!!!
+
+Memory bandwidth is a measure of how quickly data can be transferred between the processor (CPU or GPU) and the memory.
+
+High memory bandwidth is crucial for tasks that involve frequent access to large datasets (e.g., deep learning training)
+
+Memory bandwidth becomes particularly important when dealing with large matrices, as transferring data between the processor and memory efficiently can significantly impact overall performance.
+
+Code used in this video is available here: https://github.com/bnsreenu/python_for_microscopists/blob/master/Tips_Tricks_56_CPU_vs_GPU_performance_test.ipynb
+
+Original title: Why GPUs Outpace CPUs? (tips tricks 56)",Why GPUs Outpace CPUs?,2024-01-31T10:00:32+00:00
+1251000,"Benford's Law, also known as the first-digit law, is a statistical phenomenon 
+observed in many sets of numerical data. It states that in certain naturally 
+occurring datasets, the leading digits (1, 2, 3, etc.) occur with a higher frequency than larger digits (4, 5, 6, etc.). 
+
+According to Benford's Law, the distribution of leading digits follows a logarithmic pattern, where smaller digits are more likely to be the first digit in a number. This surprising and counterintuitive property is frequently encountered in diverse datasets such as financial transactions, population numbers, and scientific data, making Benford's Law a useful tool for 
+detecting anomalies and irregularities in numerical datasets.
+
+In this tutorial, we analyze the distribution of leading digits in tax deduction, population, GDP, COVID numbers and also pixel distribution in images, with the objective of verifying whether the data adheres to Benford's Law. 
+
+The observed frequencies of the leading digits are computed and compared against the expected frequencies predicted by Benford's Law. 
+
+Relevant python code is available here: https://github.com/bnsreenu/python_for_microscopists/tree/master/323-Benfords%20Law
+
+Additional Notes:
+For the image data:
+The code reads images in grayscale using opencv library, computes the DCT coefficients, and plots the observed Benford's Law distribution for each image. 
+
+In case you wonder why go through the pain of converting pixel values to DCT...
+
+In the context of Benford's Law, the distribution of leading digits is expected to follow a logarithmic pattern, where smaller digits (1, 2, 3) occur more frequently than larger digits (4, 5, 6, 7, 8, 9).  When pixel values are confined to a small range, it can disrupt this natural logarithmic distribution. For example, in 8 bit images, our pixels have values between 0 to 255. So any bright pixel will always have a leading digit of 2 and never have values 3 or greater.",338 - Understanding the Benford's Law of Probability,2024-07-10T07:00:18+00:00
+1898000,"Surrogate optimization is a method used to solve optimization problems that are expensive or time-consuming to evaluate directly. It relies on constructing a surrogate model (also known as a metamodel) that approximates the objective function based on a limited number of evaluations. The surrogate model is then used to guide the search for the optimal solution. This approach is particularly useful when dealing with complex simulations, physical experiments, or other computationally expensive tasks.
+
+Unlike traditional metaheuristic approaches like Particle Swarm Optimization (PSO) and Simulated Annealing (SA), surrogate optimization is not strictly a metaheuristic. It can be combined with metaheuristics or other optimization techniques to enhance their efficiency.
+
+Surrogate optimization is often considered a Bayesian approach because it incorporates Bayesian principles in its methodology, particularly through the use of Gaussian Processes (GPs) and Bayesian optimization techniques.
+
+To get a practical understanding, watch this video where we implement a simple example of surrogate optimization using the same objective function from our PSO tutorial (https://youtu.be/FRXsQ6qbJbs). We'll use a popular surrogate model called Gaussian Process (GP) and the Bayesian Optimization framework.
+
+Code Link: https://github.com/bnsreenu/python_for_microscopists/blob/master/339_surrogate_optimization.ipynb
+Video Number: 339",339 - Surrogate Optimization explained using simple python code,2024-06-26T07:00:02+00:00
+2320000,"A video walkthrough of up an experiment testing various large language models for generating hashtag #Python code for scientific image analysis. 
+
+340 - Comparing Top Large Language Models for Python Code Generation
+
+The task: segment nuclei in a multichannel hashtag #microscopy image (proprietary format), measure mean intensities of other channels in the segmented nuclei regions, calculate ratios and report in csv.
+
+All well-hyped models are tested:
+- Claude 3.5 Sonnet
+- ChatGPT-4o
+- Meta AI Llama 3.1 405-B
+- Google Gemini 1.5 Flash
+- Microsoft Copilot (in God's name, how do I find the model name?)
+
+All generated code can be found here: https://github.com/bnsreenu/python_for_microscopists/tree/master/340-Comparing%20Top%20Large%20Language%20Models%20for%20Python%20Code%20Generation
+
+A summary of my findings:
+- When I didn't specify how to segment, all needed a bit of hand-holding. Claude did the best here.
+- When I asked for Stardist segmentation, ChatGPT-4 nailed it on the first try, with minimal code. 
+- Claude and Meta AI weren't far behind, just needed a small tweak (normalize pixel values).
+- Gemini and Copilot... well, I'm super disappointed with their performance. Didn't manage to run the code at all, even after many prompts. 
+
+With Stardist-based segmentation, the code generated by ChatGPT, Claude, and Meta AI produced statistically identical results for the intensity measurements. 
+
+While AI is making rapid progress, the need for detailed prompting to obtain reliable results underscores the continued importance of domain expertise and basic coding skills. 
+
+Title: 
+340 - Comparing Top Large Language Models for Python Code Generation",340 - Comparing Top Large Language Models for Python Code Generation,2024-07-31T10:00:36+00:00
+1306000,"What is Sholl Analysis?
+Sholl analysis is a method used in neuroscience to quantify the complexity of neuronal branching patterns. It is performed to measure how neuron dendrites or axons branch out from the cell body.
+
+How is it performed?
+A series of concentric circles is overlaid on an image of a neuron.
+The circles are centered on the cell body (soma).
+The number of times neuronal processes intersect each circle is counted.
+When performing automated analysis, the soma is assumed to be the largest, brightest object in the image.
+
+Concentric circles are Placed around the soma because branching typically radiates outward. Usually spaced at regular intervals (e.g., 10 μm apart). Extend far enough to cover the entire dendritic field.
+
+Analysis:
+The intersection counts are plotted against circle radius. This plot shows how branching complexity changes with distance from the soma.
+
+This type of analysis is usually performed when ...
+Comparing neuron morphology between different cell types or conditions.
+Assessing changes in neuronal structure during development or disease.
+
+Image credit:
+https://www.mbfbioscience.com/wp-content/uploads/2022/06/neurontracingconfocalmicroscopy-661x1024.png
+
+Code: https://github.com/bnsreenu/python_for_microscopists/tree/master/341-342%20-%20Sholl%20Analysis",341 - Sholl Analysis using python coding,2024-08-28T09:01:00+00:00
+825000,"This video tutorial cover the topics of:
+- performing Sholl analysis on individual images in a directory and combining them
+- performing Sholl analysis on individual soma in a single image showing multiple soma and combining them.
+
+When combining Sholl profiles from multiple neurons, we often encounter a challenge: different neurons may have different sizes, leading to varying maximum radii in their Sholl analyses. Tdifferent neurons may have different sizes, leading to varying maximum radii in their Sholl analyses..
+
+To address this:
+
+We first determine the largest radius used across all neurons.
+We then create a common set of radii points, typically ranging from the smallest to the largest radius used in any of the analyses.
+For each neuron's profile, we use interpolation to estimate what the intersection counts would be at these common radii points. Interpolation essentially ""fills in"" values between the actual measured points, allowing us to estimate intersection counts at radii that weren't directly measured for that particular neuron. This process results in each neuron having estimated intersection counts for the same set of radii, even if the original measurements didn't extend to all of these radii.
+
+With this standardized data, we can now directly compare and average the profiles across all neurons, calculating mean intersection counts and standard deviations at each radius point.
+
+This interpolation step is crucial because it allows us to meaningfully combine data from neurons of different sizes or from images with different scales. It ensures that when we calculate the average profile or compare neurons, we're comparing equivalent points along the radius, regardless of the absolute size of each neuron.
+
+Code:",342 Sholl Analysis: Aggregating Sholl Profiles from Multiple Soma,2024-09-11T07:00:14+00:00
+731000,"This tutorial walks you through the process of extracting high resolution images of individual cores from a Tissue Microarray (TMA). The process involves detecting cores in QuPath, saving the locations in a text file and saving core images using custom python code. 
+
+QuPath download link: https://qupath.github.io/
+
+Python code: https://github.com/bnsreenu/python_for_microscopists/tree/master/343-344-TMA%20Core%20Extraction%20and%20Analysis",343 De-arraying Tissue Microarrays (TMA) using Qupath and python code,2024-09-25T09:00:28+00:00
+751000,"This tutorial walks you through the process of extracting high resolution core images from a Tissue Microarray (TMA) followed by analysis. 
+
+The analysis part includes, color separation followed by nuclei segmentation using StarDist, pretrained deep learning model and calculating mean intensity of brown pixels in the nuclear and extra-nuclear (cytosol) regions, respectively.
+
+Code: https://github.com/bnsreenu/python_for_microscopists/blob/master/343-344-TMA%20Core%20Extraction%20and%20Analysis/344-color_separate_and_nuclei_analysis_multi_cores_automated_V3.0.py",344 Color separation and nuclei segmentation in cores extracted from TMA,2024-10-09T07:00:22+00:00
+1924000,"Image Annotation Made Easy with DigitalSreeni's Python Tool
+In this video, I walk you through my Python-based image annotation application and its associated tools, providing a step-by-step demo to help you get started.
+
+Topics Covered:
+
+--Installation of the Python library for image annotation, along with setting up Anaconda and configuring your environment.
+- Creating new projects and adding 2D and multi-dimensional images (TIFF, CZI).
+- Manual annotation of 2D images and slices from multi-dimensional images using polygon and rectangle tools.
+- Semi-automatic annotations with the Segment Anything Model (SAM).
+- Renaming and assigning colors to classes for better organization.
+- Exporting annotations to various formats: COCO JSON, YOLO v8, labeled images, semantic images, Pascal VOC bounding boxes.
+- Verifying exported annotations by reloading them into the program.
+
+Additional Tools:
+- Annotation statistics
+- Combining JSON annotations
+- Data splitting
+- Patch extraction
+- Data augmentation of images and annotations
+
+Links:
+GitHub repository: https://github.com/bnsreenu/digitalsreeni-image-annotator
+PyPI for pip install info: https://pypi.org/project/digitalsreeni-image-annotator
+
+To Install:
+pip install digitalsreeni-image-annotator
+
+Once installed, simply type sreeni in your command prompt within the correct environment to launch the application.
+
+You can download SAM models from the following links. Please be cautious about the large model on systems with limited memory. 
+https://github.com/ultralytics/assets/releases/download/v8.2.0/sam2_t.pt
+https://github.com/ultralytics/assets/releases/download/v8.2.0/sam2_s.pt
+https://github.com/ultralytics/assets/releases/download/v8.2.0/sam2_b.pt
+https://github.com/ultralytics/assets/releases/download/v8.2.0/sam2_l.pt
+
+It is recommended to place the SAM models in a directory from where you normally start the application to avoid multiple downloads of the same models from the Ultralytics server.",Annotate Images Like a Pro: Python Image Annotation Tool Walkthrough,2024-09-28T18:00:34+00:00
+3275000,"Image Annotation Made Easy with DigitalSreeni's Python Tool:
+
+In this video, I walk you through my Python-based image annotation application and its associated tools, providing a step-by-step demo to help you get started.
+
+Topics Covered:
+
+- Creating new projects and adding 2D and multi-dimensional images (TIFF, CZI).
+- Searching for projects based on metadata
+- Manual annotation of 2D images and slices from multi-dimensional images using polygon and rectangle tools.
+- Semi-automatic annotations with the Segment Anything Model (SAM).
+- Renaming and assigning colors to classes for better organization.
+- Exporting annotations to various formats: COCO JSON, YOLO v8, labeled images, semantic images, Pascal VOC bounding boxes.
+- Training custom model using YOLO
+- Using the trained model to predict on images and converting predictions to annotations
+
+Additional Tools:
+- Annotation statistics
+- Combining JSON annotations
+- Data splitting
+- Patch extraction
+- Data augmentation of images and annotations
+
+Links:
+GitHub repository: https://github.com/bnsreenu/digitalsreeni-image-annotator
+PyPI for pip install info: https://pypi.org/project/digitalsreeni-image-annotator
+
+To Install:
+pip install digitalsreeni-image-annotator
+
+Once installed, simply type sreeni in your command prompt within the correct environment to launch the application.
+
+You can download SAM models from the following links. Please be cautious about the large model on systems with limited memory. 
+https://github.com/ultralytics/assets/releases/download/v8.2.0/sam2_t.pt
+https://github.com/ultralytics/assets/releases/download/v8.2.0/sam2_s.pt
+https://github.com/ultralytics/assets/releases/download/v8.2.0/sam2_b.pt
+https://github.com/ultralytics/assets/releases/download/v8.2.0/sam2_l.pt
+
+It is recommended to place the SAM models in a directory from where you normally start the application to avoid multiple downloads of the same models from the Ultralytics server.",Annotate Images Like a Pro: Python Image Annotation Tool Demo,2024-10-17T01:49:35+00:00
+199000,"In this video, I walk you through the installation process of my Python-based image annotation application
+
+Links:
+GitHub repository: https://github.com/bnsreenu/digitalsreeni-image-annotator
+PyPI for pip install info: https://pypi.org/project/digitalsreeni-image-annotator
+
+To Install:
+pip install digitalsreeni-image-annotator
+
+Once installed, simply type sreeni in your command prompt within the correct environment to launch the application.
+
+You can download SAM models from the following links. Please be cautious about the large model on systems with limited memory. 
+https://github.com/ultralytics/assets/releases/download/v8.2.0/sam2_t.pt
+https://github.com/ultralytics/assets/releases/download/v8.2.0/sam2_s.pt
+https://github.com/ultralytics/assets/releases/download/v8.2.0/sam2_b.pt
+https://github.com/ultralytics/assets/releases/download/v8.2.0/sam2_l.pt
+
+It is recommended to place the SAM models in a directory from where you normally start the application to avoid multiple downloads of the same models from the Ultralytics server.",How to install DigitalSreeni Image Annotator,2024-10-17T03:00:12+00:00
+733000,"In this video, I break down our latest research on a new blood test for distinguishing benign prostatic hyperplasia (BPH) from prostate cancer using GASP-1 protein levels. Collaborating with Halcyon Diagnostics and Dr. Rick Siderits from Rutgers University, we leveraged advanced tissue analysis, including dearraying TMAs, color separation, and intensity measurements using Python tools. 
+
+Our study reveals significant differences in GASP-1 expression between prostate cancer, BPH, and healthy tissues, highlighting its potential as a diagnostic marker. Watch to see how this breakthrough could complement PSA testing, reduce unnecessary biopsies, and improve prostate cancer detection. 
+
+For more details, find the full study in the October 2024 issue of CANCERS: https://www.mdpi.com/2072-6694/16/21/3659
+
+GitHub Link: https://github.com/bnsreenu/TMA-dearray-stain-separation
+
+Halcyon information: https://www.halcyonrx.com/
+
+
+Video: 345",A New Blood Test to Differentiate Prostate Cancer from BPH Using GASP-1 Protein,2024-11-08T08:00:57+00:00
+928000,"This tutorial is a walkthrough of 3D Sholl analysis using python. The code creates a series of concentric spherical shells around the soma center by calculating the distance of each point in 3D space from the soma center. For each spherical shell, it then counts how many times the skeletonized neuron intersects with that shell by performing a logical AND operation between the neuron skeleton and the shell, effectively counting the number of neuron branches at each distance from the soma.
+
+In simpler terms: Imagine creating a series of increasingly larger hollow spheres centered on the soma, and for each sphere, counting how many times the neuron's branches pass through that sphere's surface.
+
+Link to the code: https://github.com/bnsreenu/python_for_microscopists/tree/master/346-3D%20Sholl%20Analysis
+
+Video 346",346 - 3D Sholl Analysis Using Python,2024-11-12T05:56:39+00:00
+678000,"A demonstration of image retrieval system built with python using Vision transformer and FAISS. 
+
+A Python-based content-based image retrieval (CBIR) system using Vision Transformer (ViT) features and FAISS indexing. This application provides both a graphical user interface (GUI) and programmatic API for indexing and searching similar images.
+
+Key features:
+Vision Transformer Features: Utilizes ViT-B/16 model pre-trained on ImageNet for robust feature extraction
+Fast Similarity Search: Implements FAISS IVF indexing for efficient similarity search
+Cross-Platform Support: Works on Windows, macOS, and Linux
+User-Friendly GUI:
+Interactive interface for feature extraction and image search
+Double-click or right-click to open images and containing folders
+Progress tracking for batch operations
+Multiple Image Format Support: Handles PNG, JPG, JPEG, and WebP formats
+GPU Acceleration: Optional GPU support for faster processing when available
+
+For code and additional details:
+https://github.com/bnsreenu/vit-image-retrieval
+https://pypi.org/project/vit-image-retrieval/",351 - Image Retrieval Made Easy With GUI. Uses ViT and FAISS,
+913000,"Automate Google Search Results to Excel Using python
+Video: 347 
+
+Link to python code: https://github.com/bnsreenu/python_for_microscopists/tree/master/347-Automate%20Google%20Search%20Results%20to%20Excel",347 - Automate Google Search Results to Excel,2024-12-04T08:00:00+00:00
+1327000,"Image Similarity Search with VGG16 and Cosine Distance in python.
+
+This is a walkthrough python tutorial for image similarity search using VGG16 as feature extractor and cosine distance as a metric for similarity. 
+
+Cosine Similarity can be used to compare vectors:
+- Cosine similarity compares how ""aligned"" two vectors are (like comparing directions they point)
+- It measures the cosine of the angle between two vectors:
+- Formula: cos(θ) = (A·B)/(||A||·||B||)
+- Result ranges from -1 (opposite) to 1 (identical)
+- Value of 0 indicates perpendicularity (no similarity)
+- We compare query vector against all database vectors
+
+Link to python code:",348 - Image Similarity Search with VGG16 and Cosine Distance,
+1542000,"What is FAISS?
+
+- Faiss is a library for efficient similarity search and clustering of dense vectors. 
+- Optimized for searching through millions or billions of high-dimensional vectors quickly
+- Faiss contains several methods for similarity search.
+
+Two main approaches (that we will be focusing on):
+IndexFlatL2: Exact L2 matching but faster than manual implementation
+IndexIVF (Inverted file): Clusters similar features together, only searches relevant clusters
+
+IndexFlatL2 is similar to our cosine distance matching from the previous tutorial.
+You may not notice any speed difference both, especially for smaller datasets. 
+For large datasets, IndexFlatL2 will still be slow since it does exhaustive search.
+
+That's where IndexIVF becomes valuable 
+ (by reducing the number of comparisons needed through clustering.)
+
+References: 
+https://arxiv.org/abs/1702.08734
+https://arxiv.org/abs/2401.08281
+
+Python code available here:",349 - Understanding FAISS for efficient similarity search of dense vectors,
+1131000,"This is a walkthrough python tutorial to build an Image Retrieval System using Vision Transformer (ViT) and FAISS.
+
+Here, we implement a system for finding similar images using feature-based similarity search. 
+It extracts visual features from images using a neural network and enables fast similarity 
+search through the following main components:
+
+1. Feature Extraction: Converts images into numerical feature vectors that capture their 
+   visual characteristics (handled by a separate ImageFeatureExtractor class)
+
+2. Indexing: 
+   - Processes a directory of images and extracts their features
+   - Stores these features in a FAISS index (Facebook AI Similarity Search) 
+   - Maintains metadata about each indexed image (path, filename, indexing date)
+
+3. Search: 
+   - Takes a query image and finds the k most similar images from the indexed collection
+   - Uses IndexIVFFlat to measure similarity between images
+   - Returns matched images sorted by similarity score
+
+Note about IndexIVFFlat:
+    - Uses a ""divide and conquer"" approach
+    - First divides vectors into clusters/regions
+    - When searching:
+      * First finds which clusters are most relevant
+      * Only searches within those chosen clusters
+    - Requires two extra steps:
+      * Training: Learning how to divide vectors into clusters
+      * nprobe: Choosing how many clusters to check (tradeoff between speed and accuracy)
+    - Usually much faster for large datasets
+    - Might miss some matches (approximate search) but usually good enough
+
+Python code link:",350 - Efficient Image Retrieval with Vision Transformer (ViT) and FAISS,

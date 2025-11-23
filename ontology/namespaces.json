@@ -1,0 +1,11 @@
+{
+  "": "http://flow.ai/",
+  "ex": "http://flow.ai/ontology/",
+  "schema": "http://schema.org/",
+  "prov": "http://www.w3.org/ns/prov#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "owl": "http://www.w3.org/2002/07/owl#",
+  "xsd": "http://www.w3.org/2001/XMLSchema#",
+  "flow": "http://flow.ai/schema/",
+  "graph": "http://flow.ai/graph/"
+}

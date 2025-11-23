@@ -1,0 +1,90 @@
+@prefix : <http://flow.ai/schema/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+###############################################################################
+# Flow Provenance Schema (Lightweight Schema Definition)
+# Purpose: defines entity relationships and constraints for building named graphs.
+###############################################################################
+
+:Video a owl:Class ;
+  rdfs:subClassOf schema:VideoObject , prov:Entity ;
+  rdfs:label "Video" ;
+  rdfs:comment "A video object recorded from preprocessed metadata." .
+
+:Dataset a owl:Class ;
+  rdfs:subClassOf prov:Collection ;
+  rdfs:label "Dataset" ;
+  rdfs:comment "A collection of videos grouped as a batch (e.g., first_batch)." .
+
+:Transformation a owl:Class ;
+  rdfs:subClassOf prov:Activity ;
+  rdfs:label "Transformation" ;
+  rdfs:comment "Processing step such as cleaning or merging that generated the dataset." .
+
+###############################################################################
+# Object Properties
+###############################################################################
+
+:belongsToDataset a owl:ObjectProperty ;
+  rdfs:domain :Video ;
+  rdfs:range :Dataset ;
+  rdfs:label "belongsToDataset" ;
+  rdfs:comment "Links a video to the dataset (named graph) it belongs to." .
+
+:generatedBy a owl:ObjectProperty ;
+  rdfs:domain :Dataset ;
+  rdfs:range :Transformation ;
+  rdfs:label "generatedBy" ;
+  rdfs:comment "Indicates which transformation produced this dataset." .
+
+###############################################################################
+# Datatype Properties
+###############################################################################
+
+:videoId a owl:DatatypeProperty ;
+  rdfs:domain :Video ;
+  rdfs:range xsd:string ;
+  rdfs:label "videoId" ;
+  rdfs:comment "Unique identifier for each video." .
+
+:title a owl:DatatypeProperty ;
+  rdfs:domain :Video ;
+  rdfs:range xsd:string ;
+  rdfs:label "title" ;
+  rdfs:comment "Title of the video." .
+
+:description a owl:DatatypeProperty ;
+  rdfs:domain :Video ;
+  rdfs:range xsd:string ;
+  rdfs:label "description" ;
+  rdfs:comment "Description of the video." .
+
+:durationMs a owl:DatatypeProperty ;
+  rdfs:domain :Video ;
+  rdfs:range xsd:integer ;
+  rdfs:label "durationMs" ;
+  rdfs:comment "Video duration in milliseconds." .
+
+:publishTimestamp a owl:DatatypeProperty ;
+  rdfs:domain :Video ;
+  rdfs:range xsd:dateTime ;
+  rdfs:label "publishTimestamp" ;
+  rdfs:comment "Timestamp when the video was published." .
+
+:publishYear a owl:DatatypeProperty ;
+  rdfs:domain :Video ;
+  rdfs:range xsd:gYear ;
+  rdfs:label "publishYear" ;
+  rdfs:comment "Year extracted from the publish timestamp." .
+
+###############################################################################
+# Additional Notes
+###############################################################################
+
+# Each dataset (e.g., first_batch) will map to a Named Graph in the triple store.
+# The :belongsToDataset property connects each :Video instance to its graph provenance.
+# PROV-O terms (prov:wasDerivedFrom, prov:wasGeneratedBy) are reused to record lineage.

@@ -1,0 +1,38 @@
+{
+    "http://flow.ai/graph/graph_first_batch": {
+        "graph_file": "graph_first_batch.ttl",
+        "triples": 1107,
+        "year_range": [
+            2019,
+            2020
+        ],
+        "last_updated": "2025-10-16T17:57:07.970054"
+    },
+    "http://flow.ai/graph/graph_fourth_batch": {
+        "graph_file": "graph_fourth_batch.ttl",
+        "triples": 1089,
+        "year_range": [
+            2022,
+            2024
+        ],
+        "last_updated": "2025-10-16T17:57:08.093031"
+    },
+    "http://flow.ai/graph/graph_second_batch": {
+        "graph_file": "graph_second_batch.ttl",
+        "triples": 1107,
+        "year_range": [
+            2020,
+            2021
+        ],
+        "last_updated": "2025-10-16T17:57:08.215806"
+    },
+    "http://flow.ai/graph/graph_third_batch": {
+        "graph_file": "graph_third_batch.ttl",
+        "triples": 1107,
+        "year_range": [
+            2021,
+            2022
+        ],
+        "last_updated": "2025-10-16T17:57:08.341858"
+    }
+}
